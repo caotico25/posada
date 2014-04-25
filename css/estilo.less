@@ -1,0 +1,184 @@
+/*   VARIABLES     */
+
+
+
+
+/*    MIXINS    */
+
+.Box(@orient: horizontal, @pack: start, @align: center)
+{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-box;
+    display: -o-box;
+ 
+    -webkit-box-orient: @orient;
+    -moz-box-orient: @orient;
+ 
+    -webkit-box-pack: @pack;
+    -moz-box-pack: @pack;
+ 
+    -webkit-box-align: @align;
+    -moz-box-align: @align;
+}
+
+.Bflex(@flex: 1)
+{
+    -webkit-box-flex: @flex;
+    -moz-box-flex: @flex;
+    -ms-box-flex: @flex;
+    -o-box-flex: @flex;
+}
+
+
+/*    CSS       */
+
+*
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+body
+{
+	background-image: url("../images/fondo.jpg");
+	color: white;
+}
+
+#contenedor
+{
+	width: 80%;
+	margin-left: 10%;
+  	
+  	a
+  	{
+  		text-decoration: none;
+  		text-align: center;
+  	}
+  	
+  	header
+  	{
+  	    
+	  	>a
+	  	{
+	  		background-image: url("../images/fondocabecera.jpg");
+	  		background-repeat: no-repeat;
+	  		background-size: 100% 150px;
+	  		
+	  		
+	  		display: block;
+	  		
+	  		min-width: 100%;
+	  		height: 150px;
+  			padding-top: 50px;
+  			
+  			font-size: 200%;
+  			
+  			
+	  	}
+	  
+		nav
+		{
+		    border: 1px solid white;
+		    
+		    width: 100%;
+		    height: 50px;
+		    
+			.Box();
+			
+			a
+		  	{
+			  	 background-image: url("../images/opcion1.jpg");
+			  	 background-repeat: no-repeat;
+	  			 background-size: 100% 50px;
+			  	 
+                 display: block;
+                 height: 50px;
+			  	 padding-top: 15px;
+			  	 .Bflex();
+		  	}
+		}
+	}
+	
+	#central
+	{
+	    margin-top: 20px;
+	    margin-bottom: 20px;
+	    
+	    .Box();
+	    
+	    #contenido
+        {
+            border: 1px solid white;
+            
+            .Bflex();
+        }
+        
+        aside
+        {
+            border: 1px solid white;
+            
+            .Bflex();
+            .Box(vertical);
+            
+            section
+            {
+                margin: 10px;;
+                
+                form
+                {
+                    border: 1px solid white;
+                    
+                    width: 100px;
+                    
+                    
+                    
+                    input
+                    {
+                        &[type="text"]
+                        {
+                            width: 70px;
+                        }
+                        
+                        &[type="password"]
+                        {
+                            width: 70px;
+                        }
+                    }
+                }
+            }
+        }
+	}
+	
+	
+
+    
+
+
+
+    footer
+    {
+        border: 1px solid white;
+        
+        width: 100%;
+        height: 140px;
+        
+        .Box();
+        
+        section
+        {
+            
+            
+            .Box(vertical, end);
+            
+            p, a, img
+            {
+                display: block;
+                .Bflex();
+            }
+        }
+    }
+
+
+
+}

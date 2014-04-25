@@ -1,0 +1,267 @@
+@import 'reset.css';
+@import 'grid.less';
+
+
+/*/////////
+// GRID //
+/////////*/
+
+/* Especifica número de columnas y su ancho  */
+@columns: 12;
+@column-width: 60;
+@gutter-width: 20;
+
+/* Remove the definition below for a pixel-based layout  */
+@total-width: 100%;
+
+
+/*///////////
+// MIXINS //
+///////////*/
+
+/* Asigna border-radius */
+.border-radius(@radius: 5px)
+{
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+    
+    behavior: url(ie-css3.htc); /* Este archivo soluciona incompatibilidades con estilos de borde */
+}
+
+
+
+
+/*///////////
+// LAYOUT //
+///////////*/
+
+body
+{
+    background-image: url("../images/fondo.jpg");
+}
+
+#contenedor
+{
+    width: 80%;
+    
+    .push();
+    
+    a
+    {
+        text-decoration: none;
+        text-align: center;
+    }
+    
+    header
+    {
+        .column(12);
+        
+        >a
+        {
+            background-image: url("../images/fondocabecera.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 150px;
+            
+            .border-radius(15);
+            border: 1px solid black;
+            
+            display: block;
+            
+            min-width: 100%;
+            height: 100px;
+            padding-top: 50px;
+            
+            font-size: 4em;
+        }
+        
+        nav
+        {
+            padding-top: 50px;
+            .column(12);
+            
+            a
+            {
+                 background-image: url("../images/opcion1.jpg");
+                 background-repeat: no-repeat;
+                 background-size: 100% 50px;
+                 
+                 display: block;
+                 height: 50px;
+                 padding-top: 15px;
+                 
+                 .column(2.3);
+            }
+        }
+    }
+    
+    #contenido
+    {
+        .column(9);
+        
+        background: white;
+        color: black;
+        margin-bottom: 20px;
+        
+        >article, >section
+        {
+            padding: 0.7em;
+            
+            h2
+            {
+                border: 1px solid black;
+                .border-radius();
+                
+                background-image: url("../images/fondo.jpg");
+                
+                color: #cece00;
+                
+                padding: 0.3em;
+            }
+            
+            p
+            {
+                padding:1em;
+            }
+        }
+        
+        >section
+        {
+            
+        }
+    }
+    
+    aside
+    {
+        .column(3);
+        
+        background-color: #e5e5e5;
+        
+        section
+        {
+            margin: 10px;;
+            
+            form
+            {
+                width: 100px;
+                
+                .push(3);
+                
+                input
+                {
+                    &[type="text"]
+                    {
+                        width: 70px;
+                    }
+                    
+                    &[type="password"]
+                    {
+                        width: 70px;
+                    }
+                }
+            }
+        }
+    }
+    
+    >footer
+    {
+        color: black;
+        padding: 0.5em;
+        
+        background-image: url("../images/fondocabecera.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 120px;
+        
+        .column(12);
+        
+        section
+        {
+            .column(4);
+            
+            p, a, img
+            {
+                display: block;
+            }
+            p
+            {
+                text-align: center;
+            }
+        }
+    }
+}
+
+
+/*  MEDIA QUERIES */
+
+@media screen and (max-width: 1320px)
+{
+    #contenedor
+    {
+        header
+        {
+            >a
+            {
+                font-size: 3.5em;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1170px)
+{
+    #contenedor
+    {
+        header
+        {
+            >a
+            {
+                font-size: 3.2em;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1050px)
+{
+    #contenedor
+    {
+        header
+        {
+            >a
+            {
+                font-size: 3em;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 990px)
+{
+    #contenedor
+    {
+        header
+        {
+            >a
+            {
+                font-size: 2.7em;
+            }
+        }
+    }
+}
+
+
+/*  CAMBIO GENERAL DE ESTILO EN 900PX  */
+
+@media screen and (max-width: 900px)
+{
+    #contenedor
+    {
+        header
+        {
+            >a
+            {
+                font-size: 2.5em;
+            }
+        }
+    }
+}
