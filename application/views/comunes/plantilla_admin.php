@@ -14,18 +14,7 @@
             
             <header>
                 <a href="" >LA POSADA DEL CAOS</a>
-                
-                <nav>
-                    <a href="<?= base_url('admin/inicio') ?>" >INICIO</a>
-                    <a href="" >NOTICIAS</a>
-                    <a href="" >PARTIDAS</a>
-                    <a href="<?= base_url('admin/foro') ?>" >FORO</a>
-                    <a href="" >AYUDA</a>
-                </nav>
-                
             </header>
-            
-                <!-- NAV SECUNDARIO AQUI O EN LA VISTA CORRESPONDIENTE SI PROCEDE?                 -->
 
                 <div id="contenido">
                     

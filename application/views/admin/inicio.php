@@ -5,17 +5,13 @@
     <h2>Administrar foro</h2>
     <article>
         <h3>Secciones</h3>
-        <a href="<?= base_url('admin/foro/crear_seccion') ?>">Crear nueva sección</a>
-        <a href="">Modificar secciones</a>
-    </article>
-    <article>
-        <h3>Temas</h3>
-        <a href="">Crear nuevo tema</a>
-        <a href="">Modificar temas</a>
+        <a href="<?= base_url('admin/foros/crear_seccion') ?>">Crear nueva sección</a>
+        <a href="<?= base_url('admin/foros/modificar_seccion') ?>">Modificar secciones</a>
+        <a href="<?= base_url('admin/foros/eliminar_seccion') ?>">Eliminar secciones</a>
     </article>
     <article>
         <h3>Posts</h3>
-        <a href="">Revisar posts</a>
+        <a href="<?= base_url('foro/foros') ?>">Revisar posts</a>
     </article>
 </section>
 <section>

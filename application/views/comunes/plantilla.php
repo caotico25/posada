@@ -19,7 +19,7 @@
                     <a href="<?= base_url('portal/inicio') ?>" >INICIO</a>
                     <a href="" >NOTICIAS</a>
                     <a href="" >PARTIDAS</a>
-                    <a href="<?= base_url('foro/temas') ?>" >FORO</a>
+                    <a href="<?= base_url('foro/foros') ?>" >FORO</a>
                     <a href="" >AYUDA</a>
                 </nav>
                 
@@ -61,7 +61,7 @@
                     <a href="<?= base_url('portal/inicio') ?>" >Inicio</a>
                     <a href="" >Noticias</a>
                     <a href="" >Partidas</a>
-                    <a href="<?= base_url('foro/temas') ?>" >Foro</a>
+                    <a href="<?= base_url('foro/foros') ?>" >Foro</a>
                     <a href="" >Ayuda</a>
                 </section>
                 <section id="enlaces_externos">
