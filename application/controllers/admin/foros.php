@@ -35,7 +35,7 @@ class Foros extends CI_Controller
         
         if ($this->form_validation->run() == FALSE)
         {
-            redir_sitio('admin/foro/alta_seccion');
+            redir_admin('admin/foro/alta_seccion');
         }
         else
         {
@@ -70,7 +70,7 @@ class Foros extends CI_Controller
         
         if ($this->form_validation->run() == FALSE)
         {
-            redir_sitio('admin/foro/modificar_secciones', $data);
+            redir_admin('admin/foro/modificar_secciones', $data);
         }
         else
         {
@@ -108,6 +108,9 @@ class Foros extends CI_Controller
      
     function crear_tema()
     {
+        $secciones = $this->Foro->obtener_secciones();
+        $data['secciones'] = $secciones;
+        
         $reglas = array(
                         array(
                             'field' => 'nombre',
@@ -125,11 +128,11 @@ class Foros extends CI_Controller
         
         if ($this->form_validation->run() == FALSE)
         {
-            redir_sitio('admin/foro/alta_tema');
+            redir_admin('admin/foro/alta_tema', $data);
         }
         else
         {
-            $this->Foro->alta_seccion($this->input->post());
+            $this->Foro->alta_tema($this->input->post());
             $this->session->set_flashdata('mensaje', 'Tema creado correctamente.');
             
             redirect('admin/inicio');
@@ -152,7 +155,7 @@ class Foros extends CI_Controller
                         array(
                             'field' => 'contenido',
                             'label' => 'Contenido',
-                            'rules' => "trim"
+                            'rules' => "trim|max_length[100]"
                         )
         );
         
@@ -160,7 +163,7 @@ class Foros extends CI_Controller
         
         if ($this->form_validation->run() == FALSE)
         {
-            redir_sitio('admin/foro/modificar_temas', $data);
+            redir_admin('admin/foro/modificar_temas', $data);
         }
         else
         {
@@ -175,7 +178,17 @@ class Foros extends CI_Controller
 
     function eliminar_tema()
     {
-        $this->foro->eliminar_tema();
+        $secciones = $this->Foro->obtener_temas();
+        $data['temas'] = $temas;
+        
+        if ($this->input->post())
+        {
+            $this->Foro->eliminar_tema($this->input->post('id_tema'));
+            
+            redirect('admin/foros/eliminar_tema');
+        }
+        
+        redir_admin('admin/foro/eliminar_temas', $data);
     }
     
     

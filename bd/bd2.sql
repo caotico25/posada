@@ -1,10 +1,28 @@
-﻿/*
+﻿drop table usuarios cascade;
+drop table tipos_juego cascade;
+drop table tipos_ficha cascade;
+drop table inventarios cascade;
+drop table fichas cascade;
+drop table estados cascade;
+drop table partidas cascade;
+drop table jugadores cascade;
+drop table chat cascade;
+drop table noticias cascade;
+drop table secciones cascade;
+drop table temas cascade;
+drop table posts cascade;
+drop table comentarios cascade;
+
+
+
+
+
+
+/*
 *   --------
 *   USUARIOS
 *   --------
 */
-
-drop table usuarios cascade;
 
 create table usuarios	(
 	id					bigserial		constraint pk_usuarios primary key,
@@ -25,8 +43,6 @@ create index idx_usuarios_usuario_passwd on usuarios (usuario, passwd);
 *   --------------
 */
 
-drop table tipos_juego cascade;
-
 create table tipos_juego (
 	id					bigserial		constraint pk_tipos_juego primary key,
 	nombre				varchar(50)		not null
@@ -39,8 +55,6 @@ create table tipos_juego (
 *   TIPOS DE FICHA
 *   --------------
 */
-
-drop table tipos_ficha cascade;
 
 create table tipos_ficha (
 	id					bigserial		constraint pk_tipos_ficha primary key,
@@ -58,8 +72,6 @@ create table tipos_ficha (
 *   -----------
 */
 
-drop table inventarios cascade;
-
 create table inventarios (
 	id					bigserial		constraint pk_inventarios primary key,
 	objeto				varchar(20)		not null,
@@ -73,8 +85,6 @@ create table inventarios (
 *   FICHAS
 *   ------
 */
-
-drop table fichas cascade;
 
 create table fichas (
   id					bigserial		constraint pk_fichas primary key,
@@ -101,8 +111,6 @@ create table fichas (
 *   ----------------------
 */
 
-drop table estados cascade;
-
 create table estados (
 	id					bigserial		constraint pk_estados primary key,
 	estado				varchar(20)		not null
@@ -114,8 +122,6 @@ create table estados (
 *   PARTIDAS
 *   --------
 */
-
-drop table partidas cascade;
 
 create table partidas (
 	id					bigserial		constraint pk_partidas primary key,
@@ -146,8 +152,6 @@ create table partidas (
 *   -----------------------
 */
 
-drop table jugadores cascade;
-
 create table jugadores (
 	partida_id			bigint        	constraint fk_jugadores_partidas
 												references partidas (id)
@@ -171,8 +175,6 @@ create table jugadores (
 *   ----
 */
 
-drop table chat cascade;
-
 create table chat (
 	id					bigserial		constraint pk_chat primary key,
 	mensaje				varchar(200) 	not null,
@@ -195,8 +197,6 @@ create table chat (
 *   NOTICIAS
 *   --------
 */
-
-drop table noticias cascade;
 
 create table noticias (
   id					bigserial		constraint pk_noticias primary key,
@@ -226,8 +226,6 @@ create table noticias (
 *   ---------
 */
 
-drop table secciones cascade;
-
 create table secciones (
 	id					bigserial			constraint pk_secciones primary key,
 	titulo        		varchar(20)   		not null constraint uq_titulo_secciones unique,
@@ -241,21 +239,14 @@ create table secciones (
 *   -----
 */
 
-drop table temas cascade;
-
 create table temas (
 	id					bigserial			constraint pk_temas primary key,
 	titulo        		varchar(20)   		not null constraint uq_titulo_temas unique,
-	contenido     		text          		not null,
-	autor         		bigint        		constraint fk_temas_usuarios
-													references usuarios (id)
-															on update cascade
-													 		on delete no action,
 	seccion       		bigint        		constraint fk_temas_secciones
 													references secciones (id)
 															on update cascade
 													 		on delete no action,
-	fecha         		date          		default current_date
+	descripcion			varchar(100)		not null
 );
 
 
@@ -265,10 +256,9 @@ create table temas (
 *   -----
 */
 
-drop table posts cascade;
-
 create table posts (
 	id					bigserial		constraint pk_posts primary key,
+	titulo				varchar(20)		not null constraint uq_titulos_posts unique,
 	contenido     		text          	not null,
 	autor         		bigint        	constraint fk_posts_usuarios
 												references usuarios (id)
@@ -288,11 +278,9 @@ create table posts (
 *	-----------
 */
 
-drop table comentarios cascade;
-
 create table comentarios (
 	id					bigserial		constraint pk_comentarios primary key,
-	texto				text			not null,
+	contenido			text			not null,
 	autor				bigint			constraint fk_comentarios_usuarios
 												references usuarios (id)
 														on update cascade
@@ -336,9 +324,25 @@ insert into usuarios (usuario, email, passwd, admin)
 values ('jose', 'jfdominguezpalacios@gmail.com', md5('jose'), true);
 
 
+/**	 SECCIONES  **/
+
+insert into secciones (titulo, descripcion)
+values ('Seccion 1', ' Esta es la seccion 1');
+
+insert into secciones (titulo, descripcion)
+values ('Seccion 2', ' Esta es la seccion 2');
 
 
+/**  TEMAS  **/
 
+insert into temas (titulo, seccion, descripcion)
+values ('Tema 1', 1, 'Tema 1 de la seccion 1');
+
+insert into temas (titulo, seccion, descripcion)
+values ('Tema 2', 1, 'Tema 2 de la seccion 1');
+
+insert into temas (titulo, seccion, descripcion)
+values ('Tema 1-2', 2, 'Tema 1 de la seccion 2');
 
 
 

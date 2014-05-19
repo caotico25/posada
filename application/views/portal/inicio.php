@@ -1,10 +1,12 @@
-<article id="presentacion">
+<section id="presentacion">
     <h2>BIENVENIDOS A LA POSADA DEL CAOS</h2>
-    <p>
-        Sed bienvenidos a esta humilde posada. Sentaos y disfrutad de una buena partida de rol.
-        Compartid opiniones, discutid, daos hachazos si es necesario! (en la ficción por supuesto jejeje).
-    </p>
-</article>
+    <article>
+        <p>
+            Sed bienvenidos a esta humilde posada. Sentaos y disfrutad de una buena partida de rol.
+            Compartid opiniones, discutid, daos hachazos si es necesario! (en la ficción por supuesto jejeje).
+        </p>
+    </article>
+</section>
 
 <section id="noticias">
     <h2>NOTICIAS</h2>

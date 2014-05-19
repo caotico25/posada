@@ -9,5 +9,4 @@ class Foros extends CI_Controller
         $data['temas'] = $this->Foro->obtener_temas();
         redir_sitio('foro/inicio', $data);
     }
-
 }

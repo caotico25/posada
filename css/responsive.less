@@ -103,8 +103,9 @@ body
         color: black;
         margin-bottom: 20px;
         
-        >article, >section
+        >section
         {
+            .column(8.7,9);
             padding: 0.7em;
             
             h2
@@ -123,11 +124,34 @@ body
             {
                 padding:1em;
             }
-        }
-        
-        >section
-        {
             
+            article
+            {
+                .column(7.8,8);
+                margin: 10px;
+                border: 1px solid black;
+                .border-radius();
+                text-align: left;
+                
+                background-color: white;
+                background-image: none;
+                
+                >span
+                {
+                    border: 1px solid black;
+                    margin: 30px 15px;
+                    color: red;
+                }
+                >p
+                {
+                    margin: 10px;
+                }
+                
+                &:hover
+                {
+                    text-decoration: underline;
+                }
+            }
         }
     }
     
