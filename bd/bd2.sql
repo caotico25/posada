@@ -140,6 +140,7 @@ create table partidas (
 												references estados (id)
 														on update cascade
 														on delete no action,
+	activa				boolean			default false,
 	f_creacion			date			default current_date
 										not null,
 	f_fin				date
@@ -345,7 +346,10 @@ insert into temas (titulo, seccion, descripcion)
 values ('Tema 1-2', 2, 'Tema 1 de la seccion 2');
 
 
+/**  TIPOS DE JUEGO  **/
 
+insert into tipos_juego (nombre)
+values ('Vampiro: La Mascarada');
 
 
 

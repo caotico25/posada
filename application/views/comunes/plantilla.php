@@ -18,7 +18,7 @@
                 <nav>
                     <a href="<?= base_url('portal/inicio') ?>" >INICIO</a>
                     <a href="" >NOTICIAS</a>
-                    <a href="" >PARTIDAS</a>
+                    <a href="<?= base_url('partidas/partidas') ?>" >JUEGA ROL</a>
                     <a href="<?= base_url('foro/foros') ?>" >FORO</a>
                     <a href="" >AYUDA</a>
                 </nav>

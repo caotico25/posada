@@ -1,0 +1,40 @@
+<section id="datos_jugador">
+    <h2></h2>
+    <a href="c_contraseña">Cambiar contraseña de usuario</a>
+</section>
+
+<section id="master">
+    <h2>PARTIDAS DIRIGIDAS POR TI:</h2>
+    <?php foreach ($partidas_m as $partida): ?>
+        <article>
+            <h3><?= $partida['nombre'] ?></h3>
+            <p><?= $partida['descripcion'] ?></p>
+            <?php form_open('partidas/partidas/iniciar_partida') ?>
+                <input type="hidden" name="id_partida" value="<?= $partida['id'] ?>" id="id_partida"/>
+                <input type="submit" name="iniciar" value="Iniciar partida" id="iniciar"/>
+            <?php form_close() ?>
+        </article>
+    <?php endforeach ?>
+</section>
+
+<section id="jugador">
+    <h2>PARTIDAS EN LAS QUE PARTICIPAS:</h2>
+    <?php foreach ($partidas_p as $partida): ?>
+        <article>
+            <h3><?= $partida['nombre'] ?></h3>
+            <p><?= $partida['descripcion'] ?></p>
+        </article>
+    <?php endforeach ?>
+</section>
+
+<section id="c_contraseña">
+    <h2>CAMBIA TU CONTRASEÑA</h2>
+    <article>
+        <?= form_open('usuarios/perfil/cambiar_passwd') ?>
+            <label for="password">Introduce tu contraseña:</label><input type="password" name="password" value="" id="password"/>
+            <label for="n_passwd">Nueva contraseña:</label><input type="password" name="n_passwd" value="" id="n_passwd"/>
+            <label for="r_passwd">Repite la contraseña:</label><input type="password" name="r_passwd" value="" id="r_passwd"/>
+            <input type="submit" name="enviar" value="Cambiar contraseña" id="enviar"/>
+        <?= form_close() ?>
+    </article>
+</section>
