@@ -4,7 +4,9 @@ class Perfil extends CI_Controller
 {
     function index()
     {
-        redir_admin('');
+        $data = $this->datos_ficha();
+        
+        redir_sitio('usuarios/perfil', $data);
     }
     
     
@@ -19,14 +21,5 @@ class Perfil extends CI_Controller
     }
     
     
-    /*
-     * 
-     * 
-     */
-    function ir_a_partidas()
-    {
-        $data = $this->datos_ficha();
-        
-        redir_sitio('usuarios/ficha/master', $data);
-    }
+    
 }

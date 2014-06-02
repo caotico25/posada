@@ -9,8 +9,8 @@ class Partida extends CI_Model
     {
         extract($datos);
         
-        $this->db->query("insert into partidas (nombre, descripcion, master, tipo_juego, activa, estado)
-                            values (?, ?, $master, $tipo_juego, ?, ?)", array($nombre, $descripcion, $activa, $estado));
+        $this->db->query("insert into partidas (nombre, descripcion, master, tipo_juego, estado)
+                            values (upper(?), ?, $master, $tipo_juego, ?)", array($nombre, $descripcion, $estado));
     }
     
     
@@ -45,8 +45,15 @@ class Partida extends CI_Model
     }
     
     
-    
-    
+    /*
+     * 
+     */
+    function obtener_estados()
+    {
+        $res = $this->db->query("select * from estados");
+        
+        return $res->result_array();
+    }
     
     
     

@@ -25,7 +25,7 @@
                 <aside>
                     <!-- ANUNCIOS -->
                     <section id="login_registro">
-                        <a href="" ><?= obtener_nombre() ?></a>
+                        <a href="<?= base_url('usuarios/perfil') ?>" ><?= obtener_nombre() ?></a>
                         <a href="<?= base_url('portal/inicio/logout') ?>">Cerrar sesión</a>
                     </section>
                 </aside>

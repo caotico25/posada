@@ -25,35 +25,35 @@
                 
             </header>
             
-                <!-- NAV SECUNDARIO AQUI O EN LA VISTA CORRESPONDIENTE SI PROCEDE?                 -->
+            <!-- NAV SECUNDARIO AQUI O EN LA VISTA CORRESPONDIENTE SI PROCEDE?                 -->
 
-                <div id="contenido">
-                    
-                    <?= $contenido ?>
-                    
-                </div>
+            <div id="contenido">
                 
-                <aside>
-                    <!-- ANUNCIOS -->
-                    <section id="login_registro">
-                        <?php if (logueado()): ?>
-                            <a href="" ><?= obtener_nombre() ?></a>
-                            <?php if (es_admin(obtener_id())): ?>
-                                <a href="<?= base_url('admin/inicio') ?>">Ir a zona de administrador</a>
-                            <?php endif ?>
-                            <a href="<?= base_url('portal/inicio/logout') ?>">Cerrar sesión</a>
-                        <?php else: ?>
-                            <?= form_open('portal/inicio/login') ?>
-                                <label for="usuario_log">Usuario:</label>
-                                <input type="text" name="usuario_log" value="" id="usuario_log"/>
-                                <label for="passwd">Contraseña</label>
-                                <input type="password" name="passwd" id="passwd"/>
-                                <input type="submit" name="login" value="Login" id="login"/>
-                                <a href="<?= base_url('portal/inicio/alta') ?>">Registrate</a>
-                            <?= form_close() ?>
+                <?= $contenido ?>
+                
+            </div>
+            
+            <aside>
+                <!-- ANUNCIOS -->
+                <section id="login_registro">
+                    <?php if (logueado()): ?>
+                        <a href="<?= base_url('usuarios/perfil') ?>" ><?= obtener_nombre() ?></a>
+                        <?php if (es_admin(obtener_id())): ?>
+                            <a href="<?= base_url('admin/inicio') ?>">Ir a zona de administrador</a>
                         <?php endif ?>
-                    </section>
-                </aside>
+                        <a href="<?= base_url('portal/inicio/logout') ?>">Cerrar sesión</a>
+                    <?php else: ?>
+                        <?= form_open('portal/inicio/login') ?>
+                            <label for="usuario_log">Usuario:</label>
+                            <input type="text" name="usuario_log" value="" id="usuario_log"/>
+                            <label for="passwd">Contraseña</label>
+                            <input type="password" name="passwd" id="passwd"/>
+                            <input type="submit" name="login" value="Login" id="login"/>
+                            <a href="<?= base_url('portal/inicio/alta') ?>">Registrate</a>
+                        <?= form_close() ?>
+                    <?php endif ?>
+                </section>
+            </aside>
             
             <footer>
                 <section id="mapa_del_sitio">

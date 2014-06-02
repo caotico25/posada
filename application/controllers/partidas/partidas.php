@@ -12,18 +12,19 @@ class Partidas extends CI_Controller
     {
         $reglas = array(
                         array(
-                            'name' => 'nombre',
+                            'field' => 'nombre',
                             'label' => 'Nombre',
                             'rules' => 'trim|required|max_length[20]'
                         ),
                         array(
-                            'name' => 'descripcion',
+                            'field' => 'descripcion',
                             'label' => 'Descripcion',
                             'rules' => 'trim|required|max_length[100]'
                         )
                     );
         
         $data['tipos_juego'] = $this->Partida->obtener_tipos_juego();
+        $data['estados'] = $this->Partida->obtener_estados();
                     
         $this->form_validation->set_rules($reglas);
         
@@ -35,7 +36,13 @@ class Partidas extends CI_Controller
         {
             $this->Partida->nueva_partida($this->input->post());
             
-            redirect('usuarios/perfil/ir_a_partidas');
+            redirect('usuarios/perfil');
         }
+    }
+
+
+    function iniciar_partida()
+    {
+        $this->load->view('partidas/partida');
     }
 }
