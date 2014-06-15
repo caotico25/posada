@@ -4,9 +4,11 @@
     <head>
         <meta charset="UTF-8" />
         <title>La posada del Caos</title>
+        <script src="<?= base_url('javascript/jquery-1-10-2.js') ?>" type="text/javascript" charset="utf-8"></script>
         <!-- <link rel="stylesheet" href="<?= base_url('css/estilo.css') ?>" type="text/css" media="screen" /> -->
         <link rel="stylesheet/less" href="<?= base_url('css/responsive.less') ?>" type="text/css" media="screen" />
         <script src="<?= base_url('javascript/less.js') ?>" type="text/javascript" charset="utf-8"></script>
+        
     </head>
     
     <body>
@@ -43,7 +45,7 @@
                         <?php endif ?>
                         <a href="<?= base_url('portal/inicio/logout') ?>">Cerrar sesión</a>
                     <?php else: ?>
-                        <?= form_open('portal/inicio/login') ?>
+                        <?= form_open('portal/inicio/login', array('name' => 'login', 'id' => 'login')) ?>
                             <label for="usuario_log">Usuario:</label>
                             <input type="text" name="usuario_log" value="" id="usuario_log"/>
                             <label for="passwd">Contraseña</label>

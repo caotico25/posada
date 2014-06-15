@@ -9,7 +9,7 @@
             <article>
                 <h3><?= $partida['nombre'] ?></h3>
                 <p><?= $partida['descripcion'] ?></p>
-                <?= form_open('partidas/partidas/iniciar_partida') ?>
+                <?= form_open('partidas/partidas/partida_master', array('target' => '_blank')) ?>
                     <input type="hidden" name="id_partida" value="<?= $partida['id'] ?>" id="id_partida"/>
                     <input type="submit" name="iniciar" value="Iniciar partida" id="iniciar"/>
                 <?= form_close() ?>
@@ -17,7 +17,7 @@
         <?php endforeach ?>
     <?php else: ?>
         <article>
-            <h3>AUN NO FORMAS PARTE DE NINGUNA AVENTURA!</h3>
+            <h3>AUN NO HAS INICIADO NINGUNA AVENTURA!</h3>
             <p>¿A qué esperas? Crea nuevas aventuras!</p>
             <a href="<?= base_url('partidas/partidas/nueva_partida') ?>"></a>
         </article>

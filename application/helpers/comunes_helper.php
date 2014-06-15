@@ -70,5 +70,39 @@ if (!function_exists('logueado'))
     }
 }
 
+if (!function_exists('nombre_personaje'))
+{
+    function nombre_personaje($id_partida, $id_jugador)
+    {
+        $CI =& get_instance();
+        
+        $nombre = $CI->Ficha->nombre_personaje($id_partida, $id_jugador);
+        
+        return $nombre['nombre'];
+    }
+}
+
+if (!function_exists('es_master'))
+{
+    function es_master($id_jugador, $id_partida)
+    {
+        $CI =& get_instance();
+        
+        $master = $CI->Partida->es_master($id_jugador, $id_partida);
+        
+        return $id_jugador == $master;
+    }
+}
+
+if (!function_exists('obtener_jugadores'))
+{
+    function obtener_jugadores($id_partida)
+    {
+        $CI =& get_instance();
+        
+        return $CI->Partida->obtener_jugadores($id_partida);
+    }
+}
+
 // Fin de comunes_helper
 ?>

@@ -1,0 +1,88 @@
+{
+          "datos personaje": {
+            "nombre": "",
+            "naturaleza": "",
+            "sire": "",
+            "conducta": "",
+            "generacion": "",
+            "cronica": "",
+            "concepto": "",
+            "refugio": ""
+          },
+          "atributos": {
+            "fisicos": {
+              "fuerza": 1,
+              "destreza": 1,
+              "resistencia": 1
+            },
+            "sociales": {
+              "carisma": 1,
+              "manipulacion": 1,
+              "apariencia": 1
+            },
+            "mentales": {
+              "percepcion": 1,
+              "inteligencia": 1,
+              "astucia": 1
+            }
+          },
+          "habilidades": {
+            "talentos": {
+              "actuar": 0,
+              "alerta": 0,
+              "atletismo": 0,
+              "callejeo": 0,
+              "esquivar": 0,
+              "empatia": 0,
+              "intimidacion": 0,
+              "liderazgo": 0,
+              "pelea": 0,
+              "subterfugio": 0
+            },
+            "tecnicas": {
+              "armas c.c.": 0,
+              "armas fuego": 0,
+              "conducir": 0,
+              "etiqueta": 0,
+              "musica": 0,
+              "reparaciones": 0,
+              "seguridad": 0,
+              "sigilo": 0,
+              "supervivencia": 0,
+              "trato con animales": 0
+            },
+            "conocimientos": {
+              "burocracia": 0,
+              "ciencias": 0,
+              "finanzas": 0,
+              "informatica": 0,
+              "investigacion": 0,
+              "leyes": 0,
+              "lingüistica": 0,
+              "medicina": 0,
+              "ocultismo": 0,
+              "politica": 0
+            }
+          },
+          "ventajas": {
+            "trasfondos": [],
+            "disciplinas": [],
+            "virtudes": []
+          },
+          "meritos/defectos": {},
+          "senda": {
+            "nombre": "",
+            "puntos": 0
+          },
+          "fuerza de voluntad": 0,
+          "puntos de sangre": 0,
+          "salud": {
+            "magullado": 0,
+            "lastimado": 1,
+            "lesionado": 1,
+            "herido": 2,
+            "malherido": 2,
+            "tullido": 5,
+            "incapacitado": 0
+          }
+}

@@ -1,7 +1,7 @@
 <section>
     <h2>CREA UNA NUEVA AVENTURA</h2>
     <article>
-        <?= form_open('partidas/partidas/nueva_partida') ?>
+        <?= form_open('partidas/partidas/nueva_partida', array('name' => 'nueva_partida', 'id' => 'nueva_partida')) ?>
             <label for="nombre">Nombre: </label>
             <input type="text" name="nombre" id="nombre"/>
             <?= form_error('nombre') ?>
