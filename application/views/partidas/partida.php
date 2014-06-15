@@ -29,9 +29,8 @@
                 var id_ficha = <?= $id_ficha ?>;
                 var id_partida = <?= $id_partida ?>;
                 
-                $("#ficha input[type!='button']").blur(function() {
+                $("#ficha_ajax input[type!='button']").blur(function() {
                     
-                    alert($(this).attr("class"));
                     var a = $(this).attr("class");
                     var b = $(this).attr("name");
                     var c = $(this).val();

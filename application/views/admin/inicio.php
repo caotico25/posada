@@ -23,3 +23,10 @@
 <section>
     <h2>Administrar partidas de rol</h2>
 </section>
+<section>
+    <h2>Administrar noticias</h2>
+    <article>
+        <a href="<?= base_url('admin/noticias/escribir_noticia') ?>">Escribir una nueva noticia</a>
+        <a href="<?= base_url('noticias/noticias') ?>">Revisar noticias</a>
+    </article>
+</section>

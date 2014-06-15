@@ -45,7 +45,7 @@ class Partidas extends CI_Controller
     {
         $id_partida = $this->input->post('id_partida');
         
-        //$this->Partida->activar_partida($id_partida);
+        $this->Partida->activar_partida($id_partida);
         
         $res = $this->Partida->obtener_tipo_juego($id_partida);
         $tipo_juego = $res['tipo_juego'];
@@ -96,40 +96,7 @@ class Partidas extends CI_Controller
     }
 
 
-    /*
-     * 
-     */
-    function validar_nueva_partida()
-    {
-        $reglas = array(
-                        array(
-                            'field' => 'nombre',
-                            'label' => 'Nombre',
-                            'rules' => 'trim|required|max_length[20]'
-                        ),
-                        array(
-                            'field' => 'descripcion',
-                            'label' => 'Descripcion',
-                            'rules' => 'trim|required|max_length[100]'
-                        )
-                    );
-        
-        $data['tipos_juego'] = $this->Partida->obtener_tipos_juego();
-        $data['estados'] = $this->Partida->obtener_estados();
-                    
-        $this->form_validation->set_rules($reglas);
-        
-        if ($this->form_validation->run() == FALSE)
-        {
-            echo validation_errors();
-        }
-        else
-        {
-            $this->Partida->nueva_partida($this->input->post());
-            
-            redirect('usuarios/perfil');
-        }
-    }
+    
 
 
 

@@ -19,7 +19,7 @@
                 
                 <nav>
                     <a href="<?= base_url('portal/inicio') ?>" >INICIO</a>
-                    <a href="" >NOTICIAS</a>
+                    <a href="<?= base_url('noticias/noticias') ?>" >NOTICIAS</a>
                     <a href="<?= base_url('partidas/partidas') ?>" >JUEGA ROL</a>
                     <a href="<?= base_url('foro/foros') ?>" >FORO</a>
                     <a href="" >AYUDA</a>
@@ -61,8 +61,8 @@
                 <section id="mapa_del_sitio">
                     <p>Mapa del sitio</p>
                     <a href="<?= base_url('portal/inicio') ?>" >Inicio</a>
-                    <a href="" >Noticias</a>
-                    <a href="" >Partidas</a>
+                    <a href="<?= base_url('noticias/noticias') ?>" >Noticias</a>
+                    <a href="<?= base_url('partidas/partidas') ?>" >Juega a rol</a>
                     <a href="<?= base_url('foro/foros') ?>" >Foro</a>
                     <a href="" >Ayuda</a>
                 </section>

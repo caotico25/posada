@@ -10,7 +10,10 @@ class Inicio extends CI_Controller
      */
     function index()
     {
-        redir_sitio();
+        $data['noticias'] = $this->Noticia->obtener_noticias();
+        //$data['partidas'] = $this->Partida->obtener_partidas();
+        
+        redir_sitio('portal/inicio', $data);
     }
     
     function login()
@@ -126,43 +129,7 @@ class Inicio extends CI_Controller
     }
 
 
-    /*
-     * 
-     */
-    function validar_login()
-    {
-        $reglas = array(
-                        array(
-                            'field' => 'usuario_log',
-                            'label' => 'Usuario',
-                            'rules' => 'trim|required|callback__usuario_existe'
-                        ),
-                        array(
-                            'field' => 'passwd',
-                            'label' => 'Contraseña',
-                            'rules' => 'trim|required|callback__password_valido['.$usuario.']'
-                        )
-        );
-        
-        $this->form_validation->set_rules($reglas);
-        
-        if ($this->form_validation->run() == FALSE)
-        {
-            echo validation_errors();
-        }
-        else
-        {
-            $id_login = $this->Usuario->obtener_id($usuario);
-            $this->session->set_userdata('user_login', $usuario);
-            $this->session->set_userdata('id_login', $id_login);
-            
-            $data['usuario'] = $usuario;
-            $data['id_login'] = $id_login;
-            
-            redirect('portal/inicio', $data);
-        }
-    }
-
+    
 
 
 

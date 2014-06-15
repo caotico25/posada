@@ -193,9 +193,7 @@ create table otros_parametros (
 create table tipos_ficha (
 	id					bigserial		constraint pk_tipos_ficha primary key,
 	tipo_juego    		bigint      	constraint fk_tipos_ficha_tipos_juego
-										references tipos_juego (id)
-	                                                on update cascade
-	                                                on delete no action,
+										references tipos_juego (id),
 	ficha				bigint			constraint fk_tipos_ficha_fichas
 										references fichas (id)
 );	
@@ -224,21 +222,14 @@ create table partidas (
 	nombre				varchar(20)		not null,
 	descripcion			varchar(100),
 	master				bigint			constraint fk_partidas_usuarios
-												references usuarios (id)
-														on update cascade
-														on delete no action,
+												references usuarios (id),
 	tipo_juego			bigint			constraint fk_partidas_tipo_juego
-												references tipos_juego (id)
-														on update cascade
-														on delete no action,
+												references tipos_juego (id),
 	estado				bigint			not null
 										constraint fk_partidas_estados
-												references estados (id)
-														on update cascade
-														on delete no action,
+												references estados (id),
 	activa				boolean			default false,
-	f_creacion			date			default current_date
-										not null,
+	f_creacion			date			default current_date,
 	f_fin				date
 );
 
@@ -252,17 +243,11 @@ create table partidas (
 create table jugadores (
 	id					bigserial		constraint pk_jugadores primary key,
 	partida_id			bigint        	constraint fk_jugadores_partidas
-												references partidas (id)
-														on update cascade
-												 		on delete no action,
+												references partidas (id),
 	jugador				bigint			constraint fk_jugadores_usuarios
-												references usuarios (id)
-														on update cascade
-														on delete no action,
+												references usuarios (id),
 	ficha_id			bigint        	constraint fk_jugadores_ficha
 												references fichas (id)
-														on update cascade
-												 		on delete no action
 );
 
 
@@ -277,15 +262,11 @@ create table chat (
 	mensaje				varchar(200) 	not null,
 	jugador				bigint    	 	not null
 										constraint fk_chat_usuarios
-												references usuarios (id)
-														on update cascade
-												 		on delete no action,
+												references usuarios (id),
 	partida				bigint			not null 
 										constraint fk_chat_partidas
-												references partidas (id)
-														on update cascade
-												 		on delete no action,
-	momento				timestamp    		default current_timestamp
+												references partidas (id),
+	momento				timestamp    	default current_timestamp
 );
 
 
@@ -299,9 +280,7 @@ create table noticias (
   id					bigserial		constraint pk_noticias primary key,
   titulo        		varchar(50)   	not null,
   autor         		bigint        	constraint fk_noticias_usuarios
-												references usuarios (id)
-														on update cascade
-												 		on delete no action,
+												references usuarios (id),
   contenido     		text,
   fecha         		date          	default current_date
 );
@@ -340,9 +319,7 @@ create table temas (
 	id					bigserial			constraint pk_temas primary key,
 	titulo        		varchar(20)   		not null constraint uq_titulo_temas unique,
 	seccion       		bigint        		constraint fk_temas_secciones
-													references secciones (id)
-															on update cascade
-													 		on delete no action,
+													references secciones (id),
 	descripcion			varchar(100)		not null
 );
 
@@ -358,13 +335,9 @@ create table posts (
 	titulo				varchar(20)		not null constraint uq_titulos_posts unique,
 	contenido     		text          	not null,
 	autor         		bigint        	constraint fk_posts_usuarios
-												references usuarios (id)
-														on update cascade
-														on delete no action,
+												references usuarios (id),
 	tema       			bigint        	constraint fk_posts_temas
-												references temas (id)
-														on update cascade
-												 		on delete no action,
+												references temas (id),
 	fecha         		date          	default current_date
 );
 
@@ -379,13 +352,9 @@ create table comentarios (
 	id					bigserial		constraint pk_comentarios primary key,
 	contenido			text			not null,
 	autor				bigint			constraint fk_comentarios_usuarios
-												references usuarios (id)
-														on update cascade
-														on delete no action,
+												references usuarios (id),
 	post				bigint			constraint fk_comentarios_posts
-												references posts (id)
-														on update cascade
-														on delete no action,
+												references posts (id),
 	fecha				date			default current_date
 );
 
@@ -464,7 +433,7 @@ values ('Comenzada');
 /**  FICHA DE VAMPIRO  **/
 
 insert into fichas (anotaciones)
-values (' ');
+values ('');
 
 insert into personajes (nombre, ficha)
 values('', 1);

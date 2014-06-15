@@ -1,0 +1,65 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class Noticia extends CI_Model
+{
+    /*
+     * 
+     */
+    function obtener_noticias()
+    {
+        $res = $this->db->query("select * from noticias order by fecha");
+        
+        return $res->result_array();
+    }
+    
+    
+    /*
+     * 
+     */
+    function escribir_noticia($datos)
+    {
+        extract($datos);
+        
+        $this->db->query("insert into noticias (titulo, autor, contenido)
+                            values (?, $autor, ?)", array($titulo, $contenido));
+    }
+    
+    
+    /*
+     * 
+     */
+    function modificar_noticia($datos)
+    {
+        extract($datos);
+        
+        $this->db->query("update noticias set titulo = ?, contenido = ? where id = $id_noticia", array($titulo, $contenido));
+    }
+    
+    
+    /*
+     * 
+     */
+    function obtener_noticia($id_noticia)
+    {
+        $res = $this->db->query("select * from noticias where id = $id_noticia");
+        
+        return $res->row_array();
+    }
+    
+    
+    /*
+     * 
+     */
+    function eliminar($id_noticia)
+    {
+        $this->db->query("delete from noticias where id = $id_noticia");
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+}
