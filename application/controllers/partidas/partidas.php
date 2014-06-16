@@ -161,8 +161,23 @@ class Partidas extends CI_Controller
     }
 
 
-
-
+    /*
+     * 
+     */
+    function informe_partidas()
+    {
+        $data['partidas'] = $this->Partida->obtener_partidas();
+        
+        $html = $this->load->view('admin/informes/informe_partidas', $data, TRUE);
+        
+        $mpdf =new mPDF('c', 'A4');
+        
+        $mpdf->SetHeader('LA POSADA DEL CAOS');
+        $mpdf->SetFooter('{PAGENO}');
+        $mpdf->WriteHTML($html);
+        
+        $mpdf->Output();
+    }
 
 
 

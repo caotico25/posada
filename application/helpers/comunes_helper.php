@@ -82,6 +82,18 @@ if (!function_exists('nombre_personaje'))
     }
 }
 
+if (!function_exists('nombre_master'))
+{
+    function nombre_master($id_master)
+    {
+        $CI =& get_instance();
+        
+        $nombre = $CI->Ficha->nombre_master($id_master);
+        
+        return $nombre['nombre'];
+    }
+}
+
 if (!function_exists('es_master'))
 {
     function es_master($id_jugador, $id_partida)
@@ -131,6 +143,18 @@ if (!function_exists('obtener_estado'))
         $CI =& get_instance();
         
         return $CI->Partida->obtener_estado($id_estado);
+    }
+}
+
+if (!function_exists('obtener_tipo_juego'))
+{
+    function obtener_tipo_juego($tipo_juego)
+    {
+        $CI =& get_instance();
+        
+        $res = $CI->Partida->obtener_tipo_juego($tipo_juego);
+        
+        return $res['nombre'];
     }
 }
 

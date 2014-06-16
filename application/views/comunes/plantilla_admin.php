@@ -7,6 +7,7 @@
         <!-- <link rel="stylesheet" href="<?= base_url('css/estilo.css') ?>" type="text/css" media="screen" /> -->
         <link rel="stylesheet/less" href="<?= base_url('css/responsive.less') ?>" type="text/css" media="screen" />
         <script src="<?= base_url('javascript/less.js') ?>" type="text/javascript" charset="utf-8"></script>
+        <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     </head>
     
     <body>
@@ -32,21 +33,21 @@
             
             <footer>
                 <section id="mapa_del_sitio">
-                    <p>Mapa del sitio</p>
+                    <h5>Mapa del sitio</h5>
                     <a href="<?= base_url('portal/inicio') ?>" >Inicio</a>
-                    <a href="" >Noticias</a>
-                    <a href="" >Partidas</a>
-                    <a href="<?= base_url('foro/temas') ?>" >Foro</a>
+                    <a href="<?= base_url('noticias/noticias') ?>" >Noticias</a>
+                    <a href="<?= base_url('partidas/partidas') ?>" >Juega a rol</a>
+                    <a href="<?= base_url('foro/foros') ?>" >Foro</a>
                     <a href="" >Ayuda</a>
                 </section>
                 <section id="enlaces_externos">
-                    <img src="" alt="" />
-                    <img src="" alt="" />
-                    <p>Realizado por:</p>
-                    <a href="">SoftCaos</a>
+                    <h5>Realizado por:</h5>
+                    <a href="<?= base_url('portal/inicio') ?>">SoftCaos</a>
                 </section>
                 <section>
-                    <!-- IMAGENES DE VALIDACION HTML5 Y CSS3 -->
+                    <h5>Tests pasados:</h5>
+                    <p><img src="<?= base_url('images/valid-html5.png') ?>" alt="HTML5 passed" align="center" /></p>
+                    <p><img src="<?= base_url('images/valid-css.png') ?>" alt="CSS3 passed" align="center" /></p>
                 </section>
             </footer>
         </div>

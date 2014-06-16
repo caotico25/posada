@@ -1,6 +1,7 @@
-<section id="presentacion">
-    <h2>BIENVENIDOS A LA POSADA DEL CAOS</h2>
+<section id="presentacion" class="seccion">
+    <h2>NOS PRESENTAMOS</h2>
     <article>
+        <h3>BIENVENIDOS A LA POSADA DEL CAOS</h3>
         <p>
             Sed bienvenidos a esta humilde posada. Sentaos y disfrutad de una buena partida de rol.
             Compartid opiniones, discutid, daos hachazos si es necesario! (en la ficción por supuesto jejeje).
@@ -8,7 +9,7 @@
     </article>
 </section>
 
-<section id="noticias">
+<section id="noticias" class="seccion">
     <h2>NOTICIAS</h2>
     <?php foreach ($noticias as $noticia): ?>
         <article>
@@ -18,7 +19,7 @@
         </article>
     <?php endforeach ?>
 </section>
-<section id="partidas">
+<section id="partidas" class="seccion">
     <h2>PARTIDAS RECIENTES</h2>
     <?php foreach ($partidas as $partida): ?>
         <article>

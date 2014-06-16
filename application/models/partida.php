@@ -52,7 +52,7 @@ class Partida extends CI_Model
      */
     function obtener_tipo_juego($id_partida)
     {
-        $res = $this->db->query("select tipo_juego from partidas where id = $id_partida");
+        $res = $this->db->query("select nombre from partidas where id = $id_partida");
         
         return $res->row_array();
     }
@@ -162,6 +162,12 @@ class Partida extends CI_Model
         
         return $res['estado'];
     }
+    
+    
+    
+    
+    
+    
     
     
     

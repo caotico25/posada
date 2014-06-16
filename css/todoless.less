@@ -1,0 +1,555 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/////////////////
+// Semantic.gs // for LESS: http://lesscss.org/
+/////////////////
+
+// Defaults which you can freely override
+@column-width: 60;
+@gutter-width: 20;
+@columns: 12;
+
+// Utility variable — you should never need to modify this
+@gridsystem-width: (@column-width*@columns) + (@gutter-width*@columns) * 1px;
+
+// Set @total-width to 100% for a fluid layout
+@total-width: @gridsystem-width;
+
+// Uncomment these two lines and the star-hack width/margin lines below to enable sub-pixel fix for IE6 & 7. See http://tylertate.com/blog/2012/01/05/subpixel-rounding.html
+// @min-width: 960;
+// @correction: 0.5 / @min-width * 100 * 1%;
+
+// The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack/
+.clearfix() {
+    *zoom:1;
+    
+    &:before,
+    &:after {
+        content:"";
+        display:table;
+    }
+    &:after {
+        clear:both;
+    }
+}
+
+
+//////////
+// GRID //
+//////////
+
+body {
+    width: 100%;
+    .clearfix;
+}
+
+.row(@columns:@columns) {
+    display: block;
+    width: @total-width*((@gutter-width + @gridsystem-width)/@gridsystem-width);
+    margin: 0 @total-width*(((@gutter-width*.5)/@gridsystem-width)*-1);
+    // *width: @total-width*((@gutter-width + @gridsystem-width)/@gridsystem-width)-@correction;
+    // *margin: 0 @total-width*(((@gutter-width*.5)/@gridsystem-width)*-1)-@correction;
+    .clearfix;
+}
+.column(@x,@columns:@columns) {
+    display: inline;
+    float: left;
+    width: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width);
+    margin: 0 @total-width*((@gutter-width*.5)/@gridsystem-width);
+    // *width: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width)-@correction;
+    // *margin: 0 @total-width*((@gutter-width*.5)/@gridsystem-width)-@correction;
+}
+.push(@offset:1) {
+    margin-left: @total-width*(((@gutter-width+@column-width)*@offset) / @gridsystem-width) + @total-width*((@gutter-width*.5)/@gridsystem-width);
+}
+.pull(@offset:1) {
+    margin-right: @total-width*(((@gutter-width+@column-width)*@offset) / @gridsystem-width) + @total-width*((@gutter-width*.5)/@gridsystem-width);
+}
+
+
+
+/*/////////
+// GRID //
+/////////*/
+
+/* Especifica número de columnas y su ancho  */
+@columns: 12;
+@column-width: 60;
+@gutter-width: 20;
+
+/* Remove the definition below for a pixel-based layout  */
+@total-width: 100%;
+
+
+/*///////////
+// MIXINS //
+///////////*/
+
+/* Asigna border-radius */
+.border-radius(@radius: 5px)
+{
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+    
+    behavior: url(ie-css3.htc); /* Este archivo soluciona incompatibilidades con estilos de borde */
+}
+
+
+
+
+/*///////////
+// LAYOUT //
+///////////*/
+
+body
+{
+   background-image: url("../images/fondo.jpg");
+   font-family: 'Pacifico', cursive;
+}
+
+#contenedor
+{
+    width: 80%;
+    background-color: white;
+    
+    .push();
+    
+    a
+    {
+        text-decoration: none;
+        text-align: center;
+    }
+    
+    header
+    {
+        .column(12);
+        
+        >a
+        {
+            background-image: url("../images/fondocabecera.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 150px;
+            
+            .border-radius(15);
+            border: 1px solid black;
+            
+            display: block;
+            
+            min-width: 100%;
+            height: 100px;
+            padding-top: 50px;
+            
+            font-size: 4em;
+        }
+        
+        nav
+        {
+            padding-top: 50px;
+            .column(12);
+            
+            a
+            {
+                 background-image: url("../images/opcion1.jpg");
+                 background-repeat: no-repeat;
+                 background-size: 100% 50px;
+                 
+                 display: block;
+                 height: 50px;
+                 padding-top: 15px;
+                 
+                 .column(2.3);
+  
+                    &:hover
+                    {
+                         -webkit-animation-name: swingdown;
+                         -webkit-animation-duration: 2s;
+                         -webkit-animation-timing-function: ease;
+                    
+                         -moz-animation-name: swingdown;
+                         -moz-animation-duration: 2s;
+                         -moz-animation-timing-function: ease;
+                    
+                         -o-animation-name: swingdown;
+                         -o-animation-duration: 2s;
+                         -o-animation-timing-function: ease;
+                    
+                         -ms-animation-name: swingdown;
+                         -ms-animation-duration: 2s;
+                         -ms-animation-timing-function: ease;
+                    
+                         animation-name: swingdown;
+                         animation-duration: 2s;
+                         animation-timing-function: ease;
+                    }
+            }
+        }
+    }
+    
+    #contenido
+    {
+        .column(9);
+        
+        background: white;
+        color: black;
+        margin-bottom: 20px;
+        
+        >section
+        {
+            .column(8.7,9);
+            padding: 0.7em;
+            
+            h2
+            {
+                border: 1px solid black;
+                .border-radius();
+                
+                background-image: url("../images/fondo.jpg");
+                
+                color: #cece00;
+                
+                padding: 0.3em;
+            }
+            
+            p
+            {
+                padding:1em;
+            }
+            
+            article
+            {
+                .column(7.8,8);
+                margin: 10px;
+                border: 1px solid black;
+                .border-radius();
+                text-align: left;
+                
+                background-color: white;
+                background-image: none;
+                
+                >span
+                {
+                    margin: 30px 15px;
+                    color: red;
+                    float: right;
+                }
+                >p
+                {
+                    margin: 10px;
+                }
+                
+                >h3
+                {
+                    margin: 10px;
+                }
+                
+                input[type="submit"]
+                {
+                    margin: 10px;
+                }
+                
+                
+                &:hover
+                {
+                    background-color: #FFFFC2;
+                }
+            }
+        }
+    }
+    
+    aside
+    {
+        .column(3);
+        
+        background-color: #e5e5e5;
+        
+        section
+        {
+            margin: 10px;;
+            
+            form
+            {
+                width: 100px;
+                
+                .push(3);
+                
+                input
+                {
+                    &[type="text"]
+                    {
+                        width: 70px;
+                    }
+                    
+                    &[type="password"]
+                    {
+                        width: 70px;
+                    }
+                }
+            }
+        }
+    }
+    
+    >footer
+    {
+        color: black;
+        padding: 0.5em;
+        
+        background-image: url("../images/fondocabecera.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 120px;
+        
+        .column(12);
+        
+        section
+        {
+            .column(4);
+            
+            p, a, img
+            {
+                display: block;
+            }
+            p
+            {
+                text-align: center;
+            }
+        }
+    }
+}
+
+/*  ANIMACIONES */
+@-webkit-keyframes swingdown {
+  0% {
+   -webkit-transform: rotateX(40deg) rotateY(-3deg);
+  }
+
+  30% {  
+   -webkit-transform: rotateX(-20deg) rotateY(5deg);
+   -webkit-animation-timing-function: ease-in-out;
+  }
+
+  65% {
+   -webkit-transform: rotateX(40deg) rotateY(-3deg);
+   -webkit-animation-timing-function: ease-in-out;
+  }
+
+  100% {
+   -webkit-transform: rotateX(0);
+   -webkit-animation-timing-function: ease-in-out;
+  }
+}
+
+@-moz-keyframes swingdown {
+  0% {
+   -moz-transform: rotateX(40deg) rotateY(-3deg);
+  }
+
+  30% {  
+   -moz-transform: rotateX(-20deg) rotateY(5deg);
+   -moz-animation-timing-function: ease-in-out;
+  }
+
+  65% {
+   -moz-transform: rotateX(40deg) rotateY(-3deg);
+   -moz-animation-timing-function: ease-in-out;
+  }
+
+  100% {
+   -moz-transform: rotateX(0);
+   -moz-animation-timing-function: ease-in-out;
+  }
+}
+
+@-o-keyframes swingdown {
+  0% {
+   -o-transform: rotateX(40deg) rotateY(-3deg);
+  }
+
+  30% {  
+   -o-transform: rotateX(-20deg) rotateY(5deg);
+   -o-animation-timing-function: ease-in-out;
+  }
+
+  65% {
+   -o-transform: rotateX(40deg) rotateY(-3deg);
+   -o-animation-timing-function: ease-in-out;
+  }
+
+  100% {
+   -o-transform: rotateX(0);
+   -o-animation-timing-function: ease-in-out;
+  }
+}
+
+@-ms-keyframes swingdown {
+  0% {
+   -ms-transform: rotateX(40deg) rotateY(-3deg);
+  }
+
+  30% {  
+   -ms-transform: rotateX(-20deg) rotateY(5deg);
+   -ms-animation-timing-function: ease-in-out;
+  }
+
+  65% {
+   -ms-transform: rotateX(40deg) rotateY(-3deg);
+   -ms-animation-timing-function: ease-in-out;
+  }
+
+  100% {
+   -ms-transform: rotateX(0);
+   -ms-animation-timing-function: ease-in-out;
+  }
+}
+
+@keyframes swingdown {
+  0% {
+   transform: rotateX(40deg) rotateY(-3deg);
+  }
+
+  30% {  
+   transform: rotateX(-20deg) rotateY(5deg);
+   animation-timing-function: ease-in-out;
+  }
+
+  65% {
+   transform: rotateX(40deg) rotateY(-3deg);
+   animation-timing-function: ease-in-out;
+  }
+
+  100% {
+   transform: rotateX(0);
+   animation-timing-function: ease-in-out;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/*  MEDIA QUERIES */
+
+@media screen and (max-width: 1320px)
+{
+    #contenedor
+    {
+        header
+        {
+            >a
+            {
+                font-size: 3.5em;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1170px)
+{
+    #contenedor
+    {
+        header
+        {
+            >a
+            {
+                font-size: 3.2em;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1050px)
+{
+    #contenedor
+    {
+        header
+        {
+            >a
+            {
+                font-size: 3em;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 990px)
+{
+    #contenedor
+    {
+        header
+        {
+            >a
+            {
+                font-size: 2.7em;
+            }
+        }
+    }
+}
+
+
+/*  CAMBIO GENERAL DE ESTILO EN 900PX  */
+
+@media screen and (max-width: 900px)
+{
+    #contenedor
+    {
+        header
+        {
+            >a
+            {
+                font-size: 2.5em;
+            }
+        }
+    }
+}

@@ -38,7 +38,8 @@
 
 body
 {
-    background-image: url("../images/fondo.jpg");
+   background-image: url("../images/fondo.jpg");
+   font-family: 'Pacifico', cursive;
 }
 
 #contenedor
@@ -91,6 +92,29 @@ body
                  padding-top: 15px;
                  
                  .column(2.3);
+  
+                    &:hover
+                    {
+                         -webkit-animation-name: swingdown;
+                         -webkit-animation-duration: 2s;
+                         -webkit-animation-timing-function: ease;
+                    
+                         -moz-animation-name: swingdown;
+                         -moz-animation-duration: 2s;
+                         -moz-animation-timing-function: ease;
+                    
+                         -o-animation-name: swingdown;
+                         -o-animation-duration: 2s;
+                         -o-animation-timing-function: ease;
+                    
+                         -ms-animation-name: swingdown;
+                         -ms-animation-duration: 2s;
+                         -ms-animation-timing-function: ease;
+                    
+                         animation-name: swingdown;
+                         animation-duration: 2s;
+                         animation-timing-function: ease;
+                    }
             }
         }
     }
@@ -102,6 +126,7 @@ body
         background: white;
         color: black;
         margin-bottom: 20px;
+        min-height: 600px;
         
         >section
         {
@@ -138,18 +163,29 @@ body
                 
                 >span
                 {
-                    border: 1px solid black;
                     margin: 30px 15px;
                     color: red;
+                    float: right;
                 }
                 >p
                 {
                     margin: 10px;
                 }
                 
+                >h3
+                {
+                    margin: 10px;
+                }
+                
+                input[type="submit"]
+                {
+                    margin: 10px;
+                }
+                
+                
                 &:hover
                 {
-                    text-decoration: underline;
+                    background-color: #FFFFC2;
                 }
             }
         }
@@ -195,6 +231,7 @@ body
         background-image: url("../images/fondocabecera.jpg");
         background-repeat: no-repeat;
         background-size: 100% 120px;
+        position: relative;
         
         .column(12);
         
@@ -202,17 +239,164 @@ body
         {
             .column(4);
             
-            p, a, img
+            h5, a, img, p
             {
                 display: block;
             }
-            p
+            h5, p
             {
                 text-align: center;
+            }
+            
+            &:last-of-type h5
+            {
+                text-align: left;
             }
         }
     }
 }
+
+#login_registro
+{
+    min-height: 100px;
+    
+    h5, a, input
+    {
+        display: block;
+        text-align:center;
+        
+    }
+    
+    h5, a
+    {
+        height: 40px;
+    }
+    
+    h5
+    {
+        margin-bottom: 10px;;
+    }
+    
+    label
+    {
+        display: none;
+    }
+}
+
+/*  ANIMACIONES */
+@-webkit-keyframes swingdown {
+  0% {
+   -webkit-transform: rotateX(40deg) rotateY(-3deg);
+  }
+
+  30% {  
+   -webkit-transform: rotateX(-20deg) rotateY(5deg);
+   -webkit-animation-timing-function: ease-in-out;
+  }
+
+  65% {
+   -webkit-transform: rotateX(40deg) rotateY(-3deg);
+   -webkit-animation-timing-function: ease-in-out;
+  }
+
+  100% {
+   -webkit-transform: rotateX(0);
+   -webkit-animation-timing-function: ease-in-out;
+  }
+}
+
+@-moz-keyframes swingdown {
+  0% {
+   -moz-transform: rotateX(40deg) rotateY(-3deg);
+  }
+
+  30% {  
+   -moz-transform: rotateX(-20deg) rotateY(5deg);
+   -moz-animation-timing-function: ease-in-out;
+  }
+
+  65% {
+   -moz-transform: rotateX(40deg) rotateY(-3deg);
+   -moz-animation-timing-function: ease-in-out;
+  }
+
+  100% {
+   -moz-transform: rotateX(0);
+   -moz-animation-timing-function: ease-in-out;
+  }
+}
+
+@-o-keyframes swingdown {
+  0% {
+   -o-transform: rotateX(40deg) rotateY(-3deg);
+  }
+
+  30% {  
+   -o-transform: rotateX(-20deg) rotateY(5deg);
+   -o-animation-timing-function: ease-in-out;
+  }
+
+  65% {
+   -o-transform: rotateX(40deg) rotateY(-3deg);
+   -o-animation-timing-function: ease-in-out;
+  }
+
+  100% {
+   -o-transform: rotateX(0);
+   -o-animation-timing-function: ease-in-out;
+  }
+}
+
+@-ms-keyframes swingdown {
+  0% {
+   -ms-transform: rotateX(40deg) rotateY(-3deg);
+  }
+
+  30% {  
+   -ms-transform: rotateX(-20deg) rotateY(5deg);
+   -ms-animation-timing-function: ease-in-out;
+  }
+
+  65% {
+   -ms-transform: rotateX(40deg) rotateY(-3deg);
+   -ms-animation-timing-function: ease-in-out;
+  }
+
+  100% {
+   -ms-transform: rotateX(0);
+   -ms-animation-timing-function: ease-in-out;
+  }
+}
+
+@keyframes swingdown {
+  0% {
+   transform: rotateX(40deg) rotateY(-3deg);
+  }
+
+  30% {  
+   transform: rotateX(-20deg) rotateY(5deg);
+   animation-timing-function: ease-in-out;
+  }
+
+  65% {
+   transform: rotateX(40deg) rotateY(-3deg);
+   animation-timing-function: ease-in-out;
+  }
+
+  100% {
+   transform: rotateX(0);
+   animation-timing-function: ease-in-out;
+  }
+}
+
+
+
+
+
+
+
+
+
 
 
 /*  MEDIA QUERIES */

@@ -219,8 +219,15 @@ class Ficha extends CI_Model
     }
     
     
-    
-    
+    /*
+     * 
+     */
+    function nombre_master($master)
+    {
+        $res = $this->db->query("select usuario from usuarios where id = $master");
+        
+        return $res->row_array();
+    }
     
     
     

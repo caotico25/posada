@@ -10,6 +10,7 @@
             <?= form_error('descripcion') ?>
             <label for="tipo_juego">Formato de juego: </label>
             <select name="tipo_juego" id="tipo_juego">
+                <option>------</option>
                 <?php foreach ($tipos_juego as $tipo_juego): ?>
                     <option value="<?= $tipo_juego['id'] ?>"><?= $tipo_juego['nombre'] ?></option>
                 <?php endforeach ?>
@@ -17,6 +18,7 @@
             <?= form_error('tipo_juego') ?>
             <label for="estado">Estado de la partida: </label>
             <select name="estado" id="estado">
+                <option>------</option>
                 <?php foreach ($estados as $estado): ?>
                     <option value="<?= $estado['id'] ?>"><?= $estado['estado'] ?></option>
                 <?php endforeach ?>
