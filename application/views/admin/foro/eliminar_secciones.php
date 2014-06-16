@@ -1,5 +1,5 @@
 <section>
-    <h2>ELIMINAR SECCIONES</h2>
+    <h2>ELIMINAR SECCIONES</h2><article>
     <table>
         <?php foreach ($secciones as $seccion): ?>
             <tr>
@@ -12,5 +12,5 @@
                 </td>
             </tr>
         <?php endforeach ?>
-    </table>
+    </table></article>
 </section>
