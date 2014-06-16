@@ -16,6 +16,17 @@ class Noticia extends CI_Model
     /*
      * 
      */
+    function obtener_noticias_inicio()
+    {
+        $res = $this->db->query("select * from noticias order by fecha limit 5");
+        
+        return $res->result_array();
+    }
+    
+    
+    /*
+     * 
+     */
     function escribir_noticia($datos)
     {
         extract($datos);

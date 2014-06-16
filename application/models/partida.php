@@ -30,7 +30,9 @@ class Partida extends CI_Model
      */
     function partidas_player($id)
     {
-        
+        $res = $this->db->query("select * from partidas where id in (
+                                    select partida_id from jugadores where jugador = $id)");
+        return $res->result_array();
     }
     
     
@@ -98,6 +100,71 @@ class Partida extends CI_Model
     {
         $this->db->query("update partidas set activa = not activa where id = $id_partida");
     }
+    
+    
+    /*
+     * 
+     */
+    function obtener_partidas()
+    {
+        $res = $this->db->query("select * from partidas order by f_creacion");
+        
+        return $res->result_array();
+    }
+    
+    
+    /*
+     * 
+     */
+    function obtener_partidas_inicio()
+    {
+        $res = $this->db->query("select * from partidas order by f_creacion limit 5");
+        
+        return $res->result_array();
+    }
+    
+    
+    /*
+     * 
+     */
+    function anadir_jugador($id_partida, $jugador, $tipo_juego)
+    {
+        $tipo_juego = $this->Ficha->obtener_tipo_juego($id_partida);
+        $tipo_ficha = $this->Ficha->obtener_tipo_ficha($tipo_juego);
+        $id_ficha = $this->Ficha->inicializar_ficha($jugador, $tipo_ficha);
+        
+        $this->db->query("insert into jugadores (partida_id, jugador, ficha_id)
+                            values ($id_partida, $jugador, $id_ficha)");
+    }
+    
+    
+    /*
+     * 
+     */
+    function partida_activa($id_partida)
+    {
+        $res = $this->db->query("select activa from partidas where id = $id_partida");
+        
+        $res = $res->row_array();
+        
+        return $res['activa'];
+    }
+    
+    
+    /*
+     * 
+     */
+    function obtener_estado($estado)
+    {
+        $res = $this->db->query("select estado from estados where id = $estado");
+        
+        $res = $res->row_array();
+        
+        return $res['estado'];
+    }
+    
+    
+    
     
     
 }

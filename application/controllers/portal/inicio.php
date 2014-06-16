@@ -10,8 +10,8 @@ class Inicio extends CI_Controller
      */
     function index()
     {
-        $data['noticias'] = $this->Noticia->obtener_noticias();
-        //$data['partidas'] = $this->Partida->obtener_partidas();
+        $data['noticias'] = $this->Noticia->obtener_noticias_inicio();
+        $data['partidas'] = $this->Partida->obtener_partidas_inicio();
         
         redir_sitio('portal/inicio', $data);
     }

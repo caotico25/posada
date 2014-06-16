@@ -4,7 +4,9 @@ class Partidas extends CI_Controller
 {
     function index()
     {
-        redir_admin('partidas/inicio');
+        $data['partidas'] = $this->Partida->obtener_partidas_inicio();
+        
+        redir_sitio('partidas/inicio', $data);
     }
     
     
@@ -41,6 +43,9 @@ class Partidas extends CI_Controller
     }
 
 
+    /*
+     * 
+     */
     function partida_master()
     {
         $id_partida = $this->input->post('id_partida');
@@ -86,6 +91,45 @@ class Partidas extends CI_Controller
     /*
      * 
      */
+    function partida_jugador()
+    {
+        $id_partida = $this->input->post('id_partida');
+        
+        $id_ficha = $this->Ficha->obtener_id_ficha(obtener_id(), $id_partida);
+        
+        $data['id_partida'] = $id_partida;
+        $data['ficha'] = $this->Ficha->obtener_datos_ficha($id_ficha);
+        $data['inventario'] = $this->Ficha->obtener_inventario($id_ficha);
+        $data['personaje'] = $this->Ficha->obtener_datos_personaje($id_ficha);
+        $data['otra_info'] = $this->Ficha->obtener_otra_info($id_ficha);
+        $data['atributos'] = $this->Ficha->obtener_atributos($id_ficha);
+        $data['habilidades'] = $this->Ficha->obtener_habilidades($id_ficha);
+        $data['ventajas'] = $this->Ficha->obtener_ventajas($id_ficha);
+        $data['otros_parametros'] = $this->Ficha->obtener_otros_parametros($id_ficha);
+        
+        $ficha = $this->load->view('partidas/ficha', $data , TRUE);
+        
+        $data = NULL;
+        
+        $data['mensajes'] = array_reverse($this->Chat->obtener_mensajes($id_partida));
+        
+        $chat = $this->load->view('partidas/chat', $data, TRUE);
+        
+        $data = NULL;
+        
+        $data['ficha'] = $ficha;
+        $data['chat'] = $chat;
+        $data['id_ficha'] = $id_ficha;
+        $data['id_partida'] = $id_partida;
+        
+        
+        $this->load->view('partidas/partida', $data);
+    }
+
+
+    /*
+     * 
+     */
     function cerrar_partida()
     {
         $id_partida = $this->input->post('id_partida');
@@ -96,8 +140,25 @@ class Partidas extends CI_Controller
     }
 
 
-    
-
+    /*
+     * 
+     */
+    function unirse_a_partida()
+    {
+        extract($this->input->post());
+        $jugador = obtener_id();
+        
+        $this->Partida->anadir_jugador($id_partida, $jugador, $tipo_juego);
+        
+        if (partida_activa($id_partida) == 't')
+        {
+            redirect('partidas/partidas/partida_jugador');
+        }
+        else
+        {
+            redirect('usuarios/perfil');
+        }
+    }
 
 
 

@@ -185,8 +185,16 @@ class Foro extends CI_Model
     }
     
     
-    
-    
+    /*
+     * 
+     */
+    function obtener_autor($autor)
+    {
+        $res = $this->db->query("select usuario from usuarios where id = $autor");
+        $res = $res->row_array();
+        
+        return $res['usuario'];
+    }
     
     
     

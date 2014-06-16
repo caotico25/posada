@@ -152,7 +152,71 @@ class Ficha extends CI_Model
     }
     
     
+    /*
+     * 
+     */
+    function inicializar_ficha($jugador, $tipo_ficha)
+    {
+        $res = $this->db->query("insert into fichas (anotaciones)
+                            select anotaciones from fichas where id = $tipo_ficha returning id");
+        $id_ficha = $res;
+        
+        $this->db->query("insert into personajes (nombre, ficha)
+                            select nombre, $id_ficha from personajes where ficha = $tipo_ficha");
+        
+        $this->db->query("insert into otra_info (nombre, ficha)
+                            select nombre, $id_ficha from otra_info where ficha = $tipo_ficha");
+        
+        $this->db->query("insert into atributos (nombre, ficha, categoria)
+                            select nombre, $id_ficha, categoria from atributos where ficha = $tipo_ficha");
+        
+        $this->db->query("insert into habilidades (nombre, ficha, categoria)
+                            select nombre, $id_ficha, categoria from habilidades where ficha = $tipo_ficha");
+        
+        $this->db->query("insert into ventajas (nombre, ficha, categoria)
+                            select nombre, $id_ficha, categoria from ventajas where ficha = $tipo_ficha");
+        
+        $this->db->query("insert into otros_parametros (nombre, ficha, categoria)
+                            select nombre, $id_ficha, categoria from otros_parametros where ficha = $tipo_ficha");
+        
+        return $id_ficha;
+    }
     
+    
+    /*
+     * 
+     */
+    function obtener_tipo_juego($id_partida)
+    {
+        $res = $this->db->query("select tipo_juego from partidas where id = $id_partida");
+        $res = $res->row_array();
+        
+        return $res['tipo_juego'];
+    }
+    
+    
+    /*
+     * 
+     */
+    function obtener_tipo_ficha($tipo_juego)
+    {
+        $res = $this->db->query("select ficha from tipos_ficha where tipo_juego = $tipo_juego");
+        $res = $res->row_array();
+        
+        return $res['ficha'];
+    }
+    
+    
+    /*
+     * 
+     */
+    function obtener_id_ficha($jugador, $id_partida)
+    {
+        $res = $this->db->query("select ficha_id from jugadores where jugador = $jugador and partida_id = $id_partida");
+        $res = $res->row_array();
+        
+        return $res['ficha_id'];
+    }
     
     
     

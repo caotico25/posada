@@ -104,5 +104,36 @@ if (!function_exists('obtener_jugadores'))
     }
 }
 
+if (!function_exists('partida_activa'))
+{
+    function partida_activa($id_partida)
+    {
+        $CI =& get_instance();
+        
+        return $CI->Partida->partida_activa($id_partida);
+    }
+}
+
+if (!function_exists('obtener_autor'))
+{
+    function obtener_autor($id_autor)
+    {
+        $CI =& get_instance();
+        
+        return $CI->Foro->obtener_autor($id_autor);
+    }
+}
+
+if (!function_exists('obtener_estado'))
+{
+    function obtener_estado($id_estado)
+    {
+        $CI =& get_instance();
+        
+        return $CI->Partida->obtener_estado($id_estado);
+    }
+}
+
+
 // Fin de comunes_helper
 ?>

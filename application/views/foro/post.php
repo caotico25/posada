@@ -1,17 +1,17 @@
 <section>
     <h2><?= $post['titulo'] ?></h2>
-    <article>
+    <article class="post">
         <p><?= $post['contenido'] ?></p>
-        <span><?= $post['autor'] ?></span>
+        <span><?= obtener_autor($post['autor']) ?> - <?= $post['fecha'] ?></span>
     </article>
     
     <!-- BOTON NUEVO COMENTARIO -->
     <?php if (count($comentarios) > 0): ?>
         <?php foreach ($comentarios as $comentario): ?>
-            <article>
-                <h3><?= $comentario['autor'] ?></h3>
+            <article class="comentario">
+                <h3><?= obtener_autor($comentario['autor']) ?></h3>
                 <p><?= $comentario['contenido'] ?></p>
-                <span><?= $post['autor'] ?> - <?= $post['fecha'] ?></span>
+                <span><?= $post['fecha'] ?></span>
             </article>
         <?php endforeach ?>
     <?php else: ?>

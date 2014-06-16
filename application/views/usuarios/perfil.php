@@ -1,6 +1,6 @@
 <section id="datos_jugador">
     <h2></h2>
-    <a href="c_contraseña">Cambiar contraseña de usuario</a>
+    <button name="cambio_passwd" id="cambio_passwd">Cambia tu contraseña</button>
 </section>
 <section id="master">
     <h2>PARTIDAS DIRIGIDAS POR TI:</h2>
@@ -31,6 +31,15 @@
             <article>
                 <h3><?= $partida['nombre'] ?></h3>
                 <p><?= $partida['descripcion'] ?></p>
+                <?php if ($partida['activa'] == 't'): ?>
+                    <p>Partida activa</p>
+                    
+                    <?= form_open('partidas/partidas/partida_jugador', array('target' => '_blank')) ?>
+                        <input type="hidden" name="id_partida" value="<?= $partida['id'] ?>" id="id_partida"/>
+                        <input type="submit" name="entrar" value="Jugar" id="entrar"/>
+                    <?= form_close() ?>
+                    
+                <?php endif ?>
             </article>
         <?php endforeach ?>
     <?php else: ?>
@@ -40,17 +49,4 @@
             <a href="<?= base_url('partidas/partidas') ?>"></a>
         </article>
     <?php endif ?>
-</section>
-
-<!-- COLOCAR CAMBIO DE CONTRASEÑA EN VENTANA EMERGENTE -->
-<section id="c_contraseña">  
-    <h2>CAMBIA TU CONTRASEÑA</h2>
-    <article>
-        <?= form_open('usuarios/perfil/cambiar_passwd') ?>
-            <label for="password">Introduce tu contraseña:</label><input type="password" name="password" value="" id="password"/>
-            <label for="n_passwd">Nueva contraseña:</label><input type="password" name="n_passwd" value="" id="n_passwd"/>
-            <label for="r_passwd">Repite la contraseña:</label><input type="password" name="r_passwd" value="" id="r_passwd"/>
-            <input type="submit" name="enviar" value="Cambiar contraseña" id="enviar"/>
-        <?= form_close() ?>
-    </article>
 </section>
