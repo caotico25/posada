@@ -67,9 +67,17 @@ class Noticia extends CI_Model
     }
     
     
-    
-    
-    
+    /*
+     * 
+     */
+    function obtener_autor($id_autor)
+    {
+        $res = $this->db->query("select usuario from usuarios where id = $id_autor");
+        
+        $res = $res->row_array();
+        
+        return $res['usuario'];
+    }
     
     
     

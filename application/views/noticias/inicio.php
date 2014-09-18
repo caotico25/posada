@@ -3,8 +3,8 @@
     <?php foreach ($noticias as $noticia): ?>
         <article>
             <h3><?= $noticia['titulo'] ?></h3>
-            <p><?= $noticia['contenido'] ?></p>
-            <span><?= obtener_nombre($noticia['autor']) ?>. <?= $noticia['fecha'] ?></span>
+            <p><?= nl2br($noticia['contenido']) ?></p>
+            <span><?= obtener_autor($noticia['autor']) ?>. <?= $noticia['fecha'] ?></span>
             <?php if (es_admin(obtener_id())): ?>
                 
                 <?= form_open('admin/noticias/eliminar_noticia') ?>

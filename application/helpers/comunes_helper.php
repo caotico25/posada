@@ -28,6 +28,13 @@ if (!function_exists('redir_admin'))
     }
 }
 
+
+/*
+ * 
+ *  FUNCIONES REFERENTES AL USUARIO
+ * 
+ */
+
 if (!function_exists('obtener_nombre'))
 {
     function obtener_nombre()
@@ -69,6 +76,12 @@ if (!function_exists('logueado'))
         return $CI->Usuario->logueado();
     }
 }
+
+/*
+ * 
+ * FUNCIONES REFERENTES A PARTIDAS
+ * 
+ */
 
 if (!function_exists('nombre_personaje'))
 {
@@ -158,6 +171,25 @@ if (!function_exists('obtener_tipo_juego'))
     }
 }
 
+
+/*
+ * 
+ * FUNCIONES REFERENTES A LAS NOTICIAS
+ * 
+ */
+
+if (!function_exists('obtener_autor'))
+{
+    function obtener_autor($id_autor)
+    {
+        $CI =& get_instance();
+        
+        return $CI->Noticia->obtener_autor($id_autor);
+    }
+}
+ 
+ 
+ 
 
 // Fin de comunes_helper
 ?>
