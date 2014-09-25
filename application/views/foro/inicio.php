@@ -8,7 +8,7 @@
                 <a href="<?= base_url('foro/temas/index/' . $tema['id']) ?>">
                     <article>
                         <span><?= $tema['titulo'] ?></span>
-                        <p><?= $tema['descripcion'] ?></p>
+                        <p><?= nl2br($tema['descripcion']) ?></p>
                     </article>
                 </a>
             <?php endif ?>

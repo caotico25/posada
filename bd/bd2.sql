@@ -282,7 +282,7 @@ create table noticias (
   autor         		bigint        	constraint fk_noticias_usuarios
 												references usuarios (id),
   contenido     		text,
-  fecha         		date          	default current_date
+  fecha         		timestamp          	default current_timestamp
 );
 
 

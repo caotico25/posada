@@ -9,7 +9,7 @@ class Noticias extends CI_Controller
     {
         $data['noticias'] = $this->Noticia->obtener_noticias();
         
-        redir_sitio('noticias/inicio', $data);
+        redir_admin('noticias/inicio', $data);
     }
     
     
@@ -42,7 +42,7 @@ class Noticias extends CI_Controller
             $this->Noticia->escribir_noticia($this->input->post());
             $this->session->set_flashdata('mensaje', 'Noticia creada correctamente.');
             
-            redirect('noticias/noticias');
+            redirect('admin/noticias');
         }
     }
     
@@ -54,7 +54,7 @@ class Noticias extends CI_Controller
     {
         $this->Noticia->eliminar($this->input->post('id_noticia'));
         
-        redirect('noticias/noticias');
+        redirect('admin/noticias');
     }
     
     
@@ -89,7 +89,7 @@ class Noticias extends CI_Controller
             $this->Noticia->modificar_noticia($this->input->post());
             $this->session->set_flashdata('mensaje', 'Noticia modificada correctamente.');
             
-            redirect('noticias/noticias');
+            redirect('admin/noticias');
         }
     }
     

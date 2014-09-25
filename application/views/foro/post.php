@@ -1,7 +1,7 @@
 <section>
     <h2><?= $post['titulo'] ?></h2>
     <article class="post">
-        <p><?= $post['contenido'] ?></p>
+        <p><?= nl2br($post['contenido']) ?></p>
         <span><?= obtener_autor($post['autor']) ?> - <?= $post['fecha'] ?></span>
     </article>
     
@@ -10,7 +10,7 @@
         <?php foreach ($comentarios as $comentario): ?>
             <article class="comentario">
                 <h3><?= obtener_autor($comentario['autor']) ?></h3>
-                <p><?= $comentario['contenido'] ?></p>
+                <p><?= nl2br($comentario['contenido']) ?></p>
                 <span><?= $post['fecha'] ?></span>
             </article>
         <?php endforeach ?>
