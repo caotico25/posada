@@ -139,16 +139,6 @@ if (!function_exists('partida_activa'))
     }
 }
 
-if (!function_exists('obtener_autor'))
-{
-    function obtener_autor($id_autor)
-    {
-        $CI =& get_instance();
-        
-        return $CI->Foro->obtener_autor($id_autor);
-    }
-}
-
 if (!function_exists('obtener_estado'))
 {
     function obtener_estado($id_estado)
@@ -174,13 +164,30 @@ if (!function_exists('obtener_tipo_juego'))
 
 /*
  * 
+ * FUNCIONES REFERENTES AL FORO
+ * 
+ */
+ 
+if (!function_exists('obtener_autor'))
+{
+    function obtener_autor($id_autor)
+    {
+        $CI =& get_instance();
+        
+        return $CI->Foro->obtener_autor($id_autor);
+    }
+}
+
+
+/*
+ * 
  * FUNCIONES REFERENTES A LAS NOTICIAS
  * 
  */
 
-if (!function_exists('obtener_autor'))
+if (!function_exists('obtener_autor_noticia'))
 {
-    function obtener_autor($id_autor)
+    function obtener_autor_noticia($id_autor)
     {
         $CI =& get_instance();
         

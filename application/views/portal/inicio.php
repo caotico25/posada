@@ -15,7 +15,7 @@
         <article>
             <h3><?= $noticia['titulo'] ?></h3>
             <p><?= $noticia['contenido'] ?></p>
-            <span><?= obtener_nombre($noticia['autor']) ?>. <?= $noticia['fecha'] ?></span>
+            <span><?= obtener_autor_noticia($noticia['autor']) ?>. <?= $noticia['fecha'] ?></span>
         </article>
     <?php endforeach ?>
 </section>

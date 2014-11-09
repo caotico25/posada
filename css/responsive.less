@@ -30,6 +30,19 @@
 }
 
 
+/*
+ * DECLARACION DE FUENTES
+ */
+@font-face {
+font-family: "Augusta";
+src: url("fuentes/augusta.eot"); /* For IE 6+ */
+}
+@font-face {
+font-family: "Augusta";
+src: local("?"), url("fuentes/augusta.woff") format("woff"), url("fuentes/augusta.ttf") format("truetype"), url("fuentes/augusta.eot") format("eot"); /* For CSS3 browsers inc. Firefox */
+}
+
+
 
 
 /*///////////
@@ -39,12 +52,14 @@
 body
 {
    background-image: url("../images/fondo.jpg");
-   font-family: 'Pacifico', cursive;
 }
 
 #contenedor
 {
     width: 80%;
+    overflow: hidden;
+    
+    background-color: #e1e1e1;
     
     .push();
     
@@ -60,61 +75,73 @@ body
         
         >a
         {
-            background-image: url("../images/fondocabecera.jpg");
+            background-image: url("../images/fondo3.jpg");
             background-repeat: no-repeat;
-            background-size: 100% 150px;
+            background-size: 100% 100px;
             
             .border-radius(15);
-            border: 1px solid black;
             
             display: block;
             
             min-width: 100%;
             height: 100px;
-            padding-top: 50px;
+            padding-top: 20px;
             
+            font-family: Augusta;
             font-size: 4em;
+            
+            &:visited
+            {
+                color: black;
+            }
         }
         
         nav
         {
-            padding-top: 50px;
+            padding-top: 5px;
             .column(12);
             
             a
             {
-                 background-image: url("../images/opcion1.jpg");
-                 background-repeat: no-repeat;
-                 background-size: 100% 50px;
+                
+                background-image: url("../images/fondo3.jpg");
+                background-repeat: no-repeat;
+                background-size: 100% 50px;
                  
-                 display: block;
-                 height: 50px;
-                 padding-top: 15px;
+                display: block;
+                height: 50px;
+                padding-top: 15px;
+                
+                font-family: Augusta;
                  
-                 .column(2.3);
+                .column(2.4);
   
-                    &:hover
-                    {
-                         -webkit-animation-name: swingdown;
-                         -webkit-animation-duration: 2s;
-                         -webkit-animation-timing-function: ease;
-                    
-                         -moz-animation-name: swingdown;
-                         -moz-animation-duration: 2s;
-                         -moz-animation-timing-function: ease;
-                    
-                         -o-animation-name: swingdown;
-                         -o-animation-duration: 2s;
-                         -o-animation-timing-function: ease;
-                    
-                         -ms-animation-name: swingdown;
-                         -ms-animation-duration: 2s;
-                         -ms-animation-timing-function: ease;
-                    
-                         animation-name: swingdown;
-                         animation-duration: 2s;
-                         animation-timing-function: ease;
-                    }
+                &:hover
+                {
+                     -webkit-animation-name: swingdown;
+                     -webkit-animation-duration: 2s;
+                     -webkit-animation-timing-function: ease;
+                
+                     -moz-animation-name: swingdown;
+                     -moz-animation-duration: 2s;
+                     -moz-animation-timing-function: ease;
+                
+                     -o-animation-name: swingdown;
+                     -o-animation-duration: 2s;
+                     -o-animation-timing-function: ease;
+                
+                     -ms-animation-name: swingdown;
+                     -ms-animation-duration: 2s;
+                     -ms-animation-timing-function: ease;
+                
+                     animation-name: swingdown;
+                     animation-duration: 2s;
+                     animation-timing-function: ease;
+                }
+                &:visited
+                {
+                    color: black;
+                }
             }
         }
     }
@@ -127,6 +154,7 @@ body
         color: black;
         margin-bottom: 20px;
         min-height: 600px;
+        
         
         >section
         {
@@ -236,12 +264,12 @@ body
         color: black;
         padding: 0.5em;
         
-        background-image: url("../images/fondocabecera.jpg");
+        background-image: url("../images/fondo3.jpg");
         background-repeat: no-repeat;
         background-size: 100% 120px;
         position: relative;
         
-        .column(12);
+        .column(11.8);
         
         section
         {
