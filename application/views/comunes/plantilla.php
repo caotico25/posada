@@ -38,19 +38,21 @@
             <aside>
                 <!-- ANUNCIOS -->
                 <section id="login_registro">
-                    <h5>REGISTRO</h5>
                     <?php if (logueado()): ?>
-                        <a href="<?= base_url('usuarios/perfil') ?>" ><?= obtener_nombre() ?></a>
+                        <h5>LOGUEADO COMO:</h5>
+                        <p><?= obtener_nombre() ?></p>
+                        <a href="<?= base_url('usuarios/perfil') ?>" >Ir a area personal</a>
                         <?php if (es_admin(obtener_id())): ?>
                             <a href="<?= base_url('admin/inicio') ?>">Ir a zona de administrador</a>
                         <?php endif ?>
                         <a href="<?= base_url('portal/inicio/logout') ?>">Cerrar sesión</a>
                     <?php else: ?>
+                        <h5>ACCESO USUARIO</h5>
                         <?= form_open('portal/inicio/login', array('name' => 'login', 'id' => 'login')) ?>
                             <label for="usuario_log">Usuario:</label>
-                            <input type="text" name="usuario_log" value="" id="usuario_log"/>
+                            <input type="text" name="usuario_log" value="" id="usuario_log" placeholder="usuario"/>
                             <label for="passwd">Contraseña</label>
-                            <input type="password" name="passwd" id="passwd"/>
+                            <input type="password" name="passwd" id="passwd" placeholder="contraseña"/>
                             <input type="submit" name="login" value="Login" id="login"/>
                             <a href="<?= base_url('portal/inicio/alta') ?>">Registrate</a>
                         <?= form_close() ?>

@@ -2,6 +2,17 @@
 @import 'grid.less';
 
 
+/*
+ *  PALETA DE COLORES EN FUNCION DE LA IMAGEN DE CABECERA
+ *  
+ *  #64311E     MARRON OSCURO
+ *  #A25230     MARRON MAS CLARO
+ *  #F8A36C     CARNE                       USADO PARA CABECERA DE SECCIONES
+ *  #DC7340     MARRON AUN MAS CLARO
+ *  #FDCC91     AMARILLENTO
+ */
+
+
 /*/////////
 // GRID //
 /////////*/
@@ -75,7 +86,7 @@ body
         
         >a
         {
-            background-image: url("../images/fondo3.jpg");
+            background-image: url("../images/fondo3.png");
             background-repeat: no-repeat;
             background-size: 100% 100px;
             
@@ -104,7 +115,7 @@ body
             a
             {
                 
-                background-image: url("../images/fondo3.jpg");
+                background-image: url("../images/fondo3.png");
                 background-repeat: no-repeat;
                 background-size: 100% 50px;
                  
@@ -113,6 +124,7 @@ body
                 padding-top: 15px;
                 
                 font-family: Augusta;
+                letter-spacing: 0.3em;
                  
                 .column(2.4);
   
@@ -168,7 +180,7 @@ body
                 
                 background-image: url("../images/fondo.jpg");
                 
-                color: #cece00;
+                color: #F8A36C;
                 
                 padding: 0.3em;
             }
@@ -192,7 +204,7 @@ body
                 >span
                 {
                     margin: 30px 15px;
-                    color: red;
+                    color: #64311E;
                     float: right;
                 }
                 >p
@@ -231,11 +243,16 @@ body
     {
         .column(3);
         
-        background-color: #e5e5e5;
+        background-color: #A25230;
         
         section
         {
-            margin: 10px;;
+            margin: 10px;
+            
+            p
+            {
+                text-align: center;
+            }
             
             form
             {
@@ -263,8 +280,9 @@ body
     {
         color: black;
         padding: 0.5em;
+        font-weight: bold;
         
-        background-image: url("../images/fondo3.jpg");
+        background-image: url("../images/fondo3.png");
         background-repeat: no-repeat;
         background-size: 100% 120px;
         position: relative;
@@ -283,10 +301,9 @@ body
             {
                 text-align: center;
             }
-            
-            &:last-of-type h5
+            img
             {
-                text-align: left;
+                .push(4);
             }
         }
     }
@@ -305,12 +322,12 @@ body
     
     h5, a
     {
-        height: 40px;
+        height: 20px;
     }
     
     h5
     {
-        margin-bottom: 10px;;
+        margin-bottom: 0px;
     }
     
     label
