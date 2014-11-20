@@ -40,6 +40,26 @@
     behavior: url(ie-css3.htc); /* Este archivo soluciona incompatibilidades con estilos de borde */
 }
 
+/* Asigna border-radius a las esquinas sup-izq e inf-der de la caja */
+.semi-border-radius(@radio1: 10px)
+{
+    -webkit-border-top-left-radius: @radio1;
+    -webkit-border-bottom-right-radius: @radio1;
+    -moz-border-radius-topleft: @radio1;
+    -moz-border-radius-bottomright: @radio1;
+    border-top-left-radius: @radio1;
+    border-bottom-right-radius: @radio1;
+    
+    behavior: url(ie-css3.htc); /* Este archivo soluciona incompatibilidades con estilos de borde */
+}
+
+/* Asigna sombreado */
+.sombreado(@p1: 5px, @p2: 5px, @p3: 5px, @p4: 5px, @r: 50, @g: 50, @b: 50, @a: 0, @opacidad: 50)
+{
+    -webkit-box-shadow: 6px 8px 5px 0px rgba(50, 50, 50, 0.49);
+    -moz-box-shadow:    6px 8px 5px 0px rgba(50, 50, 50, 0.49);
+    box-shadow:         6px 8px 5px 0px rgba(50, 50, 50, 0.49);
+}
 
 /*
  * DECLARACION DE FUENTES
@@ -161,6 +181,8 @@ body
     #contenido
     {
         .column(9);
+        .semi-border-radius();
+        .sombreado();
         
         background: white;
         color: black;
@@ -180,7 +202,7 @@ body
                 
                 background-image: url("../images/fondo.jpg");
                 
-                color: #F8A36C;
+                color: #FBC187;
                 
                 padding: 0.3em;
             }
@@ -243,11 +265,15 @@ body
     {
         .column(3);
         
-        background-color: #A25230;
+        background-color: #FBC187;
         
         section
         {
+            .semi-border-radius();
+            .sombreado();
+            
             margin: 10px;
+            background-color: white;
             
             p
             {
