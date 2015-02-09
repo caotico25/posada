@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html lang="ES">
-    
-    <head>
-        <meta charset="UTF-8" />
-        <title>La posada del Caos</title>
-        
-        <script src="<?= base_url('javascript/jquery-1-10-2.js') ?>" type="text/javascript" charset="utf-8"></script>
-        <script src="<?= base_url('javascript/jquery-rol.js') ?>" type="text/javascript" charset="utf-8"></script>
-        <script src="<?= base_url('javascript/jquery.cookie.js') ?>" type="text/javascript" charset="utf-8"></script>
-        <link rel="stylesheet/less" href="<?= base_url('css/responsive.less') ?>" type="text/css" media="screen" />
-        <script src="<?= base_url('javascript/less.js') ?>" type="text/javascript" charset="utf-8"></script>
-        <script>
-        
-            
-                    $(document).ready(function() {
+        $(document).ready(function() {
                 
                 $(window).load(function() {
                     
@@ -201,50 +186,3 @@
                 });
                 
             });
-            
-        </script>
-    </head>
-    
-    <body>
-        <div id="contenedor">
-            <div id="contenido">
-                <section>
-                    <button id="cerrar_partida">Cerrar partida</button>
-                </section>
-                <section>
-                <div id="chat" style="border: 1px solid black">
-                    <div id="charla" style="border: 1px solid black; height: 300px; overflow: scroll">
-                        
-                        <?= $chat ?>
-                        
-                    </div>
-                    <textarea name="mensaje" id="mensaje" rows="2" cols="40" class="chat"></textarea>
-                </div>
-                <div id="tablero">
-                  
-                </div>
-                <div id="ficha">
-                    <?php if (es_master(obtener_id(), $id_partida)): ?>
-                        <?php $jugadores = obtener_jugadores($id_partida) ?>
-                        <label for="jugadores">Selecciona personaje para ver su ficha:</label>
-                        <select name="jugadores" id="jugadores">
-                            <option>------</option>
-                            <?php foreach ($jugadores as $jugador): ?>
-                                <?php if ($jugador['jugador'] != obtener_id()): ?>
-                                    <option value="<?= $jugador['ficha_id'] ?>"><?= nombre_personaje($id_partida, $jugador['jugador']) ?></option>
-                                <?php endif ?>
-                            <?php endforeach ?>
-                        </select>
-                        
-                    <?php endif ?>
-                    <div id="ficha_ajax">
-                        <?= $ficha ?>
-                    </div>
-                </div>
-                
-            </section>
-            
-            </div>
-        </div>
-    </body>
-</html>

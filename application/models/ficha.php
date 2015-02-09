@@ -155,11 +155,14 @@ class Ficha extends CI_Model
     /*
      * 
      */
-    function inicializar_ficha($jugador, $tipo_ficha)
+    function inicializar_ficha($jugador, $tipo_ficha, $id_partida)
     {
-        $res = $this->db->query("insert into fichas (anotaciones)
-                            select anotaciones from fichas where id = $tipo_ficha returning id");
-        $id_ficha = $res;
+        $res = $this->db->query("insert into fichas (anotaciones, usuario_id, partida_id)
+                            select anotaciones, $jugador, $id_partida from fichas where id = $tipo_ficha");
+        
+        $res = $this->db->query("select id from fichas where usuario_id = $jugador");
+        $res = $res->row_array();
+        $id_ficha = $res["id"];
         
         $this->db->query("insert into personajes (nombre, ficha)
                             select nombre, $id_ficha from personajes where ficha = $tipo_ficha");

@@ -58,6 +58,7 @@ class Partidas extends CI_Controller
         $res = $this->Ficha->id_ficha_base($tipo_juego);
         $id_ficha = $res['ficha'];
         
+        // OBTENEMOS LOS CAMPOS POR DEFECTO DE LA FICHA BASEc
         $data['id_partida'] = $id_partida;
         $data['ficha'] = $this->Ficha->obtener_datos_ficha($id_ficha);
         $data['inventario'] = $this->Ficha->obtener_inventario($id_ficha);
@@ -146,18 +147,16 @@ class Partidas extends CI_Controller
     function unirse_a_partida()
     {
         extract($this->input->post());
-        $jugador = obtener_id();
+        $jugador = $this->session->userdata('id_login');
+        
+        echo "<script type=''>alert($jugador);</script>";
+        echo "<script type=''>alert($id_partida);</script>";
+        echo "<script type=''>alert($tipo_juego);</script>";
         
         $this->Partida->anadir_jugador($id_partida, $jugador, $tipo_juego);
         
-        if (partida_activa($id_partida) == 't')
-        {
-            redirect('partidas/partidas/partida_jugador');
-        }
-        else
-        {
-            redirect('usuarios/perfil');
-        }
+        redirect('usuarios/perfil');    // SE REDIRIGE SIEMPRE A LA FICHA DEL USUARIO PARA EVITAR ERRORES
+                                        // QUE ACCEDA A LA PARTIDA QUE DESEE DESDE ALLÍ
     }
 
 
@@ -180,8 +179,16 @@ class Partidas extends CI_Controller
     }
 
 
-
-
+    /*
+     * 
+     *  Funcion usada para crear la ficha de personaje para el jugador
+     *  Creando en cada tabla una nueva fila con la nueva ficha
+     * 
+     */
+    function crear_ficha()
+    {
+        // crear campos
+    }
 
 
 
