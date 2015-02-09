@@ -5,10 +5,57 @@
         <meta charset="UTF-8" />
         <title>La posada del Caos</title>
         <script src="<?= base_url('javascript/jquery-1-10-2.js') ?>" type="text/javascript" charset="utf-8"></script>
+        <script src="<?= base_url('javascript/esquinas.js') ?>" type="text/javascript" charset="utf-8"></script>
         <!-- <link rel="stylesheet" href="<?= base_url('css/estilo.css') ?>" type="text/css" media="screen" /> -->
         <link rel="stylesheet/less" href="<?= base_url('css/responsive.less') ?>" type="text/css" media="screen" />
         <script src="<?= base_url('javascript/less.js') ?>" type="text/javascript" charset="utf-8"></script>
         <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <script type="text/javascript" charset="UTF-8">
+            
+            $(document).ready(function (){
+                
+                var url = window.location.href;
+                
+                var array = url.split("/");
+                
+                for (var i = 0; i < array.length; i++)
+                {
+                    if (array[i] == "inicio")
+                    {
+                        $("#inicio").css('background-image', 'none');
+                        $("#inicio").css('background-color', '#DC7340');
+                        $("#inicio").corner("long top 10px");
+                    }
+                    if (array[i] == "noticias")
+                    {
+                        $("#noticias").css('background-image', 'none');
+                        $("#noticias").css('background-color', '#DC7340');
+                        $("#noticias").corner("long top 10px");
+                    }
+                    if (array[i] == "partidas")
+                    {
+                        $("#rol").css('background-image', 'none');
+                        $("#rol").css('background-color', '#DC7340');
+                        $("#rol").corner("long top 10px");
+                    }
+                    if (array[i] == "foro")
+                    {
+                        $("#foro").css('background-image', 'none');
+                        $("#foro").css('background-color', '#DC7340');
+                        $("#foro").corner("long top 10px");
+                    }
+                    if (array[i] == "ayuda")
+                    {
+                        $("#ayuda").css('background-image', 'none');
+                        $("#ayuda").css('background-color', '#DC7340');
+                        $("#ayuda").corner("long top 10px");
+                    }
+                }
+            });
+            
+        </script>
+        
+        
     </head>
     
     <body>
@@ -18,11 +65,11 @@
                 <a href="<?= base_url('portal/inicio') ?>" >LA POSADA DEL CAOS</a>
                 
                 <nav>
-                    <a href="<?= base_url('portal/inicio') ?>" >INICIO</a>
-                    <a href="<?= base_url('noticias/noticias') ?>" >NOTICIAS</a>
-                    <a href="<?= base_url('partidas/partidas') ?>" >JUEGA ROL</a>
-                    <a href="<?= base_url('foro/foros') ?>" >FORO</a>
-                    <a href="" >AYUDA</a>
+                    <a href="<?= base_url('portal/inicio') ?>" id="inicio" >INICIO</a>
+                    <a href="<?= base_url('noticias/noticias') ?>" id="noticias" >NOTICIAS</a>
+                    <a href="<?= base_url('partidas/partidas') ?>" id="rol" >JUEGA ROL</a>
+                    <a href="<?= base_url('foro/foros') ?>" id="foro" >FORO</a>
+                    <a href="" id="ayuda" >AYUDA</a>
                 </nav>
                 
             </header>
