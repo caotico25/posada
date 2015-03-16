@@ -4,7 +4,6 @@
     <head>
         <meta charset="UTF-8" />
         <title>La posada del Caos</title>
-        <!-- <link rel="stylesheet" href="<?= base_url('css/estilo.css') ?>" type="text/css" media="screen" /> -->
         <link rel="stylesheet/less" href="<?= base_url('css/responsive.less') ?>" type="text/css" media="screen" />
         <script src="<?= base_url('javascript/less.js') ?>" type="text/javascript" charset="utf-8"></script>
         <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
@@ -26,7 +25,9 @@
                 <aside>
                     <!-- ANUNCIOS -->
                     <section id="login_registro">
+                        <h5>LOGUEADO COMO:</h5>
                         <a href="<?= base_url('usuarios/perfil') ?>" ><?= obtener_nombre() ?></a>
+                        <a href="<?= base_url('portal/inicio') ?>" >Inicio</a>
                         <a href="<?= base_url('portal/inicio/logout') ?>">Cerrar sesión</a>
                     </section>
                 </aside>
