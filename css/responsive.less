@@ -383,6 +383,33 @@ body
             padding: 0px;
             background-color: none;
         }
+        
+        .enlaceBoton
+        {
+            -webkit-transition-duration: 0.2s;
+            -moz-transition-duration: 0.2s;
+            transition-duration: 0.2s;
+            -webkit-user-select:none;
+            -moz-user-select:none;
+            -ms-user-select:none;
+            user-select:none;
+            
+            &:hover
+            {
+                background: #356094;
+                border: solid 1px #2A4E77;
+                text-decoration: none;
+            }
+            
+            &:active
+            {
+                -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+                -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+                box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+                background: #2E5481;
+                border: solid 1px #203E5F;
+            }
+        }
     }
 }
 
