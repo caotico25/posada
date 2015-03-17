@@ -14,7 +14,7 @@
     </article>
     <article>
         <h3>Posts</h3>
-        <a href=""></a>
+        <a href="" class="enlacevacio"></a>
         <a href="<?= base_url('foro/foros') ?>">Revisar posts</a>
     </article>
 </section>
@@ -22,14 +22,14 @@
     <h2>Administrar noticias</h2>
     <article>
         <a href="<?= base_url('admin/noticias/escribir_noticia') ?>">Escribir una nueva noticia</a>
-        <a href=""></a>
+        <a href="" class="enlacevacio"></a>
         <a href="<?= base_url('noticias/noticias') ?>">Revisar noticias</a>
     </article>
 </section>
 <section class="admin">
     <h2>Informes</h2>
     <article>
-        <a href=""></a>
+        <a href="" class="enlacevacio"></a>
         <a href="<?= base_url('partidas/partidas/informe_partidas') ?>" target="_blank" >Partidas creadas</a>
     </article>
 </section>
