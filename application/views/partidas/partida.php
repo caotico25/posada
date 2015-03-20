@@ -51,7 +51,7 @@
                         data: {'tabla': a, 'columna': b, 'valor': c, 'ficha': d, 'partida': e, 'csrf_test_name': $.cookie('csrf_cookie_name')},
                         success: function (ficha){
                             
-                            //$('#ficha_ajax').html(ficha);
+                            $('#ficha_ajax').html(ficha);
                             
                         },
                         error: function (jqXHR, textStatus, errorThrown){
@@ -83,10 +83,10 @@
                         
                         url: "http://localhost/proyecto/index.php/partidas/fichas/editar",
                         type: "POST",
-                        data: {'tabla': a, 'columna': b, 'valor': c, 'ficha': d, 'partida': e 'csrf_test_name': $.cookie('csrf_cookie_name')},
+                        data: {'tabla': a, 'columna': b, 'valor': c, 'ficha': d, 'partida': e, 'csrf_test_name': $.cookie('csrf_cookie_name')},
                         success: function (ficha){
                             
-                            //$('#ficha_ajax').html(ficha);
+                            $('#ficha_ajax').html(ficha);
                             
                         },
                         error: function (jqXHR, textStatus, errorThrown){
