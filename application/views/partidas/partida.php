@@ -30,7 +30,7 @@
                 var id_ficha = <?= $id_ficha ?>;
                 var id_partida = <?= $id_partida ?>;
                 
-                /*$("#ficha_ajax input[type!='button']").blur(function() {
+                $("#ficha_ajax input[type!='button']").blur(function() {
                     
                     var a = $(this).attr("class");
                     var b = $(this).attr("name");
@@ -46,7 +46,7 @@
                     
                     $.ajax({
                         
-                        url: "http://localhost/proyecto/index.php/partidas/fichas/editar",
+                        url: "<?= base_url('partidas/fichas/editar') ?>",
                         type: "POST",
                         data: {'tabla': a, 'columna': b, 'valor': c, 'ficha': d, 'partida': e, 'csrf_test_name': $.cookie('csrf_cookie_name')},
                         success: function (ficha){
@@ -63,9 +63,9 @@
                     });
                     
                     
-                });*/
+                });
                 
-                /*$("#ficha_ajax textarea").blur(function() {
+                $("#ficha_ajax textarea").blur(function() {
                     
                     var a = $(this).attr("class");
                     var b = $(this).attr("name");
@@ -81,7 +81,7 @@
                     
                     $.ajax({
                         
-                        url: "http://localhost/proyecto/index.php/partidas/fichas/editar",
+                        url: "<?= base_url('partidas/fichas/editar') ?>",
                         type: "POST",
                         data: {'tabla': a, 'columna': b, 'valor': c, 'ficha': d, 'partida': e, 'csrf_test_name': $.cookie('csrf_cookie_name')},
                         success: function (ficha){
@@ -97,7 +97,7 @@
                         
                     });
                     
-                });*/
+                });
                 
                 $("#mensaje").keyup(function(event) {
                     
@@ -142,7 +142,7 @@
                     
                 });
                 
-                /*$("#jugadores").change(function() {
+                $("#jugadores").change(function() {
                     
                     var ficha = $(this).val();
                     
@@ -154,7 +154,7 @@
                     
                     $.ajax({
                         
-                        url: "http://localhost/proyecto/index.php/partidas/fichas/cargar_ficha",
+                        url: "<?= base_url('partidas/fichas/cargar_ficha') ?>",
                         type: "POST",
                         data: {'id_ficha': ficha, 'csrf_test_name': $.cookie('csrf_cookie_name')},
                         success: function (ficha){
@@ -170,9 +170,9 @@
                         
                     });
                     
-                });*/
+                });
                 
-               /* $("#cerrar_partida").on("click", function (){
+                $("#cerrar_partida").on("click", function (){
                     
                     $.ajaxSetup({
                         data: {
@@ -182,7 +182,7 @@
                     
                     $.ajax({
                         
-                        url: "http://localhost/proyecto/index.php/partidas/partidas/cerrar_partida",
+                        url: "<?= base_url('partidas/partidas/cerrar_partida') ?>",
                         type: "POST",
                         data: {'id_partida': id_partida, 'csrf_test_name': $.cookie('csrf_cookie_name')},
                         success: function (){
