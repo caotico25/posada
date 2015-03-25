@@ -30,7 +30,7 @@
                 var id_ficha = <?= $id_ficha ?>;
                 var id_partida = <?= $id_partida ?>;
                 
-                $("#ficha_ajax input[type!='button']").blur(function() {
+                /*$("#ficha_ajax input[type!='button']").blur(function() {
                     
                     var a = $(this).attr("class");
                     var b = $(this).attr("name");
@@ -63,9 +63,9 @@
                     });
                     
                     
-                });
+                });*/
                 
-                $("#ficha_ajax textarea").blur(function() {
+                /*$("#ficha_ajax textarea").blur(function() {
                     
                     var a = $(this).attr("class");
                     var b = $(this).attr("name");
@@ -97,9 +97,9 @@
                         
                     });
                     
-                });
+                });*/
                 
-                $("#chat textarea").keyup(function(event) {
+                /*$("#chat textarea").keyup(function(event) {
                     
                     var msj = $(this).val().trim();
                     
@@ -140,9 +140,9 @@
                         $(this).val('');
                     }
                     
-                });
+                });*/
                 
-                $("#jugadores").change(function() {
+                /*$("#jugadores").change(function() {
                     
                     var ficha = $(this).val();
                     
@@ -170,9 +170,9 @@
                         
                     });
                     
-                });
+                });*/
                 
-                $("#cerrar_partida").on("click", function (){
+               /* $("#cerrar_partida").on("click", function (){
                     
                     $.ajaxSetup({
                         data: {
@@ -198,7 +198,7 @@
                         
                     });
                     
-                });
+                });*/
                 
             });
             
