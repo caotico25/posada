@@ -146,9 +146,17 @@ class Ficha extends CI_Model
         $res = $res->row_array();
         $ficha = $res['ficha_id'];
         
-        $res = $this->db->query("select nombre from personajes where ficha = $ficha");
+        if ($ficha != NULL)
+        {
+            $res = $this->db->query("select nombre from personajes where ficha = $ficha");
         
-        return $res->row_array();
+            return $res->row_array();
+        }
+        else
+        {
+            return null;
+        }
+        
     }
     
     
