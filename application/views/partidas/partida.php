@@ -99,7 +99,7 @@
                     
                 });*/
                 
-                /*$("#chat textarea").keyup(function(event) {
+                $("#mensaje").keyup(function(event) {
                     
                     var msj = $(this).val().trim();
                     
@@ -126,7 +126,7 @@
                                 },
                                 error: function (jqXHR, textStatus, errorThrown){
                                     
-                                    alert(textStatus + ' ' + errorThrown);
+                                    alert(textStatus + ' ¿HOLA? ' + errorThrown + ' ' + jqXHR);
                                     
                                 }
                                 
@@ -140,7 +140,7 @@
                         $(this).val('');
                     }
                     
-                });*/
+                });
                 
                 /*$("#jugadores").change(function() {
                     
@@ -212,7 +212,7 @@
                     <button id="cerrar_partida">Cerrar partida</button>
                 </section>
                 <section>
-                <div id="chat" style="border: 1px solid black">
+                <div id="chat" name="chat" style="border: 1px solid black">
                     <div id="charla" style="border: 1px solid black; height: 300px; overflow: scroll">
                         
                         <?= $chat ?>
@@ -220,7 +220,7 @@
                     </div>
                     <textarea name="mensaje" id="mensaje" rows="2" cols="40" class="chat"></textarea>
                 </div>
-                <div id="tablero">
+                <div id="tablero" name="tablero">
                   
                 </div>
                 <div id="ficha">
