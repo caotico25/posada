@@ -126,7 +126,7 @@
                                 },
                                 error: function (jqXHR, textStatus, errorThrown){
                                     
-                                    alert(textStatus + ' ¿HOLA? ' + errorThrown + ' ' + jqXHR);
+                                    alert(textStatus + ' ¿HOLA? ' + errorThrown + ' ' + jqXHR.status);
                                     
                                 }
                                 
