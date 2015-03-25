@@ -13,9 +13,7 @@ class Chats extends CI_Controller
         
         $data['mensajes'] = array_reverse($this->Chat->obtener_mensajes($partida));
         
-        $this->load->view('partidas/chat', $data, TRUE);
-        
-        return "<script>alert('Enro en servidor bien')</script>";
+        $this->load->view('partidas/chat', $data);
     }
     
     
