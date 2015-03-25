@@ -103,6 +103,8 @@
                     
                     var msj = $(this).val().trim();
                     
+                    alert(id_partida);
+                    
                     if (msj != '')
                     {
                         if (event.keyCode === 13)
@@ -116,10 +118,10 @@
                             
                             $.ajax({
                                 
-                                url: "http://localhost/proyecto/index.php/partidas/chats/insertar_mensaje",
+                                url: "<?= base_url('chats/insertar_mensaje') ?>",
                                 type: "POST",
                                 data: {'mensaje': msj, 'jugador': <?= obtener_id() ?>, 'partida': id_partida, 'csrf_test_name': $.cookie('csrf_cookie_name')},
-                                success: function (chat){
+                                success: function(chat) {
                                     
                                     $('#charla').html(chat);
                                     
