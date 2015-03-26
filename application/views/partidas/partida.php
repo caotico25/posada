@@ -30,7 +30,7 @@
                 var id_ficha = <?= $id_ficha ?>;
                 var id_partida = <?= $id_partida ?>;
                 
-                $("#ficha_ajax input[type!='button']").blur(function() {
+                $("#ficha_ajax").on("blur", "input[type!='button']", function() {
                     
                     var a = $(this).attr("class");
                     var b = $(this).attr("name");
@@ -65,7 +65,7 @@
                     
                 });
                 
-                $("#ficha_ajax textarea").blur(function() {
+                $("#ficha_ajax").on("blur", "textarea", function() {
                     
                     var a = $(this).attr("class");
                     var b = $(this).attr("name");
