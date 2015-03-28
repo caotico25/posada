@@ -9,10 +9,20 @@
             <article>
                 <h3><?= $partida['nombre'] ?></h3>
                 <p><?= $partida['descripcion'] ?></p>
+                
                 <?= form_open('partidas/partidas/partida_master', array('target' => '_blank')) ?>
                     <input type="hidden" name="id_partida" value="<?= $partida['id'] ?>" id="id_partida"/>
                     <input type="submit" name="iniciar" value="Iniciar partida" id="iniciar"/>
                 <?= form_close() ?>
+                
+                <select name="estado" id="estado">
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+                
             </article>
         <?php endforeach ?>
     <?php else: ?>
