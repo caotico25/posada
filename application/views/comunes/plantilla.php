@@ -51,6 +51,34 @@
                         $("#ayuda").corner("long top 10px");
                     }
                 }
+                
+                $("#master").on("change", "estado", function() {
+                    
+                    $.ajaxSetup({
+                        data: {
+                            csrf_test_name: $.cookie('csrf_cookie_name')
+                            }
+                    });
+                    
+                    $.ajax({
+                        
+                        url: "<?= base_url('partidas/partidas/cambiar_estado') ?>",
+                        type: "POST",
+                        data: {, 'csrf_test_name': $.cookie('csrf_cookie_name')},
+                        success: function (ficha){
+                            
+                            alert("Estado modificado correctamente." + $(this).val());
+                            
+                        },
+                        error: function (jqXHR, textStatus, errorThrown){
+                            
+                            alert(textStatus + ' ' + errorThrown);
+                            
+                        }
+                        
+                    });
+                    
+                });
             });
             
         </script>

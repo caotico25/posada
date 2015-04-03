@@ -16,11 +16,9 @@
                 <?= form_close() ?>
                 
                 <select name="estado" id="estado">
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
+                    <option value="1">Preparando partida</option>
+                    <option value="2">Buscando jugadores</option>
+                    <option value="3">Comenzada</option>
                 </select>
                 
             </article>
