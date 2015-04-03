@@ -64,7 +64,7 @@
                         
                         url: "<?= base_url('partidas/partidas/cambiar_estado') ?>",
                         type: "POST",
-                        data: {, 'csrf_test_name': $.cookie('csrf_cookie_name')},
+                        data: {'estado': $(this).val(), 'csrf_test_name': $.cookie('csrf_cookie_name')},
                         success: function (ficha){
                             
                             alert("Estado modificado correctamente." + $(this).val());
