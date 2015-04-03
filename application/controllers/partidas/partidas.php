@@ -196,7 +196,7 @@ class Partidas extends CI_Controller
      */
     function cambiar_estado()
     {
-        
+        return TRUE;
     }
 
 

@@ -52,7 +52,7 @@
                     }
                 }
                 
-                $("#master").on("change", "estado", function() {
+                $("#master").on("change", "#estado", function() {
                     
                     $.ajaxSetup({
                         data: {
