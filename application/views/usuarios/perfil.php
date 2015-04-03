@@ -15,7 +15,7 @@
                     <input type="submit" name="iniciar" value="Iniciar partida" id="iniciar"/>
                 <?= form_close() ?>
                 
-                <select name="estado" id="estado">
+                <select name="estado" id="estado" class="<?= $partida['id'] ?>">
                     <option value="1">Preparando partida</option>
                     <option value="2">Buscando jugadores</option>
                     <option value="3">Comenzada</option>

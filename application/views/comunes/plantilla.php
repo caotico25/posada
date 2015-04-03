@@ -56,6 +56,7 @@
                 $("#master").on("change", "#estado", function() {
                     
                     var estado = $("#estado").val();
+                    var id_partida = $("#estado").attr("class");
                     
                     $.ajaxSetup({
                         data: {
@@ -67,10 +68,10 @@
                         
                         url: "<?= base_url('partidas/partidas/cambiar_estado') ?>",
                         type: "POST",
-                        data: {'estado': estado, 'csrf_test_name': $.cookie('csrf_cookie_name')},
-                        success: function (estado){
+                        data: {'estado': estado, 'id_partida': id_partida, 'csrf_test_name': $.cookie('csrf_cookie_name')},
+                        success: function (){
                             
-                            alert("Estado modificado correctamente." + estado);
+                            alert("Estado modificado correctamente.");
                             
                         },
                         error: function (jqXHR, textStatus, errorThrown){

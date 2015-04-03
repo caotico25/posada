@@ -72,6 +72,16 @@ class Partida extends CI_Model
     /*
      * 
      */
+    function cambiar_estado($datos)
+    {
+        extract($datos);
+        
+        $this->db->query("update partidas set estado = $estado where id = $id_partida");
+    }
+    
+    /*
+     * 
+     */
     function es_master($id_jugador, $id_partida)
     {
         $res = $this->db->query("select master from partidas where id = $id_partida");
