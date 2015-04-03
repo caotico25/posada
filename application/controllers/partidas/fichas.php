@@ -18,7 +18,7 @@ class Fichas extends CI_Controller
         echo $datos;
     }
     
-    
+    // FALTA VALOR DE ID DE USUARIO/PERSONAJE
     function editar()
     {
         $tabla = $this->input->post('tabla');

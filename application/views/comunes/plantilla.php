@@ -6,6 +6,7 @@
         <title>La posada del Caos</title>
         <script src="<?= base_url('javascript/jquery-1-10-2.js') ?>" type="text/javascript" charset="utf-8"></script>
         <script src="<?= base_url('javascript/esquinas.js') ?>" type="text/javascript" charset="utf-8"></script>
+        <script src="<?= base_url('javascript/jquery.cookie.js') ?>" type="text/javascript" charset="utf-8"></script>
         <!-- <link rel="stylesheet" href="<?= base_url('css/estilo.css') ?>" type="text/css" media="screen" /> -->
         <link rel="stylesheet/less" href="<?= base_url('css/responsive.less') ?>" type="text/css" media="screen" />
         <script src="<?= base_url('javascript/less.js') ?>" type="text/javascript" charset="utf-8"></script>
@@ -54,6 +55,8 @@
                 
                 $("#master").on("change", "#estado", function() {
                     
+                    var estado = $("#estado").val();
+                    
                     $.ajaxSetup({
                         data: {
                             csrf_test_name: $.cookie('csrf_cookie_name')
@@ -64,7 +67,7 @@
                         
                         url: "<?= base_url('partidas/partidas/cambiar_estado') ?>",
                         type: "POST",
-                        data: {'estado': $(this).val(), 'csrf_test_name': $.cookie('csrf_cookie_name')},
+                        data: {'estado': estado, 'csrf_test_name': $.cookie('csrf_cookie_name')},
                         success: function (estado){
                             
                             alert("Estado modificado correctamente." + estado);
