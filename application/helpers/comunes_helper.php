@@ -113,7 +113,7 @@ if (!function_exists('es_master'))
     {
         $CI =& get_instance();
         
-        $master = $CI->Partida->es_master($id_jugador, $id_partida);
+        $master = $CI->Partida->obtener_master($id_partida);
         
         return $id_jugador == $master;
     }
@@ -158,6 +158,16 @@ if (!function_exists('obtener_tipo_juego'))
         $res = $CI->Partida->obtener_tipo_juego($tipo_juego);
         
         return $res['nombre'];
+    }
+}
+
+if (!function_exists('participa'))
+{
+    function participa($usuario, $id_partida)
+    {
+        $CI =& get_instance();
+        
+        return $CI->Partida->participa($usuario, $id_partida);
     }
 }
 

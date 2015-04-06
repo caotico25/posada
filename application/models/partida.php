@@ -82,7 +82,7 @@ class Partida extends CI_Model
     /*
      * 
      */
-    function es_master($id_jugador, $id_partida)
+    function obtener_master($id_partida)
     {
         $res = $this->db->query("select master from partidas where id = $id_partida");
         
@@ -174,8 +174,24 @@ class Partida extends CI_Model
     }
     
     
-    
-    
+    /*
+     * 
+     */
+    function participa($usuario, $id_partida)
+    {
+        $res = $this->db->query("select * from fichas where usuario_id = $usuario and partida_id = $id_partida");
+        
+        $res = $res->row_array();
+        
+        if (count($res) < 0)
+        {
+            return TRUE;
+        }
+        else
+        {
+        	return FALSE;
+        }
+    }
     
     
     
