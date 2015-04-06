@@ -27,8 +27,6 @@
             <p><?= $partida['descripcion'] ?></p>
             <span><?= obtener_estado($partida['estado']) ?></span>
             
-            <!-- COMPROBAR SI EL USUARIO PARTICIPA EN LA PARTIDA -->
-            <!-- SI PARTICIPA EL BOTON ABRIRA DIRECTAMENTE LA PARTIDA -->
             <?php if (participa(obtener_id(), $partida['id'])): ?>
                 
                 <?php if (es_master(obtener_id(), $partida['id'])): ?>
