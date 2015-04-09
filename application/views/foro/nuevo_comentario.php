@@ -1,3 +1,6 @@
+<div id="migas">
+    <a href="<?= base_url('portal/inicio') ?>">Inicio</a> > <a href="<?= base_url('foros/foros') ?>">Foro</a>
+</div>
 <section>
     <h2>Crear un nuevo comentario.</h2>
     <p>Recuerda seguir las normas del foro. Si las incumples, tu comentario será eliminado.</p>

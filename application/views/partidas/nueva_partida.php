@@ -1,5 +1,5 @@
 <div id="migas">
-    <a href="<?= base_url('portal/inicio') ?>">Inicio</a> > <a href="<?= base_url('partidas/partidas') ?>">Jugar a rol</a> > <a href="<?= base_url('partidas/partidas/nueva_partida') ?>">Registro</a>
+    <a href="<?= base_url('portal/inicio') ?>">Inicio</a> > <a href="<?= base_url('partidas/partidas') ?>">Jugar a rol</a> > <a href="<?= base_url('partidas/partidas/nueva_partida') ?>">Nueva partida</a>
 </div>
 <section>
     <h2>CREA UNA NUEVA AVENTURA</h2>
