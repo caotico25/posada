@@ -1,3 +1,6 @@
+<div id="migas">
+    <a href="<?= base_url('portal/inicio') ?>">Inicio</a> > <a href="<?= base_url('portal/usuarios/perfil') ?>">Perfil</a>
+</div>
 <section id="datos_jugador">
     <h2>CAMBIA TU CONTRASEÑA</h2>
     <button name="cambio_passwd" id="cambio_passwd">Cambia tu contraseña</button>

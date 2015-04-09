@@ -1,3 +1,4 @@
+
 <section>
     <h2>NOTICIAS</h2>
     <?php foreach ($noticias as $noticia): ?>
