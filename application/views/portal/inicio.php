@@ -1,3 +1,6 @@
+<div id="migas">
+    <a href="<?= base_url('portal/inicio') ?>">Inicio</a>
+</div>
 <section id="presentacion" class="seccion">
     <h2>NOS PRESENTAMOS</h2>
     <article>

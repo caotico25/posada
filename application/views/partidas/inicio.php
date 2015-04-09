@@ -1,3 +1,6 @@
+<div id="migas">
+    <a href="<?= base_url('portal/inicio') ?>">Inicio</a>/<a href="<?= base_url('partidas/partidas') ?>">Jugar a rol</a>
+</div>
 <section id="ultimas_partidas">
     <h2>PARTIDAS RECIENTES</h2>
     <?php foreach ($partidas as $partida): ?>
