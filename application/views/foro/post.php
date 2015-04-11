@@ -5,7 +5,7 @@
     <h2><?= $post['titulo'] ?></h2>
     <article class="post">
         <p><?= nl2br($post['contenido']) ?></p>
-        <span><?= obtener_autor($post['autor']) ?> - <?= $post['fecha'] ?></span>
+        <span>Por <?= obtener_autor($post['autor']) ?> - <?= $post['fecha'] ?></span>
     </article>
     
     <!-- BOTON NUEVO COMENTARIO -->

@@ -7,7 +7,7 @@
             <a href="<?= base_url('foro/posts/index/' . $post['id']) ?>">
                 <article>
                     <h3><?= $post['titulo'] ?></h3>
-                    <span><?= $post['autor'] ?> - <?= $post['fecha'] ?></span>
+                    <span>Por: <?= obtener_autor($post['autor']) ?>. <?= $post['fecha'] ?></span>
                 </article>
             </a>
         <?php endforeach ?>

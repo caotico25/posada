@@ -7,7 +7,7 @@
         <article>
             <h3><?= $noticia['titulo'] ?></h3>
             <p><?= nl2br($noticia['contenido']) ?></p>
-            <span><?= obtener_autor($noticia['autor']) ?>. <?= $noticia['fecha'] ?></span>
+            <span>Por <?= obtener_autor($noticia['autor']) ?>. <?= $noticia['fecha'] ?></span>
             <?php if (logueado()) : ?>
                 <?php if (es_admin(obtener_id())): ?>
                     
@@ -25,4 +25,10 @@
             <?php endif ?>
         </article>
     <?php endforeach ?>
+    
+    <div id="paginacion">
+        <?php foreach ($enlaces as $enlace): ?>
+            <?= $enlace ?>
+        <?php endforeach ?>
+    </div>
 </section>

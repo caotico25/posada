@@ -5,9 +5,10 @@ class Noticia extends CI_Model
     /*
      * 
      */
-    function obtener_noticias()
+    function obtener_noticias($limit, $offset)
     {
-        $res = $this->db->query("select * from noticias order by fecha");
+        $this->db->limit($limit,$offset);
+        $res = $this->db->get('noticias');
         
         return $res->result_array();
     }
@@ -18,7 +19,7 @@ class Noticia extends CI_Model
      */
     function obtener_noticias_inicio()
     {
-        $res = $this->db->query("select * from noticias order by fecha limit 5");
+        $res = $this->db->query("select * from noticias order by fecha limit 4");
         
         return $res->result_array();
     }
@@ -78,6 +79,28 @@ class Noticia extends CI_Model
         
         return $res['usuario'];
     }
+    
+    
+    /*
+     * 
+     */
+    function contar_noticias()
+    {
+        return $this->db->count_all_results('noticias');
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
