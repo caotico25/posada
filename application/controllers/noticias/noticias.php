@@ -34,7 +34,7 @@ class Noticias extends CI_Controller
         $data['noticias'] = $this->Noticia->obtener_noticias($config['per_page'], $pagina);
         
         $enlaces = $this->pagination->create_links();
-        $data['links'] = explode('&nbsp;', $enlaces);
+        $data['enlaces'] = explode('&nbsp;', $enlaces);
         
         redir_sitio('noticias/inicio', $data);
     }
