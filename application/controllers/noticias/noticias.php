@@ -5,7 +5,7 @@ class Noticias extends CI_Controller
     /*
      * 
      */
-    function index($offset = '')
+    function index($pagina = 1)
     {
         // CONFIGURACION DE  PAGINACION
         $elementos = $this->Noticia->contar_noticias();
@@ -22,16 +22,16 @@ class Noticias extends CI_Controller
         
         $this->pagination->initialize($config);
         
-        if ($this->uri->segment(3))
-        {
-            $pagina = $this->uri->segment(3);
-        }
-        else
-        {
-            $pagina = 1;
-        }
+        // if ($this->uri->segment(3))
+        // {
+            // $pagina = $this->uri->segment(3);
+        // }
+        // else
+        // {
+            // $pagina = 1;
+        // }
         
-        $data['noticias'] = $this->Noticia->obtener_noticias($config['per_page'], $pagina);
+        $data['noticias'] = $this->Noticia->obtener_noticias($config['per_page'], $pagina - 1);
         
         $enlaces = $this->pagination->create_links();
         $data['enlaces'] = explode('&nbsp;', $enlaces);
