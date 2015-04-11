@@ -1,5 +1,5 @@
 <div id="migas">
-    <a href="<?= base_url('portal/inicio') ?>">Inicio</a> > <a href="<?= base_url('foros/foros') ?>">Foro</a>
+    <a href="<?= base_url('portal/inicio') ?>">Inicio</a> > <a href="<?= base_url('foros/foros') ?>">Foro</a> > <a href="<?= base_url('foros/temas') . '/index/' . $post['tema'] ?>"><?= $tema ?></a> > <?= $post['titulo'] ?>
 </div>
 <section>
     <h2><?= $post['titulo'] ?></h2>

@@ -188,6 +188,19 @@ if (!function_exists('obtener_autor'))
     }
 }
 
+if ( ! function_exists('nombre_tema'))
+{
+    function nombre_tema($id_tema)
+    {
+        $CI =& get_instance();
+        
+        $tema = $CI->Foro->nombre_tema($id_tema);
+        
+        return $tema['titulo'];
+    }
+}
+
+
 
 /*
  * 
