@@ -28,7 +28,7 @@
     
     <div id="paginacion">
         <?php foreach ($enlaces as $enlace): ?>
-            <?= $enlace ?>
+            <?= $enlace ?> hala
         <?php endforeach ?>
     </div>
 </section>
