@@ -4,16 +4,16 @@
         <div>
             
             <?php 
-            
+            /*
                 $nombre = '';
-                if (es_admin(obtener_id()))
+                if (es_master($mensaje['jugador'], $mensaje['parida']))
                 {
                     $nombre = 'Master';
                 }
                 else
                 {
                     $nombre = nombre_personaje($mensaje['partida'], $mensaje['jugador']);
-                }
+                }*/
             ?>
             
             <span><?= $nombre ?>:</span>
