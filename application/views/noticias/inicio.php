@@ -30,6 +30,6 @@
        <!--- <?php foreach ($enlaces as $enlace): ?>
             <?= $enlace ?>
         <?php endforeach ?> --->
-        <?= $enlaces ?>
+        <?= $this->pagination->create_links() ?>
     </div>
 </section>
