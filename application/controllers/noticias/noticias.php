@@ -10,7 +10,7 @@ class Noticias extends CI_Controller
         // CONFIGURACION DE  PAGINACION
         $elementos = $this->Noticia->contar_noticias();
         
-        $config['base_url'] = base_url('noticias/index');
+        $config['base_url'] = base_url('noticias/noticias/index');
         $config['total_rows'] = $elementos;
         $config['per_page'] = 1; // NUMERO DE ELEMENTOS POR PAGINA
         $config['use_page_numbers'] = TRUE;
