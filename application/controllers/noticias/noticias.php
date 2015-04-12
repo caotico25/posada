@@ -22,14 +22,14 @@ class Noticias extends CI_Controller
         
         $this->pagination->initialize($config);
         
-        if ($this->uri->segment(3))
-        {
-            $pagina = $this->uri->segment(3);
-        }
-        else
-        {
-            $pagina = 1;
-        }
+        // if ($this->uri->segment(3))
+        // {
+            // $pagina = $this->uri->segment(3);
+        // }
+        // else
+        // {
+            // $pagina = 1;
+        // }
         
         $data['noticias'] = $this->Noticia->obtener_noticias($config['per_page'], $pagina - 1);
         
