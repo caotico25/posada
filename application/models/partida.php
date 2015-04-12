@@ -117,7 +117,7 @@ class Partida extends CI_Model
      */
     function obtener_partidas($limit, $offset = 0)
     {
-        $res = $this->db->query("select * from partidas order by f_creacion ");
+        $res = $this->db->query("select * from partidas order by f_creacion limit $limit offset $offset");
         
         return $res->result_array();
     }
