@@ -19,22 +19,11 @@ class Noticias extends CI_Controller
         $config['cur_tag_close'] = '</b>';
         $config['next_link'] = 'Siguiente';
         $config['prev_link'] = "Anterior";
+        $config['uri_segment'] = 4;
         
         $this->pagination->initialize($config);
         
-        // if ($this->uri->segment(3))
-        // {
-            // $pagina = $this->uri->segment(3);
-        // }
-        // else
-        // {
-            // $pagina = 1;
-        // }
-        
         $data['noticias'] = $this->Noticia->obtener_noticias($config['per_page'], $pagina - 1);
-        
-        //$enlaces = $this->pagination->create_links();
-        //$data['enlaces'] = $this->pagination->create_links();//explode('&nbsp;', $enlaces);
         
         redir_sitio('noticias/inicio', $data);
     }
