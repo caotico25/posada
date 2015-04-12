@@ -194,7 +194,13 @@ class Partida extends CI_Model
     }
     
     
-    
+    /*
+     * 
+     */
+    function contar_partidas()
+    {
+        return $this->db->count_all_results('partidas');
+    }
     
     
     
