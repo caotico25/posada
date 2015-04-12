@@ -5,7 +5,7 @@ class Noticia extends CI_Model
     /*
      * 
      */
-    function obtener_noticias($limit, $offset)
+    function obtener_noticias($limit, $offset = 0)
     {
         $res = $this->db->query("select * from noticias limit $limit offset $offset");
         

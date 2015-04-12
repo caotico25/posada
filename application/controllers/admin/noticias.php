@@ -7,7 +7,7 @@ class Noticias extends CI_Controller
      */
     function index()
     {
-        $data['noticias'] = $this->Noticia->obtener_noticias();
+        $data['noticias'] = $this->Noticia->obtener_noticias(10);
         
         redir_admin('noticias/inicio', $data);
     }
