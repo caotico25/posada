@@ -2,9 +2,25 @@
 
 class Partidas extends CI_Controller
 {
-    function index()
+    function index($pagina = 1)
     {
-        $data['partidas'] = $this->Partida->obtener_partidas_inicio();
+        // CONFIGURACION DE  PAGINACION
+        $elementos = $this->Partida->contar_partidas();
+        
+        $config['base_url'] = base_url('partidas/partidas/index');
+        $config['total_rows'] = $elementos;
+        $config['per_page'] = 1; // NUMERO DE ELEMENTOS POR PAGINA
+        $config['use_page_numbers'] = TRUE;
+        $config['num_links'] = $elementos;
+        $config['cur_tag_open'] = '<b>';
+        $config['cur_tag_close'] = '</b>';
+        $config['next_link'] = 'Siguiente';
+        $config['prev_link'] = "Anterior";
+        $config['uri_segment'] = 4;
+        
+        $this->pagination->initialize($config);
+        
+        $data['partidas'] = $this->Partida->obtener_partidas($config['per_page'], $pagina - 1);
         
         redir_sitio('partidas/inicio', $data);
     }

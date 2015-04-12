@@ -45,6 +45,10 @@
             
         </article>
     <?php endforeach ?>
+    
+    <div id="paginacion">
+        <?= $this->pagination->create_links() ?>
+    </div>
 </section>
 
 <section>

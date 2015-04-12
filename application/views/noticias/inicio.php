@@ -27,9 +27,6 @@
     <?php endforeach ?>
     
     <div id="paginacion">
-       <!--- <?php foreach ($enlaces as $enlace): ?>
-            <?= $enlace ?>
-        <?php endforeach ?> --->
         <?= $this->pagination->create_links() ?>
     </div>
 </section>
