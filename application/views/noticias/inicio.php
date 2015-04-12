@@ -27,8 +27,9 @@
     <?php endforeach ?>
     
     <div id="paginacion">
-        <?php foreach ($enlaces as $enlace): ?>
-            <?= $enlace ?> hala
-        <?php endforeach ?>
+       <!--- <?php foreach ($enlaces as $enlace): ?>
+            <?= $enlace ?>
+        <?php endforeach ?> --->
+        <?= $enlaces ?>
     </div>
 </section>

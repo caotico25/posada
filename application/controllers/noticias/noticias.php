@@ -15,8 +15,8 @@ class Noticias extends CI_Controller
         $config['per_page'] = 1; // NUMERO DE ELEMENTOS POR PAGINA
         $config['use_page_numbers'] = TRUE;
         $config['num_links'] = $elementos;
-        $config['cur_tag_open'] = '&nbsp;<a class="current">';
-        $config['cur_tag_close'] = '</a>';
+        //$config['cur_tag_open'] = '&nbsp;<a class="current">';
+        //$config['cur_tag_close'] = '</a>';
         $config['next_link'] = 'Siguiente';
         $config['prev_link'] = "Anterior";
         
@@ -33,8 +33,8 @@ class Noticias extends CI_Controller
         
         $data['noticias'] = $this->Noticia->obtener_noticias($config['per_page'], $pagina - 1);
         
-        $enlaces = $this->pagination->create_links();
-        $data['enlaces'] = explode('&nbsp;', $enlaces);
+        //$enlaces = $this->pagination->create_links();
+        $data['enlaces'] = $this->pagination->create_links();//explode('&nbsp;', $enlaces);
         
         redir_sitio('noticias/inicio', $data);
     }
