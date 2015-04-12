@@ -12,7 +12,7 @@ class Noticias extends CI_Controller
         
         $config['base_url'] = base_url('noticias/index');
         $config['total_rows'] = $elementos;
-        $config['per_page'] = 10; // NUMERO DE ELEMENTOS POR PAGINA
+        $config['per_page'] = 1; // NUMERO DE ELEMENTOS POR PAGINA
         $config['use_page_numbers'] = TRUE;
         $config['num_links'] = $elementos;
         $config['cur_tag_open'] = '&nbsp;<a class="current">';
