@@ -1,5 +1,5 @@
 <div id="migas">
-    <a href="<?= base_url('portal/inicio') ?>">Inicio</a> > <a href="<?= base_url('portal/usuarios/perfil') ?>">Perfil</a>
+    <a href="<?= base_url('portal/inicio') ?>">Inicio</a> <span>></span> <a href="<?= base_url('portal/usuarios/perfil') ?>">Perfil</a>
 </div>
 <section id="datos_jugador">
     <h2>CAMBIA TU CONTRASEÑA</h2>

@@ -1,5 +1,5 @@
 <div id="migas">
-    <a href="<?= base_url('portal/inicio') ?>">Inicio</a> > <a href="<?= base_url('foros/foros') ?>">Foro</a>
+    <a href="<?= base_url('portal/inicio') ?>">Inicio</a> <span>></span> <a href="<?= base_url('foros/foros') ?>">Foro</a>
 </div>
 <?php $i = 0; $j = 0; ?>
 <?php foreach ($secciones as $seccion): ?>
