@@ -1,5 +1,5 @@
 <div id="migas">
-    <a href="<?= base_url('portal/inicio') ?>">Inicio</a> > <a href="<?= base_url('noticias/noticias') ?>">Noticias</a>
+    <a href="<?= base_url('portal/inicio') ?>">Inicio</a> <span>></span> <a href="<?= base_url('noticias/noticias') ?>">Noticias</a>
 </div>
 <section>
     <h2>NOTICIAS</h2>
