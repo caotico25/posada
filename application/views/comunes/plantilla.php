@@ -26,7 +26,7 @@
                     {
                         $("#inicio").css('background-image', 'none');
                         $("#inicio").css('background-color', '#DC7340');
-                        $("#inicio").css('opacity', '0.5');
+                        //$("#inicio").css('opacity', '0.5');
                         $("#inicio").corner("long top 10px");
                     }
                     if (array[i] == "noticias")
