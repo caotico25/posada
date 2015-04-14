@@ -21,12 +21,6 @@
                 
                 for (var i = 0; i < array.length; i++)
                 {
-                    if (array.length == 0)
-                    {
-                        $("#inicio").css('background-image', 'none');
-                        $("#inicio").css('background-color', '#DC7340');
-                        $("#inicio").corner("long top 10px");
-                    }
                     
                     if (array[i] == "inicio")
                     {
