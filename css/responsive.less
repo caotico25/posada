@@ -395,6 +395,17 @@ body
     {
         background-color: #ffd7c4;
     }
+    
+    p
+    {
+        height: 20px;
+    }
+    
+    &:hover > p
+    {
+        height: 100%;
+        transition: 1s;
+    }
 }
 
 
@@ -408,12 +419,12 @@ body
     p
     {
         height: 20px;
-        
-        &:hover
-        {
-            height: 100%;
-            transition: 1s;
-        }
+    }
+    
+    &:hover > p
+    {
+        height: 100%;
+        transition: 1s;
     }
 }
 

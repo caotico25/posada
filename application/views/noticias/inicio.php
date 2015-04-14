@@ -1,7 +1,7 @@
 <div id="migas">
     <a href="<?= base_url('portal/inicio') ?>">Inicio</a> <span>></span> <a href="<?= base_url('noticias/noticias') ?>">Noticias</a>
 </div>
-<section>
+<section id="noticias">
     <h2>NOTICIAS</h2>
     <?php foreach ($noticias as $noticia): ?>
         <article>
