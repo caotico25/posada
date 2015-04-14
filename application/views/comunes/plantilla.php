@@ -25,35 +25,35 @@
                     if (array[i] == "inicio")
                     {
                         $("#inicio").css('background-image', 'none');
-                        $("#inicio").css('background-color', '#DC7340');
+                        $("#inicio").css('background-color', 'rgba(220, 115, 64, 0.5)');
                         $("#inicio").css('opacity', '0.5');
                         $("#inicio").corner("long top 10px");
                     }
                     if (array[i] == "noticias")
                     {
                         $("#noticias").css('background-image', 'none');
-                        $("#noticias").css('background-color', '#DC7340');
+                        $("#noticias").css('background-color', 'rgba(220, 115, 64, 0.5)');
                         $("#noticias").css('opacity', '0.5');
                         $("#noticias").corner("long top 10px");
                     }
                     if (array[i] == "partidas")
                     {
                         $("#rol").css('background-image', 'none');
-                        $("#rol").css('background-color', '#DC7340');
+                        $("#rol").css('background-color', 'rgba(220, 115, 64, 0.5)');
                         $("#rol").css('opacity', '0.5');
                         $("#rol").corner("long top 10px");
                     }
                     if (array[i] == "foro")
                     {
                         $("#foro").css('background-image', 'none');
-                        $("#foro").css('background-color', '#DC7340');
+                        $("#foro").css('background-color', 'rgba(220, 115, 64, 0.5)');
                         $("#foro").css('opacity', '0.5');
                         $("#foro").corner("long top 10px");
                     }
                     if (array[i] == "ayuda")
                     {
                         $("#ayuda").css('background-image', 'none');
-                        $("#ayuda").css('background-color', '#DC7340');
+                        $("#ayuda").css('background-color', 'rgba(220, 115, 64, 0.5)');
                         $("#ayuda").css('opacity', '0.5');
                         $("#ayuda").corner("long top 10px");
                     }
