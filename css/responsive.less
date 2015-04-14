@@ -188,6 +188,8 @@ body
                 
                 text-decoration: none;
                 color: black;
+                background-color: #efefef;
+                .border-radius();
                 
                 &:visited
                 {
@@ -285,6 +287,8 @@ body
             .sombreado();
             
             margin: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
             background-color: white;
             
             p
@@ -294,20 +298,18 @@ body
             
             form
             {
-                width: 100px;
-                
-                .push(3);
+                .column(2.5,3);
                 
                 input
                 {
                     &[type="text"]
                     {
-                        width: 70px;
+                        .column(2,2.5);
                     }
                     
                     &[type="password"]
                     {
-                        width: 70px;
+                        .column(2,2.5);
                     }
                 }
             }
