@@ -254,6 +254,8 @@ body
                 input[type="submit"]
                 {
                     margin: 10px;
+                    .sombreado();
+                    padding-top: 20px;
                 }
                 
                 form *
@@ -262,9 +264,6 @@ body
                     display: block;
                     margin-left: 20%;
                     margin-top: 20px;
-                    padding-top: 20px;
-                    
-                    .sombreado();
                 }
             }
         }
@@ -339,6 +338,11 @@ body
             img
             {
                 .push(4);
+            }
+            
+            a:visited
+            {
+                color:black;
             }
         }
     }

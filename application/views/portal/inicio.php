@@ -18,7 +18,7 @@
         <article>
             <h3><?= $noticia['titulo'] ?></h3>
             <p><?= $noticia['contenido'] ?></p>
-            <span><?= obtener_autor_noticia($noticia['autor']) ?>. <?= $noticia['fecha'] ?></span>
+            <span>Por: <?= obtener_autor_noticia($noticia['autor']) ?>. <?= $noticia['fecha'] ?></span>
         </article>
     <?php endforeach ?>
 </section>
