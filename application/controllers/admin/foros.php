@@ -178,7 +178,7 @@ class Foros extends CI_Controller
 
     function eliminar_tema()
     {
-        $secciones = $this->Foro->obtener_temas();
+        $temas = $this->Foro->obtener_temas();
         $data['temas'] = $temas;
         
         if ($this->input->post())
