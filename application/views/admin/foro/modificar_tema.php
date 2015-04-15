@@ -1,6 +1,6 @@
 <section class="admin">
     <h2>MODIFICAR TEMAS</h2>
-    <?= form_open('admin/foros/modificar_tema') ?>
+    <?= form_open('admin/foros/modificar_tema', array('id' => 'formadmin')) ?>
         <label for="tema">Elige el tema a modificar:</label>
         <select name="tema">
             <option>Elegir...</option>
