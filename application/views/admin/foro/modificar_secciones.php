@@ -1,4 +1,4 @@
-<section>
+<section class="admin">
     <h2>MODIFICAR SECCIONES</h2>
     <?= form_open('admin/foros/modificar_seccion') ?>
         <label for="seccion">Elige la sección a modificar:</label>

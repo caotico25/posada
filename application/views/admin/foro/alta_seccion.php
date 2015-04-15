@@ -1,4 +1,4 @@
-<section>
+<section class="admin">
     <h2>CREAR UNA NUEVA SECCION</h2>
     <article>
     <?= validation_errors() ?>

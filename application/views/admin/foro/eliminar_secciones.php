@@ -1,4 +1,4 @@
-<section>
+<section class="admin">
     <h2>ELIMINAR SECCIONES</h2><article>
     <table>
         <?php foreach ($secciones as $seccion): ?>

@@ -1,4 +1,4 @@
-<section>
+<section class="admin">
     <h3>ESCRIBIR NUEVA NOTICIA</h3>
     <?= validation_errors() ?>
     <?= form_open('admin/noticias/escribir_noticia') ?>

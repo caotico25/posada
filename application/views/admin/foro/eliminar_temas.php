@@ -1,4 +1,4 @@
-<section>
+<section class="admin">
     <h2>ELIMINAR TEMAS</h2>
     <table>
         <?php foreach ($temas as $tema): ?>
