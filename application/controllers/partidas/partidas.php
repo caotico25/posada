@@ -181,7 +181,8 @@ class Partidas extends CI_Controller
      */
     function informe_partidas()
     {
-        $data['partidas'] = $this->Partida->obtener_partidas();
+        $num_partidas = $this->Partida->contar_partidas();
+        $data['partidas'] = $this->Partida->obtener_partidas($num_partidas);
         
         $html = $this->load->view('admin/informes/informe_partidas', $data, TRUE);
         
