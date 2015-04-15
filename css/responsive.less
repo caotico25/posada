@@ -260,12 +260,16 @@ body
                 input[type="submit"]
                 {
                     margin: 10px;
-                    margin-top: 50px;
-                    display: block;
-                    
-                    .push();
                     .sombreado();
+                    margin-top: 20px;
+                }
+                
+                form *
+                {
                     .column(3);
+                    display: block;
+                    margin-left: 20%;
+                    margin-top: 20px;
                 }
             }
         }
@@ -584,17 +588,7 @@ body
             
             margin: 20px;
             
-            label
-            {
-                .column(4);
-            }
-            
-            input
-            {
-                .column(4);
-            }
-            
-            textarea
+            label, input, textarea
             {
                 .column(4);
             }
