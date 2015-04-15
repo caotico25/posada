@@ -1,5 +1,6 @@
 <section class="admin">
     <h2>MODIFICAR TEMAS</h2>
+    <article>
     <?= form_open('admin/foros/modificar_tema', array('id' => 'formadmin')) ?>
         <label for="tema">Elige el tema a modificar:</label>
         <select name="tema">
@@ -19,5 +20,5 @@
             <?php endforeach ?>
         </select>
         <input type="submit" name="enviar" value="Modificar tema" id="enviar"/>
-    <?= form_close() ?>
+    <?= form_close() ?></article>
 </section>

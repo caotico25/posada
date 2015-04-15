@@ -1,5 +1,6 @@
 <section class="admin">
-    <h3>CREAR UN NUEVO TEMA</h3>
+    <h2>CREAR UN NUEVO TEMA</h2>
+    <article>
     <?= validation_errors() ?>
 	<?= form_open('admin/foros/crear_tema', array('id' => 'formadmin')) ?>
         <label for="seccion">Sección:</label>
@@ -12,5 +13,5 @@
 		<label for="nombre">Nombre del nuevo tema:</label><input type="text" name="nombre" value="" id="nombre"/>
 		<label for="contenido">Descripción:</label><textarea name="contenido" rows="8" cols="40"></textarea>
 		<input type="submit" name="enviar" value="Crear tema" id="enviar"/>
-	<?= form_close() ?>
+	<?= form_close() ?></article>
 </section>
