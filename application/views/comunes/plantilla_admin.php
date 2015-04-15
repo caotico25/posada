@@ -13,7 +13,7 @@
         <div id="contenedor">
             
             <header>
-                <a href="" >LA POSADA DEL CAOS</a>
+                <a href="<?= base_url('portal/inicio') ?>" >LA POSADA DEL CAOS</a>
             </header>
 
                 <div id="contenido">
