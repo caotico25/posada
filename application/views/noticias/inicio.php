@@ -7,7 +7,7 @@
         <article>
             <h3><?= $noticia['titulo'] ?></h3>
             <p><?= nl2br($noticia['contenido']) ?></p>
-            <span>Por <?= obtener_autor($noticia['autor']) ?>. <?= $noticia['fecha'] ?></span>
+            <span>Por <?= obtener_autor($noticia['autor']) ?>. <?= date('dd-mm-yyyy',$noticia['fecha']) ?></span>
             <?php if (logueado()) : ?>
                 <?php if (es_admin(obtener_id())): ?>
                     
