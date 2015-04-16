@@ -4,7 +4,7 @@
 <section>
     <h2>ACCEDE A TU CUENTA</h2>
     <article>
-    <?= form_open('portal/inicio/login') ?>
+    <?= form_open('portal/inicio/login', array('class' => 'registro')) ?>
         <label for="usuario_log">Usuario:</label>
         <input type="text" name="usuario_log" id="usuario_log"/>
         <?= form_error('usuario_log') ?>
@@ -16,7 +16,7 @@
 </section>
 <section>
     <h2>REGISTRATE</h2><article>
-    <?= form_open('portal/inicio/alta') ?>
+    <?= form_open('portal/inicio/alta', array('class' => 'registro')) ?>
         <label for="usuario">Usuario:</label>
         <input type="text" name="usuario" id="usuario"/>
         <?= form_error('usuario') ?>
