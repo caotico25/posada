@@ -14,8 +14,8 @@ class Partidas extends CI_Controller
         $config['num_links'] = $elementos;
         $config['cur_tag_open'] = '<b>';
         $config['cur_tag_close'] = '</b>';
-        $config['next_link'] = 'Siguiente';
-        $config['prev_link'] = "Anterior";
+        $config['next_link'] = '&gt;';
+        $config['prev_link'] = "&lt;";
         $config['uri_segment'] = 4;
         
         $this->pagination->initialize($config);
