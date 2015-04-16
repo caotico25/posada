@@ -605,6 +605,7 @@ body
         {
             .column(5, 7);
             .border-radius();
+            .push(3);
             
             border-collapse: collapse;
             border: 1px solid black;
@@ -615,12 +616,11 @@ body
             {
                 border: 1px solid black;
                 
-                width: 100%;
+                .column(8);
                 
                 td
                 {
-                    border: 1px solid black;
-                    word-wrap: break-word;
+                    /*border: 1px solid black;*/
                     
                     &:first-child
                     {
