@@ -549,16 +549,6 @@ body
             text-align: center;
         }
         
-        p
-        {
-            .column(4,7);
-            .border-radius();
-            margin-left: 20%;
-            
-            background-color: #f5413d;
-            text-align: center;
-        }
-        
         a
         {
             display: block;
@@ -623,7 +613,7 @@ body
             
             margin: 20px;
             
-            label, input, textarea, select
+            label, input, textarea, select, p
             {
                 .column(7);
                 .push(4);
@@ -633,6 +623,12 @@ body
             
             label
             {
+                text-align: center;
+            }
+            
+            p
+            {
+                background-color: #f5413d;
                 text-align: center;
             }
         }

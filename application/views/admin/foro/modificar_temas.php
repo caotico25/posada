@@ -2,6 +2,7 @@
     <h2>MODIFICAR TEMAS</h2>
     <article>
     <?= form_open('admin/foros/modificar_tema', array('id' => 'formadmin')) ?>
+        <?= validation_errors() ?>
         <label for="tema">Elige el tema a modificar:</label>
         <select name="tema">
             <option>Elegir...</option>

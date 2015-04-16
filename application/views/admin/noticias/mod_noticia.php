@@ -1,8 +1,8 @@
 <section class="admin">
     <h2>MODIFICAR NOTICIA</h2>
     <article>
-    <?= validation_errors() ?>
     <?= form_open('admin/noticias/modificar_noticia', array('id' => 'formadmin')) ?>
+        <?= validation_errors() ?>
         <label for="titulo">Título:</label>
         <input type="text" name="titulo" id="titulo" value="<?= $noticia['titulo'] ?>" />
         <label for="contenido">Contenido:</label>

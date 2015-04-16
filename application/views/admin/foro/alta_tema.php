@@ -1,8 +1,8 @@
 <section class="admin">
     <h2>CREAR UN NUEVO TEMA</h2>
     <article>
-    <?= validation_errors() ?>
 	<?= form_open('admin/foros/crear_tema', array('id' => 'formadmin')) ?>
+	   <?= validation_errors() ?>
         <label for="seccion">Sección:</label>
         <select name="seccion">
             <option value="">Elegir...</option>

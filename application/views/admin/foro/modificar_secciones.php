@@ -2,6 +2,7 @@
     <h2>MODIFICAR SECCIONES</h2>
     <article>
     <?= form_open('admin/foros/modificar_seccion', array('id' => 'formadmin')) ?>
+        <?= validation_errors() ?>
         <label for="seccion">Elige la sección a modificar:</label>
         <select name="seccion">
             <option>Elegir...</option>
