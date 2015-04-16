@@ -609,10 +609,20 @@ body
             border-collapse: collapse;
             border: 1px solid black;
             margin: 20px;
+            table-layout: fixed;
             
             tr
             {
                 border: 1px solid black;
+                
+                td
+                {
+                    &:first-child
+                    {
+                        width: 70%;
+                        word-wrap: break-word;
+                    }
+                }
             }
         }
     }
