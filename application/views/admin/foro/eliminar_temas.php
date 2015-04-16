@@ -1,5 +1,6 @@
 <section class="admin">
     <h2>ELIMINAR TEMAS</h2>
+    <article>
     <ul>
         <?php foreach ($temas as $tema): ?>
             <li>
@@ -10,5 +11,5 @@
                 <?= form_close() ?>
             </li>
         <?php endforeach ?>
-    </ul>
+    </ul></article>
 </section>
