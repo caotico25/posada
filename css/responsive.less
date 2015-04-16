@@ -609,7 +609,8 @@ body
             
             display: block;
             border: 1px solid black;
-            margin: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
             table-layout: fixed;
             
             li
@@ -618,19 +619,14 @@ body
                 
                 .column(12);
                 
-                td
+                p
                 {
-                    /*border: 1px solid black;*/
                     
-                    &:first-child
-                    {
-                        .column(5, 7);
-                    }
+                }
+                
+                form
+                {
                     
-                    &:last-child
-                    {
-                        
-                    }
                 }
             }
         }
