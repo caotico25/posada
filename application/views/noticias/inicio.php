@@ -11,12 +11,12 @@
             <?php if (logueado()) : ?>
                 <?php if (es_admin(obtener_id())): ?>
                     
-                    <?= form_open('admin/noticias/eliminar_noticia') ?>
+                    <?= form_open('admin/noticias/eliminar_noticia', array('id' => 'formu')) ?>
                         <?= form_hidden('id_noticia', $noticia['id']) ?>
                         <input type="submit" name="enviar" value="Elimnar" id="enviar"/>
                     <?= form_close() ?>
                     
-                    <?= form_open('admin/noticias/modificar_noticia') ?>
+                    <?= form_open('admin/noticias/modificar_noticia', array('id' => 'formu')) ?>
                         <?= form_hidden('id_noticia', $noticia['id']) ?>
                         <input type="submit" name="enviar" value="Modificar" id="enviar"/>
                     <?= form_close() ?>
