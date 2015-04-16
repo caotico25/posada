@@ -619,8 +619,13 @@ body
                 {
                     &:first-child
                     {
-                        width: 70%;
+                        .column(2.5, 5);
                         word-wrap: break-word;
+                    }
+                    
+                    &:last-child
+                    {
+                        .column(2,5);
                     }
                 }
             }
