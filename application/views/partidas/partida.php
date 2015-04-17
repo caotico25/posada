@@ -206,8 +206,8 @@
     </head>
     
     <body>
-        <div id="contenedor">
-            <div id="contenido">
+        <div id="contenedor-ficha">
+            <div id="contenido-ficha">
                 <section>
                     <button id="cerrar_partida">Cerrar partida</button>
                 </section>
