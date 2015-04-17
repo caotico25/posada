@@ -22,10 +22,10 @@
         <?php foreach ($atributos as $atributo): ?>
         
             <?php if ($categoria == $atributo['categoria']): ?>
-                
+                <div>
                 <label for="<?= $atributo['nombre'] ?>"><?= $atributo['nombre'] ?>:</label>
                 <input type="number" name="<?= $atributo['nombre'] ?>" value="<?= $atributo['valor'] ?>" id="<?= $atributo['nombre'] ?>" min="0" class="atributos" />
-                
+                </div>
             <?php else: ?>
             
                 <?php $categoria = $atributo['categoria'] ?>
