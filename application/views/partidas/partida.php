@@ -210,7 +210,7 @@
                 $.("#ficha_ajax").on("click", "#ocultar", function() {
                     
                     alert("hola");
-                        $.(this).parent().children("#ocultado").css('display','block');
+                        $.(this).next().css('display','block');
                     
                     
                 });
