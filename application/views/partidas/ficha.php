@@ -186,7 +186,7 @@
 </section>
 <section>
     <article>
-        <h1>ANOTACIONES</h1>
+        <h1 id="no-ocultar">ANOTACIONES</h1>
         <div id="no-ocultado">
         <label for="anotaciones" style="display: none">Anotaciones:</label>
         <textarea name="anotaciones" id="anotaciones" rows="8" cols="40" class="fichas" ><?= $ficha['anotaciones'] ?></textarea>
