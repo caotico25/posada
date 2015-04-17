@@ -5,7 +5,6 @@
 <?php foreach ($secciones as $seccion): ?>
     <section>
         <h2><?= $seccion['titulo'] ?></h2>
-        <p><?= $seccion['descripcion'] ?></p>
         <?php foreach ($temas as $tema): 
             if ($seccion['id'] == $tema['seccion']): ?>
                 <a href="<?= base_url('foro/temas/index/' . $tema['id']) ?>">

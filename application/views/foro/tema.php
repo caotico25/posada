@@ -13,7 +13,7 @@
         <?php endforeach ?>
         
         <?php if (logueado()): ?>
-            <?= form_open('foro/posts/nuevo_post') ?>
+            <?= form_open('foro/posts/nuevo_post', array('class' => 'formu')) ?>
                 <?= form_hidden('id_tema', $id_tema) ?>
                 <?= form_submit('post', 'Nuevo post') ?>
             <?= form_close() ?>
