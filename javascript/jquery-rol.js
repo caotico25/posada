@@ -25,7 +25,7 @@
             {
                 if (cuatro > 0 && cuatro != "")
                 {
-                    div = a("<div>D4: </div>");
+                    div = a("<div><span>D4: </span></div>");
                     for (i = 0; i < cuatro; i++)
                     {
                         dado = "<div id='dado'>" + (Math.floor(Math.random() * 4) + 1) + "</div>";
@@ -37,7 +37,7 @@
                 
                 if (seis > 0 && seis != "")
                 {
-                    div = a("<div>D6: </div>");
+                    div = a("<div><span>D6: </span></div>");
                     for (i = 0; i < seis; i++)
                     {
                         dado = "<div id='dado'>" + (Math.floor(Math.random() * 6) + 1) + "</div>";
@@ -49,7 +49,7 @@
                 
                 if (ocho > 0 && ocho != "")
                 {
-                    div = a("<div>D8: </div>");
+                    div = a("<div><span>D8: </span></div>");
                     for (i = 0; i < ocho; i++)
                     {
                         dado = "<div id='dado'>" + (Math.floor(Math.random() * 8) + 1) + "</div>";
@@ -61,7 +61,7 @@
                 
                 if (diez > 0 && diez != "")
                 {
-                    div = a("<div>D10: </div>");
+                    div = a("<div><span>D10: </span></div>");
                     for (i = 0; i < diez; i++)
                     {
                         dado = "<div id='dado'>" + (Math.floor(Math.random() *10) + 1) + "</div>";
@@ -73,7 +73,7 @@
                 
                 if (doce > 0 && doce != "")
                 {
-                    div = a("<div>D12: </div>");
+                    div = a("<div><span>D12: </span></div>");
                     for (i = 0; i < doce; i++)
                     {
                         dado = "<div id='dado'>" + (Math.floor(Math.random() * 12) + 1) + "</div>";
@@ -85,7 +85,7 @@
                 
                 if (veinte > 0 && veinte != "")
                 {
-                    div = a("<div>D20: </div>");
+                    div = a("<div><span>D20: </span></div>");
                     for (i = 0; i < veinte; i++)
                     {
                         dado = "<div id='dado'>" + (Math.floor(Math.random() * 20) + 1) + "</div>";
