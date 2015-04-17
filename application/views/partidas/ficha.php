@@ -1,15 +1,19 @@
 <section>
     <article>
+        <div>
         <label for="nombre">Nombre:</label>
         <input type="text" name="nombre" value="<?= $personaje['nombre'] ?>" id="nombre" class="personajes" />
-        
+        </div>
         <?php foreach ($otra_info as $info): ?>
+            <div>
             <label for="<?= $info['nombre'] ?>"><?= $info['nombre'] ?>:</label>
             <input type="text" name="<?= $info['nombre'] ?>" value="<?= $info['valor'] ?>" id="<?= $info['nombre'] ?>" class="otra_info" />
+            </div>
         <?php endforeach ?>
-        
+        <div>
         <label for="experiencia">Experiencia:</label>
         <input type="number" name="experiencia" value="<?= $ficha['experiencia'] ?>" id="experiencia" min="0" class="fichas" />
+        </div>
     </article>
 </section>
 <section>
@@ -31,8 +35,11 @@
                 <?php $categoria = $atributo['categoria'] ?>
                 
                 <h2><?= $categoria ?></h2>
+                    <div>
                     <label for="<?= $atributo['nombre'] ?>"><?= $atributo['nombre'] ?>:</label>
                     <input type="number" name="<?= $atributo['nombre'] ?>" value="<?= $atributo['valor'] ?>" id="<?= $atributo['nombre'] ?>" min="0" class="atributos" />
+                    </div>
+                    
             <?php endif ?>
         
         <?php endforeach ?>
@@ -50,17 +57,19 @@
         <?php foreach ($habilidades as $habilidad): ?>
         
             <?php if ($categoria == $habilidad['categoria']): ?>
-                
+                <div>
                 <label for="<?= $habilidad['nombre'] ?>"><?= $habilidad['nombre'] ?>:</label>
                 <input type="number" name="<?= $habilidad['nombre'] ?>" value="<?= $habilidad['valor'] ?>" id="<?= $habilidad['nombre'] ?>" min="0" class="habilidades" />
-                
+                </div>
             <?php else: ?>
             
                 <?php $categoria = $habilidad['categoria'] ?>
                 
                 <h2><?= $categoria ?></h2>
+                    <div>
                     <label for="<?= $habilidad['nombre'] ?>"><?= $habilidad['nombre'] ?>:</label>
                     <input type="number" name="<?= $habilidad['nombre'] ?>" value="<?= $habilidad['valor'] ?>" id="<?= $habilidad['nombre'] ?>" min="0" class="habilidades" />
+                    </div>
             <?php endif ?>
         
         <?php endforeach ?>
@@ -80,24 +89,26 @@
             <?php if ($categoria == $ventaja['categoria']): ?>
                 
                 <?php if ($ventaja['nombre'] != ''): ?>
-                    
+                    <div>
                     <label for="<?= $ventaja['nombre'] ?>"><?= $ventaja['nombre'] ?>:</label>
                     <input type="number" name="<?= $ventaja['nombre'] ?>" value="<?= $ventaja['valor'] ?>" id="<?= $ventaja['nombre'] ?>" min="0" class="ventajas" />
-                
+                    </div>
                 <?php endif ?>
             <?php else: ?>
-                
+                <div>
                 <label for="anadir">Añadir</label>
                 <input type="text" name="anadir" value="" id="anadir"/>
-            
+                </div>
                 <?php $categoria = $ventaja['categoria'] ?>
                 
                 <h2><?= $categoria ?></h2>
                     
                     <?php if ($ventaja['nombre'] != ''): ?>
                     
+                        <div>
                         <label for="<?= $ventaja['nombre'] ?>"><?= $ventaja['nombre'] ?>:</label>
                         <input type="number" name="<?= $ventaja['nombre'] ?>" value="<?= $ventaja['valor'] ?>" id="<?= $ventaja['nombre'] ?>" min="0" class="ventajas" />
+                        </div>
                 
                     <?php endif ?>
                     
@@ -120,26 +131,26 @@
             <?php if ($categoria == $otro_parametro['categoria']): ?>
                 
                 <?php if ($otro_parametro['nombre'] != ''): ?>
-                
+                    <div>
                     <label for="<?= $otro_parametro['nombre'] ?>"><?= $otro_parametro['nombre'] ?>:</label>
                     <input type="number" name="<?= $otro_parametro['nombre'] ?>" value="<?= $otro_parametro['valor'] ?>" id="<?= $otro_parametro['nombre'] ?>" min="0" class="otros_parametros" />
-                
+                    </div>
                 <?php endif ?>
                 
             <?php else: ?>
-                
+                <div>
                 <label for="anadir">Añadir</label>
                 <input type="text" name="anadir" value="" id="anadir"/>
-            
+                </div>
                 <?php $categoria = $otro_parametro['categoria'] ?>
                 
                 <h2><?= $categoria ?></h2>
                     
                     <?php if ($otro_parametro['nombre'] != ''): ?>
-                    
+                        <div>
                         <label for="<?= $otro_parametro['nombre'] ?>"><?= $otro_parametro['nombre'] ?>:</label>
                         <input type="number" name="<?= $otro_parametro['nombre'] ?>" value="<?= $otro_parametro['valor'] ?>" id="<?= $otro_parametro['nombre'] ?>" min="0" class="otros_parametros" />
-                
+                        </div>
                     <?php endif ?>
                     
             <?php endif ?>

@@ -925,24 +925,20 @@ body
                         background-color: #efefef;
                         background-image: none;
                         
-                        >span
+                        div
                         {
-                            .column(3);
-                            margin: 30px 15px;
-                            color: #64311E;
-                            float: right;
-                        }
-                        >p
-                        {
-                            margin: 10px;
-                        }
-                        
-                        >h3
-                        {
-                            margin: 10px;
-                            text-align: center;
-                            padding-top: 5px;
-                            padding-bottom: 5px;
+                            .column(3, 7.8);
+                            .push(0.3);
+                            
+                            label
+                            {
+                                .column(2,3)
+                            }
+                            
+                            input[type="number"]
+                            {
+                                .column(1,3);
+                            }
                         }
                     }
                 }
