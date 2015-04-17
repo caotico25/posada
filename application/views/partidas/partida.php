@@ -21,6 +21,7 @@
                     
                 });
                 
+                // LANZA DADOS
                 $("body").on("click", "#lanzar", function() {
                     
                     $(this).tirar_dados();
@@ -30,6 +31,7 @@
                 var id_ficha = <?= $id_ficha ?>;
                 var id_partida = <?= $id_partida ?>;
                 
+                // GUARDAR CAMBIOS EN INPUT
                 $("#ficha_ajax").on("blur", "input[type!='button']", function() {
                     
                     var a = $(this).attr("class");
@@ -65,6 +67,7 @@
                     
                 });
                 
+                // GUARDAR CAMBIOS EN TEXTAREA
                 $("#ficha_ajax").on("blur", "textarea", function() {
                     
                     var a = $(this).attr("class");
@@ -99,6 +102,7 @@
                     
                 });
                 
+                // ENVIA MENSAJE EN CHAT
                 $("#mensaje").keyup(function(event) {
                     
                     var msj = $(this).val().trim();
@@ -142,6 +146,7 @@
                     
                 });
                 
+                // CAMBIA FICHA DE PERSONAJE, SOLO PARA ADMIN
                 $("#jugadores").change(function() {
                     
                     var ficha = $(this).val();
@@ -172,6 +177,7 @@
                     
                 });
                 
+                // FUNCION PARA CERRAR PARTIDA
                 $("#cerrar_partida").on("click", function (){
                     
                     $.ajaxSetup({
@@ -197,6 +203,16 @@
                         }
                         
                     });
+                    
+                });
+                
+                // FUNCION PARA DESPLEGAR O GUARDAR SECCIONES DE FICHA
+                $.("#ficha_ajax").on("click", "#ocultar", function() {
+                    
+                    if ($.(this).children("#ocultado").css("display") == "none")
+                    {
+                        $.(this).children("#ocultado").css("display", "visible");
+                    }
                     
                 });
                 

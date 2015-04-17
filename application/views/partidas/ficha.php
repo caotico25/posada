@@ -20,7 +20,8 @@
     <?php $categoria = $atributos[0]['categoria'] ?>
     
     <article>
-        <h1>ATRIBUTOS</h1>
+        <h1 id="ocultar">ATRIBUTOS</h1>
+        <div id="ocultado">
         <h2><?= $categoria ?></h2>
         
         <?php foreach ($atributos as $atributo): ?>
@@ -43,7 +44,7 @@
             <?php endif ?>
         
         <?php endforeach ?>
-    
+        </div>
     </article>
     
 </section>
@@ -51,7 +52,7 @@
     <?php $categoria = $habilidades[0]['categoria'] ?>
     
     <article>
-        <h1>HABILIDADES</h1>
+        <h1 id="ocultar">HABILIDADES</h1>
         <h2><?= $categoria ?></h2>
         
         <?php foreach ($habilidades as $habilidad): ?>
@@ -81,7 +82,7 @@
     <?php $categoria = $ventajas[0]['categoria'] ?>
     
     <article>
-        <h1>VENTAJAS</h1>
+        <h1 id="ocultar">VENTAJAS</h1>
         <h2><?= $categoria ?></h2>
         
         <?php foreach ($ventajas as $ventaja): ?>
@@ -123,7 +124,7 @@
     <?php $categoria = $otros_parametros[0]['categoria'] ?>
     
     <article>
-        <h1>OTROS</h1>
+        <h1 id="ocultar">OTROS</h1>
         <h2><?= $categoria ?></h2>
         
         <?php foreach ($otros_parametros as $otro_parametro): ?>
@@ -162,7 +163,7 @@
 </section>
 <section>
     <article>
-        <h1>INVENTARIO</h1>
+        <h1 id="ocultar">INVENTARIO</h1>
         
         <?php foreach ($inventario as $objeto): ?>
             <article>
@@ -180,7 +181,7 @@
 </section>
 <section>
     <article>
-        <h1>ANOTACIONES</h1>
+        <h1 id="ocultar">ANOTACIONES</h1>
         
         <label for="anotaciones" style="display: none">Anotaciones:</label>
         <textarea name="anotaciones" id="anotaciones" rows="8" cols="40" class="fichas" ><?= $ficha['anotaciones'] ?></textarea>

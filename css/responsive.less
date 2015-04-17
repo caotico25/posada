@@ -922,70 +922,77 @@ body
                             }
                         }
                         
-                        h2
-                        {
-                            .border-radius();
-                            .column(7.8,7.8);
-                            
-                            border: 1px solid black;
-                            background-image: url("../images/fondo.jpg");
-                            color: #FBC187;
-                            padding: 0.3em;
-                            text-align: center;
-                        }
-                        
                         div
                         {
-                            .column(3.7, 8);
-                            /*.push(0.3);*/
+                            display: none;
                             
-                            padding-top: 10px;
-                            padding-bottom: 10px;
-                            
-                            label, input[type="text"]
+                            h2
                             {
-                                .column(3.2,7)
+                                .border-radius();
+                                .column(7.8,7.8);
+                                
+                                border: 1px solid black;
+                                background-image: url("../images/fondo.jpg");
+                                color: #FBC187;
+                                padding: 0.3em;
+                                text-align: center;
                             }
                             
-                            input[type="number"]
+                            div
                             {
-                                .column(3,7);
+                                .column(3.7, 8);
+                                /*.push(0.3);*/
                                 
-                                &:-webkit-inner-spin-button
+                                padding-top: 10px;
+                                padding-bottom: 10px;
+                                
+                                label, input[type="text"]
                                 {
-                                    -webkit-appearance: none; 
+                                    .column(3.2,7)
+                                }
+                                
+                                input[type="number"]
+                                {
+                                    .column(3,7);
+                                    
+                                    &:-webkit-inner-spin-button
+                                    {
+                                        -webkit-appearance: none; 
+                                        margin: 0;
+                                    }
+                                    
+                                    &:-webkit-outer-spin-button
+                                    {
+                                        -webkit-appearance: none; 
+                                        margin: 0;
+                                    }
+                                }
+                                
+                                input[type="number"]::-webkit-outer-spin-button,
+                                input[type="number"]::-webkit-inner-spin-button
+                                {
+                                    -webkit-appearance: none;
                                     margin: 0;
                                 }
                                 
-                                &:-webkit-outer-spin-button
+                                input[type="number"]
                                 {
-                                    -webkit-appearance: none; 
-                                    margin: 0;
+                                    -moz-appearance:textfield;
                                 }
                             }
-                            
-                            input[type="number"]::-webkit-outer-spin-button,
-                            input[type="number"]::-webkit-inner-spin-button
+                                
+                            textarea
                             {
-                                -webkit-appearance: none;
-                                margin: 0;
+                                .column(7,8);
+                                .push(0.8);
+                                .border-radius();
+                                
+                                margin-bottom: 10px;
                             }
-                            
-                            input[type="number"]
-                            {
-                                -moz-appearance:textfield;
-                            }
-                        }
-                            
-                        textarea
-                        {
-                            .column(7,8);
-                            .push(0.8);
-                            .border-radius();
-                            
-                            margin-bottom: 10px;
                         }
                     }
+                        
+                        
                 }
             }
         }
