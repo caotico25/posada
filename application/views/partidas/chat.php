@@ -6,7 +6,7 @@
             <?php 
             
                 $nombre = '';
-                if (es_master($mensaje['jugador'], $mensaje['parida']))
+                if (es_master($mensaje['jugador'], $mensaje['partida']))
                 {
                     $nombre = 'Master';
                 }
