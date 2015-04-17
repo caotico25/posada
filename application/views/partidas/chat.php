@@ -5,7 +5,7 @@
             
             <?php 
             
-                /*$nombre = '';
+                $nombre = '';
                 if (es_master($mensaje['jugador'], $mensaje['parida']))
                 {
                     $nombre = 'Master';
@@ -13,7 +13,7 @@
                 else
                 {
                     $nombre = nombre_personaje($mensaje['partida'], $mensaje['jugador']);
-                }*/
+                }
             ?>
             
             <span><?= $nombre ?>:</span>
