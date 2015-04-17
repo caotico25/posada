@@ -211,11 +211,11 @@
                     
                     if ($(this).next().is(":visible"))
                     {
-                        $(this).next().hide("slow");
+                        $(this).next().hide("fast");
                     }
                     else
                     {
-                        $(this).next().show("slow");
+                        $(this).next().show("fast");
                     }
                 });
                 
