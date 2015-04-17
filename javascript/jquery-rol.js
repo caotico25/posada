@@ -94,10 +94,6 @@
                     
                     a("#resultado").append(div);
                 }
-                
-                a("#resultado > div").css("margin", "25px");
-                
-                a("#resultado #dado").css({"border":"1px solid black", "width":"30px", "height":"30px", "margin-top":"20px", "margin-right":"10px", "padding":"10px", "text-align":"center", "display":"inline"});
             }
             
             return this;
