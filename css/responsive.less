@@ -547,6 +547,59 @@ body
 }
 
 
+.comentario
+{
+    article
+    {
+        .column(6,8);
+        .border-radius();
+        .push();
+        
+        margin: 10px;
+        border: 1px solid black;
+        text-align: left;
+        background-color: #efefef;
+        background-image: none;
+        
+        >span
+        {
+            .column(3);
+            
+            margin: 30px 15px;
+            color: #64311E;
+            float: right;
+        }
+        >p
+        {
+            margin: 10px;
+        }
+        
+        >h3
+        {
+            margin: 10px;
+            
+            text-align: center;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        
+        #formu
+        {
+            .column(3);
+            display: block;
+            margin-top: 20px;
+
+            input[type="submit"]
+            {
+                margin: 10px;
+                .sombreado();
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+
 /* ZONA ADMINISTRADOR     Cambios estilos admin   */
 .admin
 {
