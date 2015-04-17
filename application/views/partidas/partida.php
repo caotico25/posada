@@ -207,10 +207,10 @@
                 });
                 
                 // FUNCION PARA DESPLEGAR O GUARDAR SECCIONES DE FICHA
-                $.("#ficha_ajax").on("click", "#ocultar", function() {
+                $("#ficha_ajax").on("click", "#ocultar", function() {
                     
                     alert("hola");
-                        $.(this).next().css('display','block');
+                        $(this).next().css('display','block');
                     
                     
                 });
