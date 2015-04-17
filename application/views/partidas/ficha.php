@@ -170,6 +170,10 @@
                 <input type="number" name="cantidad" value="<?= $objeto['valor'] ?>" id="cantidad" class="inventarios" />
             </article>
         <?php endforeach ?>
+        <div>
+        <label for="anadir">Añadir</label>
+        <input type="text" name="anadir" value="" id="anadir"/>
+        </div>
         
         <!-- OPCION DE AÑADIR OBJETO AL INVENTARIO -->
     </article>
