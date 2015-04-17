@@ -121,9 +121,9 @@
                     <?php if (logueado()): ?>
                         <h5>LOGUEADO COMO:</h5>
                         <p><?= obtener_nombre() ?></p>
-                        <a href="<?= base_url('usuarios/perfil') ?>" >Ir a area personal</a>
+                        <a href="<?= base_url('usuarios/perfil') ?>" >Area personal</a>
                         <?php if (es_admin(obtener_id())): ?>
-                            <a href="<?= base_url('admin/inicio') ?>">Ir a zona de administrador</a>
+                            <a href="<?= base_url('admin/inicio') ?>">Zona admin</a>
                         <?php endif ?>
                         <a href="<?= base_url('portal/inicio/logout') ?>">Cerrar sesión</a>
                     <?php else: ?>
