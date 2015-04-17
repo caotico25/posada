@@ -927,8 +927,11 @@ body
                         
                         div
                         {
-                            .column(3, 7.8);
+                            .column(4, 7.8);
                             .push(0.3);
+                            
+                            padding-top: 10px;
+                            padding-bottom: 10px;
                             
                             label
                             {
@@ -938,6 +941,18 @@ body
                             input[type="number"]
                             {
                                 .column(1,7);
+                                
+                                &:-webkit-inner-spin-button
+                                {
+                                    -webkit-appearance: none; 
+                                    margin: 0;
+                                }
+                                
+                                &:-webkit-outer-spin-button
+                                {
+                                    -webkit-appearance: none; 
+                                    margin: 0;
+                                }
                             }
                         }
                     }
