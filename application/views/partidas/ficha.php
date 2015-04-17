@@ -1,5 +1,6 @@
 <section>
     <article>
+        <div id="ocultado">
         <div>
         <label for="nombre">Nombre:</label>
         <input type="text" name="nombre" value="<?= $personaje['nombre'] ?>" id="nombre" class="personajes" />
@@ -13,6 +14,7 @@
         <div>
         <label for="experiencia">Experiencia:</label>
         <input type="number" name="experiencia" value="<?= $ficha['experiencia'] ?>" id="experiencia" min="0" class="fichas" />
+        </div>
         </div>
     </article>
 </section>
