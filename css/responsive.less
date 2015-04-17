@@ -1093,6 +1093,9 @@ body
         
         aside
         {
+            .column(3);
+        
+            background-color: #FBC187;
             
             section
             {
@@ -1100,6 +1103,9 @@ body
                 .semi-border-radius();
                 .sombreado();
                 
+                padding-top: 10px;
+                padding-bottom: 10px;
+                background-color: white;
                 margin-top: 10px;
                 margin-bottom: 10px;
                 
@@ -1113,7 +1119,15 @@ body
                 {
                     .column(2.5,3);
                     .border-radius();
-                    .push(0.2);
+                    .push();
+                    
+                    margin-top: 15px;
+                    background: #e5e5e5;
+                    
+                    &:visited
+                    {
+                        color: black;
+                    }
                 }
             }
         }
