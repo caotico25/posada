@@ -53,6 +53,7 @@
     
     <article>
         <h1 id="ocultar">HABILIDADES</h1>
+        <div id="ocultado">
         <h2><?= $categoria ?></h2>
         
         <?php foreach ($habilidades as $habilidad): ?>
@@ -74,7 +75,7 @@
             <?php endif ?>
         
         <?php endforeach ?>
-    
+        </div>
     </article>
     
 </section>
@@ -83,6 +84,7 @@
     
     <article>
         <h1 id="ocultar">VENTAJAS</h1>
+        <div id="ocultado">
         <h2><?= $categoria ?></h2>
         
         <?php foreach ($ventajas as $ventaja): ?>
@@ -116,7 +118,7 @@
             <?php endif ?>
         
         <?php endforeach ?>
-    
+        </div>
     </article>
     
 </section>
@@ -125,6 +127,7 @@
     
     <article>
         <h1 id="ocultar">OTROS</h1>
+        <div id="ocultado">
         <h2><?= $categoria ?></h2>
         
         <?php foreach ($otros_parametros as $otro_parametro): ?>
@@ -157,14 +160,14 @@
             <?php endif ?>
         
         <?php endforeach ?>
-    
+        </div>
     </article>
     
 </section>
 <section>
     <article>
         <h1 id="ocultar">INVENTARIO</h1>
-        
+        <div id="ocultado">
         <?php foreach ($inventario as $objeto): ?>
             <article>
                 <label for="cantidad"><?= $objeto['nombre'] ?>:</label>
@@ -175,13 +178,13 @@
         <label for="anadir">Añadir</label>
         <input type="text" name="anadir" value="" id="anadir"/>
         </div>
-        
+        </div>
         <!-- OPCION DE AÑADIR OBJETO AL INVENTARIO -->
     </article>
 </section>
 <section>
     <article>
-        <h1 id="ocultar">ANOTACIONES</h1>
+        <h1>ANOTACIONES</h1>
         
         <label for="anotaciones" style="display: none">Anotaciones:</label>
         <textarea name="anotaciones" id="anotaciones" rows="8" cols="40" class="fichas" ><?= $ficha['anotaciones'] ?></textarea>
