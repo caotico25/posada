@@ -134,15 +134,6 @@
             
             a(padre).append(mesa);
             
-            
-            a("#mesa, #resultado").each(function() {
-                
-                a(this).css({"border":"1px solid black", "padding":"20px"});
-                
-            });
-            a("input").css("width", "50px");
-            a("label").css({"border":"1px solid black", "width":"300px"});
-            
             return this;
             
         },
