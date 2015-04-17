@@ -1129,6 +1129,46 @@ body
                         color: black;
                     }
                 }
+                
+                form
+                {
+                    .column(2.5,3);
+                    
+                    input
+                    {
+                        margin-top: 15px;
+                        
+                        &[type="text"]
+                        {
+                            .column(1.5,2.5);
+                            .push(4);
+                        }
+                        
+                        &[type="password"]
+                        {
+                            .column(1.5,2.5);
+                            .push(4);
+                        }
+                        
+                        &[type="submit"]
+                        {
+                            .column(1.5,2.5);
+                            .push(4);
+                        }
+                    }
+                    
+                    a
+                    {
+                        margin-top: 25px;
+                        margin-bottom: 20px;
+                        
+                        .column(1.5,2.5);
+                        .push(4);
+                        .border-radius();
+                        
+                        background: #e5e5e5;
+                    }
+                }
             }
         }
     }
