@@ -776,12 +776,15 @@ body
             .border-radius();
             
             margin-top: 20px;
+            border: 1px solid black;
             
             #mesa, #resultado
             {
                 .column(7,8);
                 .push(0.8);
                 .border-radius();
+                
+                border: 1px solid black;
             }
             
             #mesa
@@ -794,6 +797,23 @@ body
                 input
                 {
                     .column(1,8);
+                }
+                
+                button
+                {
+                    .column(6,7);
+                    .push(0.8);
+                }
+            }
+            
+            #resultado
+            {
+                h4
+                {
+                    .column(6,7);
+                    .push(0.8);
+                    
+                    text-align: center;
                 }
             }
         }
