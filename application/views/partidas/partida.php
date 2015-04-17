@@ -209,7 +209,8 @@
                 // FUNCION PARA DESPLEGAR O GUARDAR SECCIONES DE FICHA
                 $.("#ficha_ajax").on("click", "#ocultar", function() {
                     
-                        $.(this).children("#ocultado").show();
+                    alert("hola");
+                        $.(this).children("#ocultado").css('display','block');
                     
                     
                 });
