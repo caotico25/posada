@@ -711,9 +711,24 @@ body
 /* ESTILOS FICHA PERSONAJE */
 #contenedor-ficha
 {
+    width: 80%;
+    overflow: hidden;
+    
+    background-color: #e1e1e1;
+    
+    .push();
+    
     #contenido-ficha
     {
         .push(2);
+        .column(9);
+        .semi-border-radius();
+        .sombreado();
+        
+        background: white;
+        color: black;
+        margin-bottom: 20px;
+        min-height: 600px;
     }
 }
 
