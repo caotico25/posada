@@ -30,7 +30,7 @@
             
                 <?php $categoria = $atributo['categoria'] ?>
                 
-                </article><article><h2><?= $categoria ?></h2>
+                <h2><?= $categoria ?></h2>
                     <label for="<?= $atributo['nombre'] ?>"><?= $atributo['nombre'] ?>:</label>
                     <input type="number" name="<?= $atributo['nombre'] ?>" value="<?= $atributo['valor'] ?>" id="<?= $atributo['nombre'] ?>" min="0" class="atributos" />
             <?php endif ?>
@@ -58,7 +58,7 @@
             
                 <?php $categoria = $habilidad['categoria'] ?>
                 
-                </article><article><h2><?= $categoria ?></h2>
+                <h2><?= $categoria ?></h2>
                     <label for="<?= $habilidad['nombre'] ?>"><?= $habilidad['nombre'] ?>:</label>
                     <input type="number" name="<?= $habilidad['nombre'] ?>" value="<?= $habilidad['valor'] ?>" id="<?= $habilidad['nombre'] ?>" min="0" class="habilidades" />
             <?php endif ?>
@@ -92,7 +92,7 @@
             
                 <?php $categoria = $ventaja['categoria'] ?>
                 
-                </article><article><h2><?= $categoria ?></h2>
+                <h2><?= $categoria ?></h2>
                     
                     <?php if ($ventaja['nombre'] != ''): ?>
                     
@@ -133,7 +133,7 @@
             
                 <?php $categoria = $otro_parametro['categoria'] ?>
                 
-                </article><article><h2><?= $categoria ?></h2>
+                <h2><?= $categoria ?></h2>
                     
                     <?php if ($otro_parametro['nombre'] != ''): ?>
                     
@@ -159,6 +159,8 @@
                 <input type="number" name="cantidad" value="<?= $objeto['valor'] ?>" id="cantidad" class="inventarios" />
             </article>
         <?php endforeach ?>
+        
+        <!-- OPCION DE AÑADIR OBJETO AL INVENTARIO -->
     </article>
 </section>
 <section>
