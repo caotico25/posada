@@ -1079,7 +1079,7 @@ body
     }
 }
 
-@media screen and (max-width: 1050px)
+@media screen and (max-width: 1100px)
 {
     #contenedor
     {
@@ -1088,6 +1088,45 @@ body
             >a
             {
                 font-size: 3em;
+            }
+        }
+        
+        aside
+        {
+            .column(3);
+        
+            background-color: #FBC187;
+            
+            section
+            {
+                .semi-border-radius();
+                .sombreado();
+                
+                margin: 10px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                background-color: white;
+                
+                p
+                {
+                    text-align: center;
+                    margin: 10px;
+                }
+                
+                a
+                {
+                    .column(2.5,3);
+                    
+                    margin-top: 15px;
+                    background: #e5e5e5;
+                    
+                    .border-radius();
+                    
+                    &:visited
+                    {
+                        color: black;
+                    }
+                }
             }
         }
     }
