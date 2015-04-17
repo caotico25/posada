@@ -778,18 +778,14 @@ body
             margin-top: 20px;
             border: 1px solid black;
             
-            #mesa, #resultado
+            #mesa
             {
+                .column(9,9);
                 .border-radius();
                 
                 border: 1px solid black;
                 margin-top: 20px;
                 margin-bottom: 20px;
-            }
-            
-            #mesa
-            {
-                .column(9,9);
                 
                 label
                 {
@@ -813,6 +809,11 @@ body
             {
                 .column(7,8);
                 .push(0.8);
+                .border-radius();
+                
+                border: 1px solid black;
+                margin-top: 20px;
+                margin-bottom: 20px;
                 
                 h4
                 {
@@ -854,6 +855,17 @@ body
                         padding: 10px;
                         text-align: center;
                         display: inline;
+                        background: white;
+                    }
+                    
+                    &:nth-child(2n+1)
+                    {
+                        background-color: #ffd7c4;
+                    }
+                    
+                    &:nth-child(2n)
+                    {
+                        background-color: white;
                     }
                 }
             }
