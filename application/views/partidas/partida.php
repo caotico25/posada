@@ -226,15 +226,18 @@
                 <div id="ficha">
                     <?php if (es_master(obtener_id(), $id_partida)): ?>
                         <?php $jugadores = obtener_jugadores($id_partida) ?>
-                        <label for="jugadores">Selecciona personaje para ver su ficha:</label>
-                        <select name="jugadores" id="jugadores">
-                            <option>------</option>
-                            <?php foreach ($jugadores as $jugador): ?>
-                                <?php if ($jugador['jugador'] != obtener_id()): ?>
-                                    <option value="<?= $jugador['ficha_id'] ?>"><?= nombre_personaje($id_partida, $jugador['jugador']) ?></option>
-                                <?php endif ?>
-                            <?php endforeach ?>
-                        </select>
+                        
+                        <div id="lista-jugadores">
+                            <label for="jugadores">Selecciona personaje para ver su ficha:</label>
+                            <select name="jugadores" id="jugadores">
+                                <option>------</option>
+                                <?php foreach ($jugadores as $jugador): ?>
+                                    <?php if ($jugador['jugador'] != obtener_id()): ?>
+                                        <option value="<?= $jugador['ficha_id'] ?>"><?= nombre_personaje($id_partida, $jugador['jugador']) ?></option>
+                                    <?php endif ?>
+                                <?php endforeach ?>
+                            </select>
+                        </div>
                         
                     <?php endif ?>
                     <div id="ficha_ajax">

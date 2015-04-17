@@ -728,6 +728,7 @@ body
         background: white;
         color: black;
         margin-bottom: 20px;
+        margin-top: 20px;
         min-height: 600px;
         
         #cerrar
@@ -865,7 +866,7 @@ body
                     
                     &:nth-child(2n)
                     {
-                        background-color: white;
+                        background-color: #e6e6e6;
                     }
                 }
             }
@@ -875,8 +876,22 @@ body
         {
             .column(8,9);
             .push(0.8);
+            .border-radius();
+            
             margin-top: 20px;
             margin-bottom: 20px;
+            border: 1px solid black;
+            
+            #lista-jugadores
+            {
+                .column(7,8);
+                .push(0.8);
+            }
+            
+            #ficha_ajax
+            {
+                
+            }
         }
     }
 }
