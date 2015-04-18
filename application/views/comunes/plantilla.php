@@ -83,7 +83,17 @@
                     });
                     
                 });
+                
+                $("#cambio_passwd").on("click", function() {
+                    
+                    window.open();
+                    
+                });
+                
             });
+            
+            
+            // POP UP CAMBIO PASSWD
             
         </script>
         
