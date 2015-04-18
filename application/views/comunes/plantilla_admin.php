@@ -12,7 +12,7 @@
             
             $(document).ready(function() {
                 
-                $("#seccion").on("change", function() {
+                $("#contenido").on("change", "select", function() {
                     
                     alert("holap");
                     
