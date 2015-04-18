@@ -4,7 +4,9 @@
     <head>
         <meta charset="UTF-8" />
         <title>La posada del Caos</title>
-        <script type="text/javascript" charset="utf-8">
+        
+        <style type="text/css" media="screen">
+            
             h3
             {
                 width: 100%;
@@ -19,7 +21,14 @@
                 margin-bottom: 10px;
                 width: 100%;
             }
-        </script>
+            
+            form input[type="password"]
+            {
+                width: 90%;
+                margin-left: 5%;
+            }
+            
+        </style>
     </head>
     
     <body>
