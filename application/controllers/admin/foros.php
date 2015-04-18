@@ -200,6 +200,14 @@ class Foros extends CI_Controller
     }
     
     
+    function info_tema()
+    {
+        $id_tema = $this->input->post('id');
+        
+        echo json_encode($this->Foro->info_tema($id_tema));
+    }
+    
+    
     
     
     

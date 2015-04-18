@@ -73,8 +73,8 @@ class Foro extends CI_Model
         extract($datos);
         
         $this->db->query("update temas
-                            set titulo = ?, descripcion = ?
-                            where id = $seccion", array($nombre, $descripcion, $seccion));
+                            set titulo = ?, descripcion = ?, seccion= ?
+                            where id = $tema", array($nombre, $descripcion, $seccion_tema));
     }
     
     
@@ -203,6 +203,17 @@ class Foro extends CI_Model
     function info_seccion($id_seccion)
     {
         $res = $this->db->query("select * from secciones where id = $id_seccion");
+        
+        return $res->row_array();
+    }
+    
+    
+    /*
+     * 
+     */
+    function info_tema($id_tema)
+    {
+        $res = $this->db->query("select * from temas where id = $id_tema");
         
         return $res->row_array();
     }

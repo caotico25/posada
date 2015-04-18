@@ -49,6 +49,11 @@
                             $("#descripcion").text(info.descripcion);
                             $("#id").val(info.id);
                             
+                            if ($(this).attr("name") == "tema")
+                            {
+                                $("#seccion_tema").val(info.seccion);
+                            }
+                    
                             alert(info.id);
                             
                         },

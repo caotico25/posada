@@ -14,7 +14,7 @@
         <label for="nombre">Nombre del tema:</label><input type="text" name="nombre" value="" id="nombre"/>
         <label for="descripcion">Descripción:</label><textarea name="descripcion" id="descripcion" rows="8" cols="40"></textarea>
         <label for="seccion">Mover de sección:</label>
-        <select name="seccion">
+        <select name="seccion_tema" id="seccion_tema">
             <option value="">Elegir...</option>
             <?php foreach ($secciones as $seccion): ?>
                 <option value="<?= $seccion['id'] ?>"><?= $seccion['titulo'] ?></option>
