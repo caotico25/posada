@@ -128,6 +128,7 @@
                 <a href="<?= base_url('portal/inicio') ?>" >LA POSADA DEL CAOS</a>
                 
                 <nav>
+                    <a href="">MENU</a>
                     <a href="<?= base_url('portal/inicio') ?>" id="inicio" >INICIO</a>
                     <a href="<?= base_url('noticias/noticias') ?>" id="noticias" >NOTICIAS</a>
                     <a href="<?= base_url('partidas/partidas') ?>" id="rol" >JUEGA ROL</a>
