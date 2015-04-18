@@ -13,9 +13,12 @@
                 
                 $("article").on("change", "select", function() {
                     
+                    alert("holap");
+                    
                     if ($(this).attr("name") == "seccion")
                     {
                         var dir = <?= base_url('admin/foros/info_seccion') ?>;
+                        alert("seccion");
                     }
                     else if ($(this).attr("name") == "tema")
                     {
