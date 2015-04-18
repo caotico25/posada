@@ -1206,6 +1206,47 @@ body
             {
                 font-size: 2.5em;
             }
+            
+            nav
+            {
+                padding-top: 5px;
+                .column(3);
+                
+                a
+                {
+                    
+                    background-image: url("../images/fondo3.png");
+                    background-repeat: no-repeat;
+                    background-size: 100% 50px;
+                     
+                    display: none;
+                    height: 50px;
+                    padding-top: 15px;
+                    
+                    font-weight: bold;
+                    letter-spacing: 0.3em;
+                     
+                    .column(2.4);
+      
+                    &:selected
+                    {
+                        background-image: none;
+                        background-color: #d4d4d4;
+                    }
+                    
+                    &:visited
+                    {
+                        color: black;
+                        background-image: none;
+                        background-color: #d4d4d4;
+                    }
+                    
+                    &:first-of-type
+                    {
+                        display:block;
+                    }
+                }
+            }
         }
         
         #contenido
