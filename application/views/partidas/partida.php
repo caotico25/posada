@@ -150,6 +150,7 @@
                 $("#jugadores").change(function() {
                     
                     var ficha = $(this).val();
+                    var partida = <?= $partida ?>;
                     
                     $.ajaxSetup({
                         data: {
@@ -161,7 +162,7 @@
                         
                         url: "<?= base_url('partidas/fichas/cargar_ficha') ?>",
                         type: "POST",
-                        data: {'id_ficha': ficha, 'csrf_test_name': $.cookie('csrf_cookie_name')},
+                        data: {'id_ficha': ficha, 'id_partida': partida, 'csrf_test_name': $.cookie('csrf_cookie_name')},
                         success: function (ficha){
                             
                             $('#ficha_ajax').html(ficha);

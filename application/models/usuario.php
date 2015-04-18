@@ -84,7 +84,7 @@ class Usuario extends CI_Model
     {
         $id_usuario = obtener_id();
         
-        $this->db->query("update usuarios set passwd = ? where id = $id_usuario", array($passwd));
+        $this->db->query("update usuarios set passwd = md5(?) where id = $id_usuario", array($passwd));
     }
     
     

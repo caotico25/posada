@@ -42,6 +42,25 @@ class Fichas extends CI_Controller
         $this->load->view('partidas/ficha', $data);
         
     }
+
+
+    function cargar_ficha()
+    {
+        $ficha = $this->input->post('id_ficha');
+        $partida = $this->input->post('id_partida');
+        
+        $data['id_partida'] = $partida;
+        $data['ficha'] = $this->Ficha->obtener_datos_ficha($ficha);
+        $data['inventario'] = $this->Ficha->obtener_inventario($ficha);
+        $data['personaje'] = $this->Ficha->obtener_datos_personaje($ficha);
+        $data['otra_info'] = $this->Ficha->obtener_otra_info($ficha);
+        $data['atributos'] = $this->Ficha->obtener_atributos($ficha);
+        $data['habilidades'] = $this->Ficha->obtener_habilidades($ficha);
+        $data['ventajas'] = $this->Ficha->obtener_ventajas($ficha);
+        $data['otros_parametros'] = $this->Ficha->obtener_otros_parametros($ficha);
+        
+        $this->load->view('partidas/ficha', $data);
+    }
     
     
     
