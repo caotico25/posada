@@ -6,6 +6,7 @@
     <button name="cambio_passwd" id="cambio_passwd" onclick="abrir_popup()">
         Cambia tu contraseña
     </button>
+    <?= anchor_popup('usuarios/perfil/cambio_passwd', array( 'width' => '200', 'height' => '300',  'Cambiar contrase;a', 'screenx' => '500', 'screeny' => '200')) ?>
 </section>
 <section id="master">
     <h2>PARTIDAS DIRIGIDAS POR TI:</h2>
