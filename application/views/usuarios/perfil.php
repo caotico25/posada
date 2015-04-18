@@ -15,7 +15,7 @@
                 <h3><?= $partida['nombre'] ?></h3>
                 <p><?= $partida['descripcion'] ?></p>
                 
-                <?= form_open('partidas/partidas/partida_master', array('target' => '_blank', 'id' => 'formu')) ?>
+                <?= form_open('partidas/partidas/partida_master', array('target' => '_blank', 'class' => 'formu')) ?>
                     <input type="hidden" name="id_partida" value="<?= $partida['id'] ?>" id="id_partida"/>
                     <input type="submit" name="iniciar" value="Iniciar partida" id="iniciar"/>
                 <?= form_close() ?>
@@ -47,7 +47,7 @@
                 <?php if ($partida['activa'] == 't'): ?>
                     <p>Partida activa</p>
                     
-                    <?= form_open('partidas/partidas/partida_jugador', array('target' => '_blank', 'id' => 'formu')) ?>
+                    <?= form_open('partidas/partidas/partida_jugador', array('target' => '_blank', 'class' => 'formu')) ?>
                         <input type="hidden" name="id_partida" value="<?= $partida['id'] ?>" id="id_partida"/>
                         <input type="submit" name="entrar" value="Jugar" id="entrar"/>
                     <?= form_close() ?>

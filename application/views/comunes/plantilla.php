@@ -10,7 +10,7 @@
         <link rel="stylesheet/less" href="<?= base_url('css/responsive.less') ?>" type="text/css" media="screen" />
         <script src="<?= base_url('javascript/less.js') ?>" type="text/javascript" charset="utf-8"></script>
         <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-        <script type="text/javascript" charset="UTF-8">
+        <script type="text/javascript">
             
             $(document).ready(function (){
                 

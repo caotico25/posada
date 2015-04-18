@@ -151,8 +151,6 @@
                     
                     var ficha = $(this).val();
                     
-                    alert(ficha);
-                    
                     $.ajaxSetup({
                         data: {
                             csrf_test_name: $.cookie('csrf_cookie_name')
@@ -210,8 +208,6 @@
                 
                 // FUNCION PARA DESPLEGAR O GUARDAR SECCIONES DE FICHA
                 $("#ficha_ajax").on("click", "#ocultar", function() {
-                    
-                    alert("bu!");
                     
                     if ($(this).next().is(":visible"))
                     {

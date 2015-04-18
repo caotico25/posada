@@ -22,7 +22,7 @@
     <?php endif ?>
         
     <?php if (logueado()): ?>
-        <?= form_open('foro/comentarios/nuevo_comentario', array('id' => 'formu')) ?>
+        <?= form_open('foro/comentarios/nuevo_comentario', array('class' => 'formu')) ?>
             <?= form_hidden('id_post', $id_post) ?>     <!-- PASAR A HTML5 -->
             <?= form_submit('comentario', 'Responder') ?>
         <?= form_close() ?>
