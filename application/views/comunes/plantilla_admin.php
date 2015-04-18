@@ -18,12 +18,12 @@
                     
                     if ($(this).attr("name") == "seccion")
                     {
-                        var dir = <?= base_url('admin/foros/info_seccion') ?>;
+                        var dir = "<?= base_url('admin/foros/info_seccion') ?>";
                         alert("seccion");
                     }
                     else if ($(this).attr("name") == "tema")
                     {
-                        var dir = <?= base_url('admin/foros/info_tema') ?>;
+                        var dir = "<?= base_url('admin/foros/info_tema') ?>";
                     }
                     
                     var id = $(this).val();
