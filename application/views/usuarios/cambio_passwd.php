@@ -7,6 +7,11 @@
         
         <style type="text/css" media="screen">
             
+            body
+            {
+                background: #e1e1e1;
+            }
+            
             h3
             {
                 width: 100%;
@@ -26,6 +31,7 @@
             {
                 width: 50%;
                 margin-left: 25%;
+                text-align:center;
             }
             
         </style>
