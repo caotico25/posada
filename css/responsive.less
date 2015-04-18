@@ -304,6 +304,11 @@ body
         
         background-color: #FBC187;
         
+        >a
+        {
+            display: none;
+        }
+        
         section
         {
             .semi-border-radius();
@@ -1277,7 +1282,24 @@ body
         
         aside
         {
-            display: none;
+            position: absolute;
+            top: 200px;
+            right: 50px;
+            z-index: 5;
+            
+            >a
+            {
+                background-image: url("../images/fondo3.png");
+                background-repeat: no-repeat;
+                background-size: 100% 50px;
+                 
+                display: block;
+                height: 50px;
+                padding-top: 15px;
+                
+                font-weight: bold;
+                letter-spacing: 0.3em;
+            }
         }
     }
 }
