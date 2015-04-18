@@ -11,7 +11,7 @@
             {
                 width: 100%;
                 text-align: center;
-                background-image: url("../images/fondo.jpg");
+                background-image: url("<?= base_url('images/fondo.jpg') ?>");
                 color: #FBC187;
             }
             
@@ -22,10 +22,10 @@
                 width: 100%;
             }
             
-            form input[type="password"]
+            form input
             {
-                width: 90%;
-                margin-left: 5%;
+                width: 50%;
+                margin-left: 25%;
             }
             
         </style>
