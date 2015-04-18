@@ -140,10 +140,10 @@
                     <?php else: ?>
                         <h5>ACCESO USUARIO</h5>
                         <?= form_open('portal/inicio/login', array('name' => 'login', 'id' => 'login')) ?>
-                            <label for="usuario_log">Usuario:</label>
-                            <input type="text" name="usuario_log" value="" placeholder="usuario"/>
-                            <label for="passwd">Contraseña</label>
-                            <input type="password" name="passwd" placeholder="contraseña"/>
+                            <label for="user_log">Usuario:</label>
+                            <input type="text" name="usuario_log" value="" placeholder="usuario" id="user_log" />
+                            <label for="passwd_log">Contraseña</label>
+                            <input type="password" name="passwd" placeholder="contraseña" id="passwd_log" />
                             <input type="submit" name="login" value="Login"/>
                             <a href="<?= base_url('portal/inicio/alta') ?>">Registrate</a>
                         <?= form_close() ?>
