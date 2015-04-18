@@ -32,7 +32,7 @@ class Perfil extends CI_Controller
                         array(
                             'field' => 're_passwd',
                             'label' => 'Confirmar contraseña',
-                            'rules' => 'trim|required|matches[password]'
+                            'rules' => 'trim|required|matches[passwd]'
                         )
         );
         
