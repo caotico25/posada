@@ -4,7 +4,7 @@
     <?= form_open('admin/foros/modificar_seccion', array('id' => 'formadmin')) ?>
         <?= validation_errors() ?>
         <label for="seccion">Elige la sección a modificar:</label>
-        <select name="seccion">
+        <select name="seccion" id="seccion">
             <option>Elegir...</option>
             <?php foreach ($secciones as $seccion): ?>
                 <option value="<?= $seccion['id'] ?>"><?= $seccion['titulo'] ?></option>
