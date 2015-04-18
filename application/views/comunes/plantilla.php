@@ -3,6 +3,7 @@
     
     <head>
         <meta charset="UTF-8" />
+        <meta name="Description" content="En la Posada del Caos podrás jugar a rol con tus amigos, aunque no se encuentren cerca de ti! Pásate y diviértete haciendo lo que más te gusta!."/>
         <title>La posada del Caos</title>
         <script src="<?= base_url('javascript/jquery-1-10-2.js') ?>" type="text/javascript" charset="utf-8"></script>
         <script src="<?= base_url('javascript/esquinas.js') ?>" type="text/javascript" charset="utf-8"></script>
@@ -107,7 +108,7 @@
                 <a href="<?= base_url('portal/inicio') ?>" >LA POSADA DEL CAOS</a>
                 
                 <nav>
-                    <a href="">MENU</a>
+                    <a href="#">MENU</a>
                     <a href="<?= base_url('portal/inicio') ?>" id="inicio" >INICIO</a>
                     <a href="<?= base_url('noticias/noticias') ?>" id="noticias" >NOTICIAS</a>
                     <a href="<?= base_url('partidas/partidas') ?>" id="rol" >JUEGA ROL</a>
@@ -126,7 +127,7 @@
             </div>
             
             <aside>
-                <a href="">OPCIONES</a>
+                <a href="#">OPCIONES</a>
                 <section id="login_registro">
                     <?php if (logueado()): ?>
                         <h5>LOGUEADO COMO:</h5>
@@ -140,10 +141,10 @@
                         <h5>ACCESO USUARIO</h5>
                         <?= form_open('portal/inicio/login', array('name' => 'login', 'id' => 'login')) ?>
                             <label for="usuario_log">Usuario:</label>
-                            <input type="text" name="usuario_log" value="" id="usuario_log" placeholder="usuario"/>
+                            <input type="text" name="usuario_log" value="" placeholder="usuario"/>
                             <label for="passwd">Contraseña</label>
-                            <input type="password" name="passwd" id="passwd" placeholder="contraseña"/>
-                            <input type="submit" name="login" value="Login" id="login"/>
+                            <input type="password" name="passwd" placeholder="contraseña"/>
+                            <input type="submit" name="login" value="Login"/>
                             <a href="<?= base_url('portal/inicio/alta') ?>">Registrate</a>
                         <?= form_close() ?>
                     <?php endif ?>
