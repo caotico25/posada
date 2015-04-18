@@ -144,6 +144,8 @@ class Foros extends CI_Controller
     function modificar_tema()
     {
         $temas = $this->Foro->obtener_temas();
+        $secciones = $this->Foro->obtener_secciones();
+        $data['secciones'] = $secciones;
         $data['temas'] = $temas;
         
         $reglas = array(
