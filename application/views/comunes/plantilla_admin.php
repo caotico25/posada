@@ -46,7 +46,7 @@
                             alert(info);
                             
                             $("#nombre").val(info.titulo);
-                            $("#descripcion").val(info.descripcion);
+                            $("#descripcion").text(info.descripcion);
                             $("#id").val(info.id);
                             
                             alert(info.id);
