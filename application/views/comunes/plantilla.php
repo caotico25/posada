@@ -27,30 +27,60 @@
                         $("#inicio").css('background-image', 'none');
                         $("#inicio").css('background-color', 'rgba(220, 115, 64, 0.5)');
                         $("#inicio").corner("long top 10px");
+                        
+                        if ($(window).width() <= 700)
+                        {
+                            $("nav a").css('display', 'none !important');
+                            $("#inicio").css('display', 'block !important');
+                        }
                     }
                     if (array[i] == "noticias")
                     {
                         $("#noticias").css('background-image', 'none');
                         $("#noticias").css('background-color', 'rgba(220, 115, 64, 0.5)');
                         $("#noticias").corner("long top 10px");
+                        
+                        if ($(window).width() <= 700)
+                        {
+                            $("nav a").css('display', 'none !important');
+                            $("#noticias").css('display', 'block !important');
+                        }
                     }
                     if (array[i] == "partidas")
                     {
                         $("#rol").css('background-image', 'none');
                         $("#rol").css('background-color', 'rgba(220, 115, 64, 0.5)');
                         $("#rol").corner("long top 10px");
+                        
+                        if ($(window).width() <= 700)
+                        {
+                            $("nav a").css('display', 'none !important');
+                            $("#rol").css('display', 'block !important');
+                        }
                     }
                     if (array[i] == "foro")
                     {
                         $("#foro").css('background-image', 'none');
                         $("#foro").css('background-color', 'rgba(220, 115, 64, 0.5)');
                         $("#foro").corner("long top 10px");
+                        
+                        if ($(window).width() <= 700)
+                        {
+                            $("nav a").css('display', 'none !important');
+                            $("#foro").css('display', 'block !important');
+                        }
                     }
                     if (array[i] == "ayuda")
                     {
                         $("#ayuda").css('background-image', 'none');
                         $("#ayuda").css('background-color', 'rgba(220, 115, 64, 0.5)');
                         $("#ayuda").corner("long top 10px");
+                        
+                        if ($(window).width() <= 700)
+                        {
+                            $("nav a").css('display', 'none !important');
+                            $("#ayuda").css('display', 'block !important');
+                        }
                     }
                 }
                 
