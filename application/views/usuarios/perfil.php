@@ -3,7 +3,7 @@
 </div>
 <section id="datos_jugador">
     <h2>CAMBIA TU CONTRASEÑA</h2>
-    <button name="cambio_passwd" id="cambio_passwd" onclick="abrir_popup">
+    <button name="cambio_passwd" id="cambio_passwd" onclick="abrir_popup()">
         Cambia tu contraseña
     </button>
 </section>
