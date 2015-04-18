@@ -50,12 +50,13 @@
         <?= $this->pagination->create_links() ?>
     </div>
 </section>
-
-<section>
-    <h2>CREA UNA NUEVA PARTIDA</h2>
-    <article>
-        <?= form_open('partidas/partidas/nueva_partida') ?>
-            <input type="submit" name="enviar" value="Comenzar" id="enviar"/>
-        <?= form_close() ?>
-    </article>
-</section>
+<?php if (logueado()): ?>
+    <section>
+        <h2>CREA UNA NUEVA PARTIDA</h2>
+        <article>
+            <?= form_open('partidas/partidas/nueva_partida') ?>
+                <input type="submit" name="enviar" value="Comenzar" id="enviar"/>
+            <?= form_close() ?>
+        </article>
+    </section>
+<?php endif ?>

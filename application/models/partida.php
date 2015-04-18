@@ -183,7 +183,7 @@ class Partida extends CI_Model
         
         $res = $res->row_array();
         
-        if (count($res) < 0)
+        if (count($res) > 0)
         {
             return TRUE;
         }

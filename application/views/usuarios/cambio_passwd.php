@@ -38,6 +38,7 @@
             {
                 width: 80%;
                 margin-left: 10%;
+                text-align: center;
             }
             
             div p

@@ -47,7 +47,7 @@ class Perfil extends CI_Controller
         {
             $this->Usuario->cambio_passwd($this->input->post('passwd'));
             
-            $data['mensaje'] = '';
+            $data['mensaje'] = 'Cambio realizado correctamente';
             $this->load->view('usuarios/cambio_passwd', $data);
         }
     }
