@@ -1225,7 +1225,6 @@ body
                     
                     font-weight: bold;
                     letter-spacing: 0.3em;
-                    position: relative;
                      
                     .column(3,3);
       
@@ -1248,10 +1247,15 @@ body
                     }
                 }
                 
+                &:hover
+                {
+                    z-index: 5;
+                    position: absolute;
+                }
+                
                 &:hover a
                 {
                     display: block !important;
-                    z-index: 5;
                 }
             }
         }
