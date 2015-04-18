@@ -86,7 +86,7 @@
                 
                 $("#cambio_passwd").on("click", function() {
                     
-                    window.open();
+                    window.open('', "<?= base_url('portal/inicio', 'height=800, width=1000, top=500, left=200, scrollable=yes, menubar=yes, resizable=yes') ?>");
                     
                 });
                 
