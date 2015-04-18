@@ -77,8 +77,15 @@ class Usuario extends CI_Model
     }
     
     
-    
-    
+    /*
+     * 
+     */
+    function cambio_passwd($passwd)
+    {
+        $id_usuario = obtener_id();
+        
+        $this->db->query("update usuarios set passwd = ? where id = $id_usuario", array($passwd));
+    }
     
     
     

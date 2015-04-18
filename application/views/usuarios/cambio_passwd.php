@@ -34,12 +34,30 @@
                 text-align:center;
             }
             
+            div
+            {
+                width: 80%;
+                margin-left: 10%;
+            }
+            
+            div p
+            {
+                background: red;
+            }
+            
         </style>
     </head>
     
     <body>
         <section>
             <h3>INTRODUZCA NUEVA CONTRASEÑA</h3>
+            <div>
+                <?= validation_errors() ?>
+                
+                <?php if (isset($mensaje)): ?>
+                    <?= $mensaje ?>
+                <?php endif ?>
+            </div>
             <?= form_open('', array('class' => 'registro')) ?>
                 <input type="password" id="passwd" name="passwd" placeholder="Contraseña" />
                 <input type="password" id="re_passwd" name="re_passwd" placeholder="Repetir" />

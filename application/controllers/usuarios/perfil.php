@@ -23,7 +23,33 @@ class Perfil extends CI_Controller
     
     function cambio_passwd()
     {
-        $this->load->view('usuarios/cambio_passwd');
+        $reglas = array(
+                        array(
+                            'field' => 'passwd',
+                            'label' => 'Contraseña',
+                            'rules' => 'trim|required'
+                        ),
+                        array(
+                            'field' => 're_passwd',
+                            'label' => 'Confirmar contraseña',
+                            'rules' => 'trim|required|matches[password]'
+                        )
+        );
+        
+        $this->form_validation->set_rules($reglas);
+        
+        if ($this->form_validation->run() == FALSE)
+        {
+            $data['mensaje'] = '';
+            $this->load->view('usuarios/cambio_passwd', $data);
+        }
+        else
+        {
+            $this->Usuario->cambio_passwd($this->input->post('passwd'));
+            
+            $data['mensaje'] = '';
+            $this->load->view('usuarios/cambio_passwd', $data);
+        }
     }
     
     
