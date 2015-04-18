@@ -42,13 +42,10 @@
                         data: {id: id, 'csrf_test_name': $.cookie('csrf_cookie_name')},
                         success: function (datos){
                             
-                            alert(datos);
+                            alert($.parseJSON(datos));
                             
-                            $("#nombre").val(datos.titulo);
-                            $("#descripcion").val(datos.descripcion);
-                            $("#id").val(datos.id);
                             
-                            alert(datos.id);
+                            alert("Modificacion realizada correctamente");
                             
                         },
                         error: function (jqXHR, textStatus, errorThrown){
