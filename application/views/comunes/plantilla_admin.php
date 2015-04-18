@@ -4,6 +4,7 @@
     <head>
         <meta charset="UTF-8" />
         <title>La posada del Caos</title>
+        <script src="<?= base_url('javascript/jquery-1-10-2.js') ?>" type="text/javascript" charset="utf-8"></script>
         <link rel="stylesheet/less" href="<?= base_url('css/responsive.less') ?>" type="text/css" media="screen" />
         <script src="<?= base_url('javascript/less.js') ?>" type="text/javascript" charset="utf-8"></script>
         <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
@@ -11,7 +12,7 @@
             
             $(document).ready(function() {
                 
-                $("article").on("change", "select", function() {
+                $("#seccion").on("change", function() {
                     
                     alert("holap");
                     
