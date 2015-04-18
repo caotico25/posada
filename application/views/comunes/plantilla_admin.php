@@ -35,35 +35,39 @@
                             }
                     });
                     
-                    $.ajax({
+                    if ($(this).attr("name") == "seccion" || $(this).attr("name") == "tema")
+                    {
+                        $.ajax({
                         
-                        url: dir,
-                        type: "POST",
-                        data: {id: id, 'csrf_test_name': $.cookie('csrf_cookie_name')},
-                        success: function (datos){
-                            
-                            var info = $.parseJSON(datos)
-                            alert(info);
-                            
-                            $("#nombre").val(info.titulo);
-                            $("#descripcion").text(info.descripcion);
-                            $("#id").val(info.id);
-                            
-                            if ($(this).attr("name") == "tema")
-                            {
-                                $("#seccion_tema").val(info.seccion);
+                            url: dir,
+                            type: "POST",
+                            data: {id: id, 'csrf_test_name': $.cookie('csrf_cookie_name')},
+                            success: function (datos){
+                                
+                                var info = $.parseJSON(datos)
+                                alert(info);
+                                
+                                $("#nombre").val(info.titulo);
+                                $("#descripcion").text(info.descripcion);
+                                $("#id").val(info.id);
+                                
+                                if ($(this).attr("name") == "tema")
+                                {
+                                    $("#seccion_tema").val(info.seccion);
+                                }
+                        
+                                alert(info.id);
+                                
+                            },
+                            error: function (jqXHR, textStatus, errorThrown){
+                                
+                                alert(textStatus + ' ' + errorThrown);
+                                
                             }
-                    
-                            alert(info.id);
                             
-                        },
-                        error: function (jqXHR, textStatus, errorThrown){
-                            
-                            alert(textStatus + ' ' + errorThrown);
-                            
-                        }
+                        });
                         
-                    });
+                    }
                     
                 });
                 
