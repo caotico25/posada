@@ -23,7 +23,7 @@
                 </div>
                 
                 <aside>
-                    <!-- ANUNCIOS -->
+                    <a href="">OPCIONES</a>
                     <section id="login_registro">
                         <h5>LOGUEADO COMO:</h5>
                         <a href="<?= base_url('usuarios/perfil') ?>" ><?= obtener_nombre() ?></a>
