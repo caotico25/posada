@@ -12,7 +12,7 @@
     </article>
 </section>
 
-<section id="noticias" class="seccion">
+<section class="noticias">
     <h2>NOTICIAS</h2>
     <?php foreach ($noticias as $noticia): ?>
         <article>
@@ -22,7 +22,7 @@
         </article>
     <?php endforeach ?>
 </section>
-<section id="partidas" class="seccion">
+<section class="partidas">
     <h2>PARTIDAS RECIENTES</h2>
     <?php foreach ($partidas as $partida): ?>
         <article>
