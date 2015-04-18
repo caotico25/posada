@@ -90,7 +90,7 @@
             // POP UP CAMBIO PASSWD
             function abrir_popup()
             {
-                window.open("<?= base_url('usuarios/perfil/cambio_passwd')?>", '_blank', 'height=100, width=100, top=500, left=200');
+                window.open("<?= base_url('usuarios/perfil/cambio_passwd')?>", '_blank', 'height=500, width=300, top=500, left=200');
                 return false;
             }
             
