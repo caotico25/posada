@@ -197,8 +197,15 @@ class Foro extends CI_Model
     }
     
     
-    
-    
+    /*
+     * 
+     */
+    function info_seccion($id_seccion)
+    {
+        $res = $this->db->query("select * from secciones where id = $id_seccion");
+        
+        return $res->row_array();
+    }
     
     
     

@@ -7,6 +7,52 @@
         <link rel="stylesheet/less" href="<?= base_url('css/responsive.less') ?>" type="text/css" media="screen" />
         <script src="<?= base_url('javascript/less.js') ?>" type="text/javascript" charset="utf-8"></script>
         <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <script type="text/javascript" charset="utf-8">
+            
+            $(document).ready(function() {
+                
+                $("article").on("change", "select", function() {
+                    
+                    if ($(this).attr("name") == "seccion")
+                    {
+                        var dir = <?= base_url('admin/foros/info_seccion') ?>;
+                    }
+                    else if ($(this).attr("name") == "tema")
+                    {
+                        var dir = <?= base_url('admin/foros/info_tema') ?>;
+                    }
+                    
+                    var id = $(this).val();
+                    
+                    $.ajaxSetup({
+                        data: {
+                            csrf_test_name: $.cookie('csrf_cookie_name')
+                            }
+                    });
+                    
+                    $.ajax({
+                        
+                        url: dir,
+                        type: "POST",
+                        data: {id: id, 'csrf_test_name': $.cookie('csrf_cookie_name')},
+                        success: function (datos){
+                            
+                            alert(datos);
+                            
+                        },
+                        error: function (jqXHR, textStatus, errorThrown){
+                            
+                            alert(textStatus + ' ' + errorThrown);
+                            
+                        }
+                        
+                    });
+                    
+                });
+                
+            });
+            
+        </script>
     </head>
     
     <body>

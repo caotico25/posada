@@ -153,8 +153,8 @@ class Foros extends CI_Controller
                             'rules' => 'trim|max_length[20]'
                         ),
                         array(
-                            'field' => 'contenido',
-                            'label' => 'Contenido',
+                            'field' => 'descripcion',
+                            'label' => 'Descripcion',
                             'rules' => "trim|max_length[100]"
                         )
         );
@@ -167,7 +167,7 @@ class Foros extends CI_Controller
         }
         else
         {
-            $this->Foro->mod_seccion($this->input->post());
+            $this->Foro->mod_tema($this->input->post());
             $this->session->set_flashdata('mensaje', 'Tema modificado correctamente.');
             
             redirect('admin/foros/modificar_tema');
@@ -192,7 +192,12 @@ class Foros extends CI_Controller
     }
     
     
-    
+    function info_seccion()
+    {
+        $id_seccion = $this->input->post('id');
+        
+        echo json_encode($this->Foro->info_seccion($id_seccion));
+    }
     
     
     

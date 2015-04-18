@@ -5,7 +5,7 @@
     <h2>Crear un nuevo post.</h2>
     <p>Recuerda seguir las normas del foro. Si las incumples, tu post será eliminado.</p>
     <article>
-        <?= form_open('foro/posts/nuevo_post') ?>
+        <?= form_open('foro/posts/nuevo_post', array('class' => 'registro')) ?>
             <label for="titulo">Título</label>
             <input type="text" name="titulo" value="" id="titulo"/>
             <textarea name="contenido" rows="8" cols="40"></textarea>
