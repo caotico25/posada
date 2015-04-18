@@ -59,8 +59,8 @@ class Foro extends CI_Model
     {
         extract($datos);
         
-        $this->db->query("insert into temas (titulo, contenido, seccion)
-                            values (?, ?, $seccion)", array($nombre, $contenido));
+        $this->db->query("insert into temas (titulo, descripcion, seccion)
+                            values (?, ?, $seccion)", array($nombre, $descripcion));
     }
     
     

@@ -15,12 +15,9 @@
                 
                 $("#contenido").on("change", "select", function() {
                     
-                    alert("holap");
-                    
                     if ($(this).attr("name") == "seccion")
                     {
                         var dir = "<?= base_url('admin/foros/info_seccion') ?>";
-                        alert("seccion");
                     }
                     else if ($(this).attr("name") == "tema")
                     {
@@ -45,7 +42,6 @@
                             success: function (datos){
                                 
                                 var info = $.parseJSON(datos)
-                                alert(info);
                                 
                                 $("#nombre").val(info.titulo);
                                 $("#descripcion").text(info.descripcion);
@@ -55,8 +51,6 @@
                                 {
                                     $("#seccion_tema").val(info.seccion);
                                 }
-                        
-                                alert(info.id);
                                 
                             },
                             error: function (jqXHR, textStatus, errorThrown){
