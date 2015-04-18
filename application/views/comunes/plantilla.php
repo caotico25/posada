@@ -103,7 +103,7 @@
                     <a href="<?= base_url('noticias/noticias') ?>" id="noticias" >NOTICIAS</a>
                     <a href="<?= base_url('partidas/partidas') ?>" id="rol" >JUEGA ROL</a>
                     <a href="<?= base_url('foro/foros') ?>" id="foro" >FORO</a>
-                    <a href="" id="ayuda" >AYUDA</a>
+                    <a href="<?= base_url('ayuda/ayudas') ?>" id="ayuda" >AYUDA</a>
                 </nav>
                 
             </header>
@@ -148,7 +148,7 @@
                     <a href="<?= base_url('noticias/noticias') ?>" >Noticias</a>
                     <a href="<?= base_url('partidas/partidas') ?>" >Juega a rol</a>
                     <a href="<?= base_url('foro/foros') ?>" >Foro</a>
-                    <a href="" >Ayuda</a>
+                    <a href="<?= base_url('ayuda/ayudas') ?>" >Ayuda</a>
                 </section>
                 <section id="enlaces_externos">
                     <h5>Realizado por:</h5>
