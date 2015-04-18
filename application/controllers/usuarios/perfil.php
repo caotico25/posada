@@ -21,5 +21,11 @@ class Perfil extends CI_Controller
     }
     
     
+    function cambio_passwd()
+    {
+        $this->load->view('usuarios/cambio_passwd');
+    }
+    
+    
     
 }
