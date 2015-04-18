@@ -13,12 +13,12 @@
                     
                     <?= form_open('admin/noticias/eliminar_noticia', array('class' => 'formu')) ?>
                         <?= form_hidden('id_noticia', $noticia['id']) ?>
-                        <input type="submit" name="enviar" value="Elimnar" id="enviar"/>
+                        <input type="submit" name="enviar" value="Elimnar"/>
                     <?= form_close() ?>
                     
                     <?= form_open('admin/noticias/modificar_noticia', array('class' => 'formu')) ?>
                         <?= form_hidden('id_noticia', $noticia['id']) ?>
-                        <input type="submit" name="enviar" value="Modificar" id="enviar"/>
+                        <input type="submit" name="enviar" value="Modificar"/>
                     <?= form_close() ?>
                     
                 <?php endif ?>
