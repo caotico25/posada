@@ -44,6 +44,12 @@
                             
                             alert(datos);
                             
+                            $("#nombre").val(datos.titulo);
+                            $("#descripcion").val(datos.descripcion);
+                            $("#id").val(datos.id);
+                            
+                            alert(datos.id);
+                            
                         },
                         error: function (jqXHR, textStatus, errorThrown){
                             
