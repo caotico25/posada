@@ -61,7 +61,7 @@ class Partida extends CI_Model
     /*
      * 
      */
-    function obtener_tipos_juego($id_partida)
+    function obtener_tiposs_juego($id_partida)
     {
         $res = $this->db->query("select tipo_juego from partidas where id = $id_partida");
         $tipo = $res->row_array();
