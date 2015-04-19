@@ -47,19 +47,42 @@
             }
             
         </style>
+        
+        <script type="text/javascript">
+            
+            function validar()
+            {
+                var pass = document.getElementById('passwd').value;
+                var repass = document.getElementById('re_passwd').value;
+                
+                if (pass != repass)
+                {
+                    document.getElementById('errores').innerHTML = "<p>Los campos no coinciden</p>";
+                    
+                    return false;
+                }
+                else
+                {
+                    document.opener.getElementById('pass_cambiada').innerHTML = "<p>Contraseña cambiada correctamente</p>";
+                    return true;
+                }
+            }
+            
+        </script>
+        
     </head>
     
     <body>
         <section>
             <h3>INTRODUZCA NUEVA CONTRASEÑA</h3>
-            <div>
+            <div id="errores">
                 <?= validation_errors() ?>
                 
                 <?php if (isset($mensaje)): ?>
                     <?= $mensaje ?>
                 <?php endif ?>
             </div>
-            <?= form_open('', array('class' => 'registro')) ?>
+            <?= form_open('', array('class' => 'registro', 'onsubmit' => 'return validar()')) ?>
                 <input type="password" id="passwd" name="passwd" placeholder="Contraseña" />
                 <input type="password" id="re_passwd" name="re_passwd" placeholder="Repetir" />
                 <input type="submit" name="enviar" id="enviar" value="Cambiar" />
