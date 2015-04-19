@@ -65,6 +65,7 @@ class Partida extends CI_Model
     {
         $res = $this->db->query("select tipo_juego from partidas where id = $id_partida");
         $tipo = $res->row_array();
+        $tipo = $res['tipo_juego'];
         
         $res = $this->db->query("select * form tipos_juego where id = $tipo");
         
