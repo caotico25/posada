@@ -6,10 +6,12 @@
     <article>
         <h3>BIENVENIDOS A LA POSADA DEL CAOS</h3>
         <p>
-            <video width="400" controls autoplay>
+            <video width="400" controls autoplay style="width: 100% !important; height: auto;">
                 <source src="<?= base_url('videos/intro.mp4') ?>" type="video/mp4">
                 Your browser does not support HTML5 video.
             </video>
+        </p>
+        <p>
             Sed bienvenidos a esta humilde posada. Sentaos y disfrutad de una buena partida de rol.
             Compartid opiniones, discutid, daos hachazos si es necesario! (en la ficción por supuesto jejeje).
         </p>
