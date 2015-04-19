@@ -103,7 +103,7 @@ if (!function_exists('nombre_master'))
         
         $nombre = $CI->Ficha->nombre_master($id_master);
         
-        return $nombre['nombre'];
+        return $nombre['usuario'];
     }
 }
 
@@ -156,6 +156,18 @@ if (!function_exists('obtener_tipo_juego'))
         $CI =& get_instance();
         
         $res = $CI->Partida->obtener_tipo_juego($tipo_juego);
+        
+        return $res['nombre'];
+    }
+}
+
+if (!function_exists('obtener_tipos_juego'))
+{
+    function obtener_tipos_juego($tipo_juego)
+    {
+        $CI =& get_instance();
+        
+        $res = $CI->Partida->obtener_tipos_juego($tipo_juego);
         
         return $res['nombre'];
     }
