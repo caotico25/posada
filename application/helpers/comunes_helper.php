@@ -161,13 +161,13 @@ if (!function_exists('obtener_tipo_juego'))
     }
 }
 
-if (!function_exists('obtener_tiposs_juego'))
+if (!function_exists('tipo_juego'))
 {
-    function obtener_tiposs_juego($tipo_juego)
+    function tipo_juego($tipo_juego)
     {
         $CI =& get_instance();
         
-        $res = $CI->Partida->obtener_tiposs_juego($tipo_juego);
+        $res = $CI->Partida->tipo_juego($tipo_juego);
         
         return $res['nombre'];
     }
