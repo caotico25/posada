@@ -92,6 +92,7 @@
             function abrir_popup()
             {
                 var ventan = window.open("<?= base_url('usuarios/perfil/cambio_passwd')?>", '_blank', 'height=200, width=300, top=500, left=200');
+                ventan.focus();
                 return false;
             }
             
