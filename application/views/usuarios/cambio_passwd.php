@@ -63,7 +63,7 @@
                 }
                 else
                 {
-                    document.opener.document.getElementById('pass_cambiada').innerHTML = "<p>Contraseña cambiada correctamente</p>";
+                    window.opener.document.getElementById('pass_cambiada').innerHTML = "<p>Contraseña cambiada correctamente</p>";
                     return true;
                 }
             }
