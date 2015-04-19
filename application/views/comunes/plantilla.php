@@ -105,7 +105,7 @@
         <div id="contenedor">
             
             <header>
-                <a href="<?= base_url('portal/inicio') ?>" >LA POSADA DEL CAOS</a>
+                <a href="<?= base_url('portal/inicio') ?>" ><h1>LA POSADA DEL CAOS</h1></a>
                 
                 <nav>
                     <a href="#">MENU</a>

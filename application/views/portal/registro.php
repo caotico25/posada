@@ -24,7 +24,7 @@
         <input type="text" name="usuario" id="usuario" />
         <?= form_error('email') ?>
         <label for="email">Correo electrónico:</label>
-        <input type="email" name="email" />
+        <input type="email" name="email" id="email" />
         <?= form_error('password') ?>
         <label for="password">Contraseña</label>
         <input type="password" name="password" id="password" />
