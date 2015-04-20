@@ -20,25 +20,40 @@ values ('pepe', 'pepe@gmail.com', md5('pepe'), false);
 /**	 SECCIONES  **/
 
 insert into secciones (titulo, descripcion)
-values ('General', 'Información general sobre el sitio web');
+values ('General', 'Información general sobre el sitio web.');
 
 insert into secciones (titulo, descripcion)
-values ('Juegos', 'Todo sobre juegos de rol');
+values ('Juegos', 'Todo sobre juegos de rol.');
 
 insert into secciones (titulo, descripcion)
-values ('Varios', 'De todo un poco');
+values ('Varios', 'De todo un poco.');
 
 
 /**  TEMAS  **/
 
 insert into temas (titulo, seccion, descripcion)
-values ('Normas', 1, 'Normas del sitio web');
+values ('Normas', 1, 'Normas del sitio web.');
 
 insert into temas (titulo, seccion, descripcion)
-values ('Presentaciones', 1, 'Pasa y presentate');
+values ('Presentaciones', 1, 'Pasa y presentate.');
 
 insert into temas (titulo, seccion, descripcion)
-values ('Tema 1-2', 2, 'Tema 1 de la seccion 2');
+values ('Vampiro: La Mascarada', 2, 'Todo lo referente a este juego.');
+
+insert into temas (titulo, seccion, descripcion)
+values ('Tutoriales', 3, 'Todo tipo de tutoriales.');
+
+
+/**  POSTS  **/
+
+insert into posts (titulo, tema, contenido, autor)
+values ('Me presento', 2, 'Me llamo Jose y soy un gran apasionado de los juegos de rol. Espero que podamos pasar muchas horas de juego juntos!!', 2);
+
+
+/** NOTICIAS **/
+
+
+
 
 
 /**  TIPOS DE JUEGO  **/
@@ -215,10 +230,10 @@ insert into ventajas (nombre, categoria, ficha)
 values ('', 'Disciplinas', 1);
 
 insert into ventajas (nombre, categoria, ficha)
-values ('Conciencia/conviccion', 'Virtudes', 1);
+values ('Conciencia/ conviccion', 'Virtudes', 1);
 
 insert into ventajas (nombre, categoria, ficha)
-values ('Autocontrol/instintos', 'Virtudes', 1);
+values ('Autocontrol/ instintos', 'Virtudes', 1);
 
 insert into ventajas (nombre, categoria, ficha)
 values ('Coraje', 'Virtudes', 1);
@@ -228,7 +243,7 @@ insert into otros_parametros (nombre, categoria, ficha)
 values ('', 'Meritos y defectos', 1);
 
 insert into otros_parametros (nombre, categoria, ficha)
-values ('', 'Humanidad/senda', 1);
+values ('', 'Humanidad/ senda', 1);
 
 insert into otros_parametros (nombre, categoria, ficha)
 values ('Fuerza de voluntad', 'Otros', 1);
