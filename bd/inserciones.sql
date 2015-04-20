@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 *   -----------
 *   INSERCIONES
 *   -----------
@@ -20,7 +20,7 @@ values ('pepe', 'pepe@gmail.com', md5('pepe'), false);
 /**	 SECCIONES  **/
 
 insert into secciones (titulo, descripcion)
-values ('General', 'Información general sobre el sitio web.');
+values ('General', 'InformaciÃ³n general sobre el sitio web.');
 
 insert into secciones (titulo, descripcion)
 values ('Juegos', 'Todo sobre juegos de rol.');
@@ -211,7 +211,7 @@ insert into habilidades (nombre, categoria, ficha)
 values ('Leyes', 'Conocimientos', 1);
 
 insert into habilidades (nombre, categoria, ficha)
-values ('Lingüistica', 'Conocimientos', 1);
+values ('LingÃ¼istica', 'Conocimientos', 1);
 
 insert into habilidades (nombre, categoria, ficha)
 values ('Medicina', 'Conocimientos', 1);
@@ -253,3 +253,12 @@ values ('Reserva de sangre', 'Otros', 1);
 
 insert into otros_parametros (nombre, categoria, ficha)
 values ('', 'Salud', 1);
+
+
+
+
+
+/**  TIPOS DE FICHA  **/
+
+insert into tipos_ficha (tipo_juego, ficha)
+values (1, 1);

@@ -385,9 +385,3 @@ create index last_activity_idx on ci_sessions (last_activity);
 
 
 
-/**  TIPOS DE FICHA  **/
-
-insert into tipos_ficha (tipo_juego, ficha)
-values (1, 1);
-
-
