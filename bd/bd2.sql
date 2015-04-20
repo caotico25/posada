@@ -380,8 +380,3 @@ CREATE TABLE ci_sessions (
 );
 
 create index last_activity_idx on ci_sessions (last_activity);
-
-
-
-
-
