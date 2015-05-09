@@ -29,7 +29,10 @@
                     <option value="3">Comenzada</option>
                 </select>
                 
-                <button id="cerrar_partida" class="formu">Cerrar partida</button>
+                <?= form_open('#', array('class' => 'formu')) ?>
+                    <input type="hidden" name="id_partida" value="<?= $partida['id'] ?>" id="id_partida"/>
+                    <input type="submit" name="iniciar" value="Finalizar partida" id="iniciar"/>
+                <?= form_close() ?>
                 
             </article>
         <?php endforeach ?>
