@@ -29,6 +29,8 @@
                     <option value="3">Comenzada</option>
                 </select>
                 
+                <button id="cerrar_partida" class="formu">Cerrar partida</button>
+                
             </article>
         <?php endforeach ?>
     <?php else: ?>
