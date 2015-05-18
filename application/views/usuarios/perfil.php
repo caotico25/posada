@@ -29,7 +29,7 @@
                     <option value="3">Comenzada</option>
                 </select>
                 
-                <?= form_open('#', array('class' => 'formu')) ?>
+                <?= form_open('#', array('class' => 'formu', 'id' => $partida['id'])) ?>
                     <input type="hidden" name="id_partida" value="<?= $partida['id'] ?>" id="id_partida"/>
                     <input type="submit" name="finalizar" value="Finalizar partida" id="finalizar"/>
                 <?= form_close() ?>
