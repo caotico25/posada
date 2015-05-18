@@ -31,7 +31,7 @@
                 
                 <?= form_open('#', array('class' => 'formu')) ?>
                     <input type="hidden" name="id_partida" value="<?= $partida['id'] ?>" id="id_partida"/>
-                    <input type="submit" name="iniciar" value="Finalizar partida" id="iniciar"/>
+                    <input type="submit" name="finalizar" value="Finalizar partida" id="finalizar"/>
                 <?= form_close() ?>
                 
             </article>
@@ -71,3 +71,16 @@
         </article>
     <?php endif ?>
 </section>
+
+<?php if ($partidas_f != NULL): ?>
+    <section id="finallizada">
+        <h2>PARTIDAS FINALIZADAS:</h2>
+            <?php foreach ($partidas_m as $partida): ?>
+                <article>
+                    <h3><?= $partida['nombre'] ?></h3>
+                    <p><?= $partida['descripcion'] ?></p>
+                    <p>Fecha de finalización: <?= $partida['f_fin'] ?></p>
+                </article>
+            <?php endforeach ?>
+    </section>
+<?php endif ?>

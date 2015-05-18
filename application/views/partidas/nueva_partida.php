@@ -24,7 +24,9 @@
             <select name="estado" id="estado">
                 <option>------</option>
                 <?php foreach ($estados as $estado): ?>
-                    <option value="<?= $estado['id'] ?>"><?= $estado['estado'] ?></option>
+                    <?php if ($estado['id'] != 4): ?>
+                        <option value="<?= $estado['id'] ?>"><?= $estado['estado'] ?></option>
+                    <?php endif ?>
                 <?php endforeach ?>
             </select>
             

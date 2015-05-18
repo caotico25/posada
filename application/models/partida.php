@@ -19,7 +19,7 @@ class Partida extends CI_Model
      */
     function partidas_master($id)
     {
-        $res = $this->db->query("select * from partidas where master = $id");
+        $res = $this->db->query("select * from partidas where master = $id and estado != 4");
         
         return $res->result_array();
     }
@@ -31,7 +31,19 @@ class Partida extends CI_Model
     function partidas_player($id)
     {
         $res = $this->db->query("select * from partidas where id in (
-                                    select partida_id from jugadores where jugador = $id)");
+                                    select partida_id from jugadores where jugador = $id) and estado != 4");
+        return $res->result_array();
+    }
+    
+    
+    /*
+     * DEVUELVE LAS PARTIDAS EN LAS QUE HA PARTICIPADO Y HAN FINALIZADO
+     */
+    function partidas_finalizadas($id)
+    {
+        $res = $this->db->query("select * from partidas where master = $id or id in (
+                                    select partida_id from jugadores where jugador = $id) and estado = 4");
+        
         return $res->result_array();
     }
     
@@ -212,6 +224,19 @@ class Partida extends CI_Model
     {
         return $this->db->count_all_results('partidas');
     }
+    
+    
+    /*
+     * 
+     */
+    function finalizar_partida($id_partida)
+    {
+        $this->db->query("update partidas set estado = 4, f_fin = current_date where id = $id_partida");
+    }
+    
+    
+    
+    
     
     
     

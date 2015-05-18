@@ -54,6 +54,7 @@
                     }
                 }
                 
+                // FUNCION PARA CAMBIAR EL ESTADO DE LA PARTIDA
                 $("#master").on("change", "#estado", function() {
                     
                     var estado = $("#estado").val();
@@ -73,6 +74,37 @@
                         success: function (){
                             
                             alert("Estado modificado correctamente.");
+                            
+                        },
+                        error: function (jqXHR, textStatus, errorThrown){
+                            
+                            alert(textStatus + ' ' + errorThrown);
+                            
+                        }
+                        
+                    });
+                    
+                });
+                
+                // FUNCION PARA FINALIZAR PARTIDA
+                $("#finalizar").on("click", function() {
+                    
+                    // RECOGER DE NUEVO LA VISTA DE PERFIL Y VOLVER A MOSTRAR CON LOS CAMBIOS REALIZADOS
+                    // CREAR SECCION EN LA QUE SE MUESTRE LISTA DE PARTIDAS FINALIZADAS
+                    $.ajaxSetup({
+                        data: {
+                            csrf_test_name: $.cookie('csrf_cookie_name')
+                            }
+                    });
+                    
+                    $.ajax({
+                        
+                        url: "<?= base_url('partidas/partidas/finalizar_partida') ?>",
+                        type: "POST",
+                        data: {'id_partida': id_partida, 'csrf_test_name': $.cookie('csrf_cookie_name')},
+                        success: function() {
+                            
+                            alert("Partida finalizada.");
                             
                         },
                         error: function (jqXHR, textStatus, errorThrown){

@@ -145,7 +145,7 @@ class Partidas extends CI_Controller
 
 
     /*
-     * 
+     * BLOQUEA LA PARTIDA PARA QUE LOS USUARIOS NO SE PUEDAN CONECTAR
      */
     function cerrar_partida()
     {
@@ -217,8 +217,13 @@ class Partidas extends CI_Controller
     }
 
 
-
-
+    /*
+     *  FINALIZA LA PARTIDA INDICADA
+     */
+    function finalizar_partida($id_partida)
+    {
+        $this->Partida->finalizar_partida($id_partida);
+    }
 
 
 
