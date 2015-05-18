@@ -73,7 +73,7 @@
 </section>
 
 <?php if ($partidas_f != NULL): ?>
-    <section id="finallizada">
+    <section id="finalizada">
         <h2>PARTIDAS FINALIZADAS:</h2>
             <?php foreach ($partidas_m as $partida): ?>
                 <article>
