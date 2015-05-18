@@ -19,7 +19,7 @@ class Partida extends CI_Model
      */
     function partidas_master($id)
     {
-        $res = $this->db->query("select * from partidas where master = $id and estado != 4");
+        $res = $this->db->query("select * from partidas where master = $id and estado <> 4");
         
         return $res->result_array();
     }
@@ -31,7 +31,7 @@ class Partida extends CI_Model
     function partidas_player($id)
     {
         $res = $this->db->query("select * from partidas where id in (
-                                    select partida_id from jugadores where jugador = $id) and estado != 4");
+                                    select partida_id from jugadores where jugador = $id) and estado <> 4");
         return $res->result_array();
     }
     
