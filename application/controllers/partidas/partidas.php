@@ -220,9 +220,9 @@ class Partidas extends CI_Controller
     /*
      *  FINALIZA LA PARTIDA INDICADA
      */
-    function finalizar_partida($id_partida)
+    function finalizar_partida()
     {
-        $this->Partida->finalizar_partida($id_partida);
+        $this->Partida->finalizar_partida($this->input->post('id_partida'));
     }
 
 
