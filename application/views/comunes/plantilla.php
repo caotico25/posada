@@ -96,7 +96,7 @@
                             csrf_test_name: $.cookie('csrf_cookie_name')
                             }
                     });
-                    alert($(this).parent().attr('id').val());
+                    alert($(this).parent().attr('id'));
                     $.ajax({
                         
                         url: "<?= base_url('partidas/partidas/finalizar_partida') ?>",
