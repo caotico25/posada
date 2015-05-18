@@ -96,12 +96,12 @@
                             csrf_test_name: $.cookie('csrf_cookie_name')
                             }
                     });
-                    
+                    alert($(this).parent().attr('id').val());
                     $.ajax({
                         
                         url: "<?= base_url('partidas/partidas/finalizar_partida') ?>",
                         type: "POST",
-                        data: {'id_partida': $(this).parent().attr('id'), 'csrf_test_name': $.cookie('csrf_cookie_name')},
+                        data: {'id_partida': $(this).parent().attr('id').val(), 'csrf_test_name': $.cookie('csrf_cookie_name')},
                         success: function() {
                             
                             alert("Partida finalizada.");
