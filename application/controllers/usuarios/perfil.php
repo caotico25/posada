@@ -16,6 +16,7 @@ class Perfil extends CI_Controller
         
         $data['partidas_m'] = $this->Partida->partidas_master($id_usuario);
         $data['partidas_p'] = $this->Partida->partidas_player($id_usuario);
+        $data['partidas_f'] = $this->Partida->partidas_finalizadas($id_usuario);
         
         return $data;
     }
