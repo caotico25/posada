@@ -78,7 +78,7 @@
                     
                     $.ajax({
                     
-                        url: "<?= base_url('juegos/crear_tipo_juego') ?>",
+                        url: "<?= base_url('admin/juegos/crear_tipo_juego') ?>",
                         type: "POST",
                         data: {'nombre': $("#nombre").val(), 'descripcion': $("#descripcion").val(), 'csrf_test_name': $.cookie('csrf_cookie_name')},
                         success: function (datos){
