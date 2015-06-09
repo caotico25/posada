@@ -1,17 +1,11 @@
 ﻿drop table usuarios cascade;
-drop table tipos_juego cascade;
-drop table tipos_ficha cascade;
-drop table inventarios cascade;
-drop table fichas cascade;
-drop table personajes cascade;
-drop table otra_info cascade;
-drop table atributos cascade;
-drop table habilidades cascade;
-drop table ventajas cascade;
-drop table otros_parametros cascade;
 drop table estados cascade;
 drop table partidas cascade;
-drop table jugadores cascade;
+drop table fichas cascade;
+drop table tipos_juego cascade;
+drop table inventarios cascade;
+drop table anotaciones cascade;
+drop table campos cascade;
 drop table chat cascade;
 drop table noticias cascade;
 drop table secciones cascade;
@@ -45,15 +39,9 @@ create index idx_usuarios_usuario_passwd on usuarios (usuario, passwd);
 
 /*
 *   --------------
-*   TIPOS DE JUEGO
+*   DATOS DE FICHA
 *   --------------
 */
-
-create table tipos_juego (
-	id					bigserial		constraint pk_tipos_juego primary key,
-	nombre				varchar(50)		not null
-										constraint uq_tipos_juego unique
-);	
 
 
 /*
@@ -92,26 +80,30 @@ create table partidas (
 
 
 /*
-*   --------------
-*   DATOS DE FICHA
-*   --------------
-*/
-
-
-/*
 *	------
 *	FICHAS
 *	------
 */
 create table fichas (
 	id					bigserial		constraint pk_fichas primary key,
-	experiencia			numeric(6)		default 0,
-	anotaciones   		varchar(500),
-	usuario_id			bigint			constraint fk_usuarios_fichas
-										references usuarios (id),
-	partida_id			bigint			constraint fk_fichas_partidas
-										references partidas (id)
+	usuario_id			bigint			default null,
+	partida_id			bigint			default null
 );
+
+
+/*
+*   --------------
+*   TIPOS DE JUEGO
+*   --------------
+*/
+
+create table tipos_juego (
+	id					bigserial		constraint pk_tipos_juego primary key,
+	nombre				varchar(50)		not null
+										constraint uq_tipos_juego_nombre unique,
+	descripcion			text,
+	ficha_base			bigint			constraint fk_tipos_juego_fichas references fichas (id)
+);	
 
 
 /*
@@ -131,127 +123,32 @@ create table inventarios (
 
 
 /*
-*   ----------
-*   PERSONAJES
-*   ----------
+*	-----------
+*	ANOTACIONES
+*	-----------
 */
 
-create table personajes (
-	id					bigserial		constraint pk_personajes primary key,
-	nombre				varchar(50)		not null,
-	ficha				bigint			constraint fk_personajes_fichas
-										references fichas (id)
-);
-
-
-/*
-*	----------------
-*	OTRA INFORMACION
-*	----------------
-*/
-
-create table otra_info (
-	id					bigserial		constraint pk_otra_info primary key,
+create table anotaciones (
 	ficha				bigint			constraint fk_otra_info_fichas
 										references fichas (id),
-	nombre				varchar(30)		not null,
-	valor				text			default ''
+	texto				text			default ''
 );
 
 
 /*
-*	---------
-*	ATRIBUTOS
-*	---------
+*	------
+*	CAMPOS
+*	------
 */
 
-create table atributos (
+create table campos (
 	id					bigserial		constraint pk_atributos primary key,
 	ficha				bigint			constraint fk_atributos_fichas
 										references fichas (id),
 	nombre				varchar(30)		not null,
 	valor				numeric(3)		not null default 0,
-	categoria			varchar(30)		not null
-);
-
-
-/*
-*	-----------
-*	HABILIDADES
-*	-----------
-*/
-
-create table habilidades (
-	id					bigserial		constraint pk_habilidades primary key,
-	ficha				bigint			constraint fk_habilidades_fichas
-										references fichas (id),
-	nombre				varchar(30)		not null,
-	valor				numeric(3)		not null default 0,
-	categoria			varchar(30)		not null
-);
-
-
-/*
-*	--------
-*	VENTAJAS
-*	--------
-*/
-
-create table ventajas (
-	id					bigserial		constraint pk_ventajas primary key,
-	ficha				bigint			constraint fk_ventajas_fichas
-										references fichas (id),
-	nombre				varchar(30)		not null,
-	valor				numeric(3)		not null default 0,
-	categoria			varchar(30)		not null
-);
-
-
-/*
-*	----------------
-*	OTROS PARAMETROS
-*	----------------
-*/
-
-create table otros_parametros (
-	id					bigserial		constraint pk_otros_parametros primary key,
-	ficha				bigint			constraint fk_otros_parametros_fichas
-										references fichas (id),
-	nombre				varchar(30)		not null,
-	valor				numeric(3)		not null default 0,
-	categoria			varchar(30)		not null
-);
-
-
-/*
-*   --------------
-*   TIPOS DE FICHA
-*   --------------
-*/
-
-create table tipos_ficha (
-	id					bigserial		constraint pk_tipos_ficha primary key,
-	tipo_juego    		bigint      	constraint fk_tipos_ficha_tipos_juego
-										references tipos_juego (id),
-	ficha				bigint			constraint fk_tipos_ficha_fichas
-										references fichas (id)
-);
-
-
-/*
-*   -----------------------
-*   JUGADORES EN LA PARTIDA
-*   -----------------------
-*/
-
-create table jugadores (
-	id					bigserial		constraint pk_jugadores primary key,
-	partida_id			bigint        	constraint fk_jugadores_partidas
-												references partidas (id),
-	jugador				bigint			constraint fk_jugadores_usuarios
-												references usuarios (id),
-	ficha_id			bigint        	constraint fk_jugadores_ficha
-												references fichas (id)
+	categoria			varchar(50)		not null,
+	subcategoria		varchar(50)
 );
 
 

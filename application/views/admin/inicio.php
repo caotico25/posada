@@ -27,6 +27,14 @@
     </article>
 </section>
 <section class="admin">
+    <h2>Administrar tipos de juego</h2>
+    <article>
+        <a class="enlaceBoton" href="<?= base_url('admin/juegos/crear_tipo_juego') ?>">Crear nuevo tipo de juego</a>
+        <a class="enlaceBoton" href="<?= base_url('admin/juegos/modificar_tipo_juego') ?>">Modificar tipos de juego</a>
+        <a class="enlaceBoton" href="<?= base_url('admin/juegos/eliminar_tipo_juego') ?>">Eliminar tipo de juego</a>
+    </article>
+</section>
+<section class="admin">
     <h2>Informes</h2>
     <article>
         <a href="" class="enlacevacio"></a>

@@ -65,6 +65,41 @@
                     
                 });
                 
+                
+                // FUNCIONES PARA LA CREACION NUEVO TIPO DE JUEGO
+                $("#crear_juego").on("click", function() {
+                    
+                    $.ajaxSetup({
+                        data: {
+                            csrf_test_name: $.cookie('csrf_cookie_name')
+                            }
+                    });
+                    
+                    if ($(this).attr("name") == "seccion" || $(this).attr("name") == "tema")
+                    {
+                        $.ajax({
+                        
+                            url: "<?= base_url('juegos/crear_tipo_juego') ?>",
+                            type: "POST",
+                            data: {'nombre': $("#nombre").val(), 'descripcion': $("#descripcion").val(), 'csrf_test_name': $.cookie('csrf_cookie_name')},
+                            success: function (datos){
+                                
+                                alert(datos);
+                                alert(eval(datos));
+                                
+                            },
+                            error: function (jqXHR, textStatus, errorThrown){
+                                
+                                alert(textStatus + ' ' + errorThrown);
+                                
+                            }
+                            
+                        });
+                        
+                    }
+                    
+                });
+                
             });
             
         </script>
