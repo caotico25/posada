@@ -1,7 +1,7 @@
 <section class="admin">
     <h2>CREAR NUEVO TIPO DE JUEGO</h2>
     <article>
-        <form action="" method="post" accept-charset="utf-8">
+        <form action="" method="post" accept-charset="utf-8" class="formadmin">
             <label for="nombre">Nombre:</label>
             <input type="text" name="nombre" value="" id="nombre"/>
             <label for="descripcion">Descripción:</label>

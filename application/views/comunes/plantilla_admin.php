@@ -69,6 +69,7 @@
                 // FUNCIONES PARA LA CREACION NUEVO TIPO DE JUEGO
                 $("#crear_juego").on("click", function() {
                     
+                    alert('hola');
                     $.ajaxSetup({
                         data: {
                             csrf_test_name: $.cookie('csrf_cookie_name')
@@ -87,6 +88,7 @@
                                 alert(datos);
                                 alert(eval(datos));
                                 
+                                
                             },
                             error: function (jqXHR, textStatus, errorThrown){
                                 
@@ -97,6 +99,8 @@
                         });
                         
                     }
+                    
+                    return false;
                     
                 });
                 
