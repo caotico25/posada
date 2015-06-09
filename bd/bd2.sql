@@ -57,29 +57,6 @@ create table estados (
 
 
 /*
-*   --------
-*   PARTIDAS
-*   --------
-*/
-
-create table partidas (
-	id					bigserial		constraint pk_partidas primary key,
-	nombre				varchar(20)		not null,
-	descripcion			varchar(100),
-	master				bigint			constraint fk_partidas_usuarios
-												references usuarios (id),
-	tipo_juego			bigint			constraint fk_partidas_tipo_juego
-												references tipos_juego (id),
-	estado				bigint			not null
-										constraint fk_partidas_estados
-												references estados (id),
-	activa				boolean			default false,
-	f_creacion			date			default current_date,
-	f_fin				date
-);
-
-
-/*
 *	------
 *	FICHAS
 *	------
@@ -103,7 +80,30 @@ create table tipos_juego (
 										constraint uq_tipos_juego_nombre unique,
 	descripcion			text,
 	ficha_base			bigint			constraint fk_tipos_juego_fichas references fichas (id)
-);	
+);
+
+
+/*
+*   --------
+*   PARTIDAS
+*   --------
+*/
+
+create table partidas (
+	id					bigserial		constraint pk_partidas primary key,
+	nombre				varchar(20)		not null,
+	descripcion			varchar(100),
+	master				bigint			constraint fk_partidas_usuarios
+												references usuarios (id),
+	tipo_juego			bigint			constraint fk_partidas_tipo_juego
+												references tipos_juego (id),
+	estado				bigint			not null
+										constraint fk_partidas_estados
+												references estados (id),
+	activa				boolean			default false,
+	f_creacion			date			default current_date,
+	f_fin				date
+);
 
 
 /*
