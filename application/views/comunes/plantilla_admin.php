@@ -84,7 +84,7 @@
                             
                             var tipo_juego = eval(datos);
                             
-                            $("#ficha").append("<section>" +
+                            $("#ficha").append("<section class='admin'>" +
                             "<form class='formadmin'><label for='categoria'>Crear nueva categoria</label><input type='text' id='categoria' />" +
                             "<button id='crear_categoria'>Crear</button></form>" +
                             "</section>");
@@ -100,6 +100,13 @@
                     });
                     
                     return false;
+                    
+                });
+                
+                
+                $("#ficha").on("cllick", "crear_categoria", function() {
+                    
+                    alert('muahaaa');
                     
                 });
                 
