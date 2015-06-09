@@ -60,8 +60,13 @@ class Juegos extends CI_Controller
     }
     
     
-    
-    
+    /**
+     * 
+     */
+    function nuevo_juego()
+    {
+        redir_admin('admin/juegos/crear_juego');
+    }
     
     
     
