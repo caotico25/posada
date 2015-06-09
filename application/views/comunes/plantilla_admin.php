@@ -76,29 +76,25 @@
                             }
                     });
                     
-                    if ($(this).attr("name") == "seccion" || $(this).attr("name") == "tema")
-                    {
-                        $.ajax({
-                        
-                            url: "<?= base_url('juegos/crear_tipo_juego') ?>",
-                            type: "POST",
-                            data: {'nombre': $("#nombre").val(), 'descripcion': $("#descripcion").val(), 'csrf_test_name': $.cookie('csrf_cookie_name')},
-                            success: function (datos){
-                                
-                                alert(datos);
-                                alert(eval(datos));
-                                
-                                
-                            },
-                            error: function (jqXHR, textStatus, errorThrown){
-                                
-                                alert(textStatus + ' ' + errorThrown);
-                                
-                            }
+                    $.ajax({
+                    
+                        url: "<?= base_url('juegos/crear_tipo_juego') ?>",
+                        type: "POST",
+                        data: {'nombre': $("#nombre").val(), 'descripcion': $("#descripcion").val(), 'csrf_test_name': $.cookie('csrf_cookie_name')},
+                        success: function (datos){
                             
-                        });
+                            alert(datos);
+                            alert(eval(datos));
+                            
+                            
+                        },
+                        error: function (jqXHR, textStatus, errorThrown){
+                            
+                            alert(textStatus + ' ' + errorThrown);
+                            
+                        }
                         
-                    }
+                    });
                     
                     return false;
                     
