@@ -205,7 +205,7 @@ create table noticias (
 
 create table secciones (
 	id					bigserial			constraint pk_secciones primary key,
-	titulo        		varchar(20)   		not null constraint uq_titulo_secciones unique,
+	titulo        		varchar(50)   		not null constraint uq_titulo_secciones unique,
 	descripcion   		varchar(100)  		not null
 );
 
@@ -218,7 +218,7 @@ create table secciones (
 
 create table temas (
 	id					bigserial			constraint pk_temas primary key,
-	titulo        		varchar(20)   		not null constraint uq_titulo_temas unique,
+	titulo        		varchar(50)   		not null constraint uq_titulo_temas unique,
 	seccion       		bigint        		constraint fk_temas_secciones
 													references secciones (id),
 	descripcion			varchar(100)		not null
@@ -233,7 +233,7 @@ create table temas (
 
 create table posts (
 	id					bigserial		constraint pk_posts primary key,
-	titulo				varchar(20)		not null constraint uq_titulos_posts unique,
+	titulo				varchar(50)		not null constraint uq_titulos_posts unique,
 	contenido     		text          	not null,
 	autor         		bigint        	constraint fk_posts_usuarios
 												references usuarios (id),
