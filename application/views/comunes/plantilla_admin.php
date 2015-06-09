@@ -69,7 +69,6 @@
                 // FUNCIONES PARA LA CREACION NUEVO TIPO DE JUEGO
                 $("#crear_juego").on("click", function() {
                     
-                    alert('hola');
                     $.ajaxSetup({
                         data: {
                             csrf_test_name: $.cookie('csrf_cookie_name')
@@ -83,8 +82,12 @@
                         data: {'nombre': $("#nombre").val(), 'descripcion': $("#descripcion").val(), 'csrf_test_name': $.cookie('csrf_cookie_name')},
                         success: function (datos){
                             
-                            alert(datos);
-                            alert(eval(datos));
+                            var tipo_juego = eval(datos);
+                            
+                            $("#ficha").append("<section>" +
+                            "<form class='formadmin'><label for='categoria'>Crear nueva categoria</label><input type='text' id='categoria' />" +
+                            "<button id='crear_categoria'>Crear</button></form>" +
+                            "</section>");
                             
                             
                         },
