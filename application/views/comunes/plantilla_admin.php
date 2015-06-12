@@ -133,7 +133,7 @@
                             $("#datos article:nth-last-child(2)").append("<form class='formadmin'><label for='subcategoria'>Crear nueva subcategoria</label><input type='text' id='subcategoria' />" +
                             "<button id='crear_subcategoria'>Crear</button></form>");
                             
-                            $("#datos article:nth-last-child(2)").css({'border': '1px solid black', 'overflow': 'hidden', 'margin-top': '10px', 'margin-bottom': '10px'});
+                            $("#datos article:nth-last-child(2)").css({'border': '1px solid black', 'overflow': 'hidden', 'margin-top': '10px', 'margin-bottom': '10px', 'width': '80%', 'margin-left': '10%'});
                         },
                         error: function (jqXHR, textStatus, errorThrown){
                             
