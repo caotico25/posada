@@ -155,7 +155,7 @@
                     
                     alert('hiiii');
                     
-                    alert($(this).parent());
+                    alert($(this).parent().get(0).tagName);
                     
                     
                     //$("#datos").prepend("<section id='" + $("#subcategoria").val() + "' class='nueva-subcategoria'></article>");
