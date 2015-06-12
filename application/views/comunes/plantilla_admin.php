@@ -153,9 +153,7 @@
                 // CREA NUEVA SUBCATEGORIA
                 $("#ficha").on('click', "#crear_subcategoria", function() {
                     
-                    alert('hiiii');
-                    
-                    alert($(this).parent().get(0).tagName);
+                    alert($(this).parent().parent().get(0).tagName);
                     
                     
                     //$("#datos").prepend("<section id='" + $("#subcategoria").val() + "' class='nueva-subcategoria'></article>");
