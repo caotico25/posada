@@ -11,8 +11,8 @@
         </form>
     </article>
 </section>
-<div id="ficha-c">
-    <section class="admin" style="display: none;" id="datos">
+<div id="ficha-c" style="display: none;">
+    <section class="admin" id="datos">
         
         <article class="nueva-categoria">
             <!-- FORMULARIO PARA CREAR NUEVA CATEGORIA -->
