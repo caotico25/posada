@@ -123,7 +123,7 @@
                             
                             var res = eval(datos);
                             
-                            $("<article id='" + $("#categoria").val() + "' class='nueva-categoria'></article>").insertBefore("#datos:last-child");
+                            $("<article id='" + $("#categoria").val() + "' class='nueva-categoria'></article>").insertBefore("#datos article:last-child");
                             
                             // FORMULARIO PARA CREAR CAMPO
                             $("#datos article:nth-last-child(2)").append("<form class='formadmin' id='form_campo'><label for='campo'>Crear nuevo campo</label><input type='text' id='campo' />" +
