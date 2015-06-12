@@ -14,7 +14,7 @@
 <div id="ficha-c" style="display: none;">
     <section class="admin" id="datos">
         
-        <article class="nueva-categoria">
+        <article>
             <!-- FORMULARIO PARA CREAR NUEVA CATEGORIA -->
             <form class="formadmin" method="post" accept-charset="utf-8" id="form_crear_categoria">
                 <label for="categoria">Crear nueva categoria</label>
