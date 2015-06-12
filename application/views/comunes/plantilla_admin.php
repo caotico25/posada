@@ -133,7 +133,7 @@
                             $("#datos article:last-child").append("<form class='formadmin'><label for='subcategoria'>Crear nueva subcategoria</label><input type='text' id='subcategoria' />" +
                             "<button id='crear_subcategoria'>Crear</button></form>");
                             
-                            $("#datos article:last-child").css('border', '1px solid black');
+                            $("#datos article:last-child").css({'border': '1px solid black', 'overflow': 'hidden'});
                         },
                         error: function (jqXHR, textStatus, errorThrown){
                             
