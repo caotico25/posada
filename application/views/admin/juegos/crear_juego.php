@@ -11,7 +11,7 @@
         </form>
     </article>
 </section>
-<div id="ficha">
+<div id="ficha-c">
     <section class="admin" style="display: none;" id="datos">
         
         <article class="nueva-categoria">
