@@ -153,12 +153,10 @@
                 // CREA NUEVA SUBCATEGORIA
                 $("#ficha").on('click', "#crear_subcategoria", function() {
                     
-                    alert($(this).parent().parent().get(0).tagName);
+                    $(this).parent().parent().prepend("<section id='" + $("#subcategoria").val() + "' class='nueva-subcategoria'></article>");
                     
-                    
-                    //$("#datos").prepend("<section id='" + $("#subcategoria").val() + "' class='nueva-subcategoria'></article>");
-                    
-                    
+                    $("#" + $("#subcategoria").val()).append("<form class='formadmin'><label for='campo'>Crear nuevo campo</label><input type='text' id='campo' />" +
+                            "<button id='crear_campo'>Crear</button></form>");
                     
                     return false;
                 });
