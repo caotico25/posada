@@ -106,7 +106,7 @@
                 
                 
                 // CREAR UNA NUEVA CATEGORIA
-                $("#ficha").on("click", "crear_categoria", function() {
+                $("#ficha").on("click", "#crear_categoria", function() {
                     
                     alert('muahaaa');
                     
