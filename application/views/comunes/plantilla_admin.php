@@ -89,7 +89,7 @@
                             
                             tipo_juego = eval(datos);
                             
-                            $("#datos").css({'display': 'block', 'border': '1px solid black'}).css('margin', '10px');
+                            $("#datos").css({'display': 'block', 'border': '1px solid red'}).css('margin', '10px');
                             
                         },
                         error: function (jqXHR, textStatus, errorThrown){
