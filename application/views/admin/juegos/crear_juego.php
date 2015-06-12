@@ -14,26 +14,13 @@
 <div id="ficha">
     <section class="admin" style="display: none;" id="datos">
         
-        <article style="display: none;">
-            <!-- SI SE CREA CATEGORIA, AQUI SU NOMBRE -->
-            <h1></h1>
-            <div class="campos">
-                <!-- // PIZARRITAAAA -->
-            </div>
-            <!-- FORMULARIO PARA CREAR CAMPOS SIN SUBCATEGORIA -->
-            <form class="formadmin" method="post" accept-charset="utf-8">
-                <label for="campo">Crear nuevo campo</label>
-                <input type="text" id="campo" />
-                <input type="hidden" name="categoria" value="" id="categoria"/>
-                <button id="crear_campo">Crear</button>
+        <article class="nueva-categoria">
+            <!-- FORMULARIO PARA CREAR NUEVA CATEGORIA -->
+            <form class="formadmin" method="post" accept-charset="utf-8" id="form_crear_categoria">
+                <label for="categoria">Crear nueva categoria</label>
+                <input type="text" id="categoria" />
+                <button id="crear_categoria">Crear</button>
             </form>
         </article>
-        
-        <!-- FORMULARIO PARA CREAR NUEVA CATEGORIA -->
-        <form class="formadmin" method="post" accept-charset="utf-8" id="form_crear_categoria">
-            <label for="categoria">Crear nueva categoria</label>
-            <input type="text" id="categoria" />
-            <button id="crear_categoria">Crear</button>
-        </form>
     </section>
 </div>

@@ -125,13 +125,10 @@
                             
                             var res = eval(datos);
                             
-                            $("#datos").append("<article id='" + $("#categoria").val() + "'></article>");
-                            
-                            // CREAMOS ARTICLE DE LA CATEGORIA
-                            $("<article id='" + $("#categoria").val() + "'></article>").insertBefore("#form_crear_categoria");
+                            $("#datos").append("<article id='" + $("#categoria").val() + "' class='nueva-categoria'></article>");
                             
                             // FORMULARIO PARA CREAR CAMPO
-                            $("#datos article:last-child").append("<form class='formadmin'><label for='campo'>Crear nuevo campo</label><input type='text' id='campo' />" +
+                            $("#datos article:last-child").append("<form class='formadmin' id='form_campo'><label for='campo'>Crear nuevo campo</label><input type='text' id='campo' />" +
                             "<button id='crear_campo'>Crear</button></form>");
                             
                             // FORMULARIO PARA CREAR SUBCATEGORIA
@@ -150,6 +147,22 @@
                     
                     return false;
                     
+                });
+                
+                
+                // CREA NUEVA SUBCATEGORIA
+                $("#ficha").on('click', "#crear_subcategoria", function() {
+                    
+                    alert('hiiii');
+                    
+                    alert($(this).parent());
+                    
+                    
+                    //$("#datos").prepend("<section id='" + $("#subcategoria").val() + "' class='nueva-subcategoria'></article>");
+                    
+                    
+                    
+                    return false;
                 });
                 
             });

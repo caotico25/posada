@@ -80,4 +80,13 @@ class Juegos extends CI_Controller
     }
     
     
+    /**
+     * CREA UNA NUEVA CATEGORIA
+     */
+    function crear_subcategoria()
+    {
+        echo json_encode("hola");
+    }
+    
+    
 }
