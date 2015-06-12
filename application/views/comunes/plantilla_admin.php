@@ -89,7 +89,7 @@
                             
                             tipo_juego = eval(datos);
                             
-                            $("#datos").css('display', 'block');
+                            $("#datos").css('display', 'block').css('border', '1px solid black');
                             
                         },
                         error: function (jqXHR, textStatus, errorThrown){
@@ -135,7 +135,7 @@
                             $("#datos article:last-child").append("<form class='formadmin'><label for='subcategoria'>Crear nueva subcategoria</label><input type='text' id='subcategoria' />" +
                             "<button id='crear_subcategoria'>Crear</button></form>");
                             
-                            
+                            $("#datos article:last-child").css('border', '1px solid black');
                         },
                         error: function (jqXHR, textStatus, errorThrown){
                             
@@ -159,6 +159,8 @@
                     
                     $("#" + $("#subcategoria").val()).append("<form class='formadmin'><label for='campo'>Crear nuevo campo</label><input type='text' id='campo' />" +
                             "<button id='crear_campo'>Crear</button></form>");
+                            
+                    $("#" + $("#subcategoria").val()).css('border', '1px solid black');
                     
                     return false;
                 });
