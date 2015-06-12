@@ -125,6 +125,8 @@
                             
                             var res = eval(datos);
                             
+                            $("#datos").append("<article id='" + $("#categoria").val() + "'></article>");
+                            
                             // CREAMOS ARTICLE DE LA CATEGORIA
                             $("<article id='" + $("#categoria").val() + "'></article>").insertBefore("#form_crear_categoria");
                             
