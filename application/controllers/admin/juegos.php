@@ -47,17 +47,8 @@ class Juegos extends CI_Controller
             redirect('admin/inicio');
         }
     }
-    
-    
-    /**
-     * CREA UN NUEVO TIPO DE JUEGO
-     */
-    function crear_tipo_juego()
-    {
-        $id_juego_nuevo = $this->Juego->nuevo_juego($this->input->post());
-        
-        echo json_encode($id_juego_nuevo);
-    }
+
+/* FUNCIONES PARA LA CREACION DENUEVS TIPOS DE JUEGO */
     
     
     /**
@@ -69,8 +60,24 @@ class Juegos extends CI_Controller
     }
     
     
+    /**
+     * CREA UN NUEVO TIPO DE JUEGO
+     */
+    function crear_tipo_juego()
+    {
+        //$id_juego_nuevo = $this->Juego->nuevo_juego($this->input->post());
+        
+        echo json_encode(1);
+    }
     
     
+    /**
+     * CREA UNA NUEVA CATEGORIA
+     */
+    function crear_categoria()
+    {
+        echo json_encode("hola");
+    }
     
     
 }

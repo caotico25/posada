@@ -67,6 +67,11 @@
                 
                 
                 // FUNCIONES PARA LA CREACION NUEVO TIPO DE JUEGO
+                // VARIABLE EN LA QUE SE ALMACENAR´EL TIPO DE JUEGO
+                var tipo_juego = 0;
+                
+                
+                // CREA UN NUEVO TIPO DE JUEGO
                 $("#crear_juego").on("click", function() {
                     
                     $.ajaxSetup({
@@ -82,13 +87,9 @@
                         data: {'nombre': $("#nombre").val(), 'descripcion': $("#descripcion").val(), 'csrf_test_name': $.cookie('csrf_cookie_name')},
                         success: function (datos){
                             
-                            var tipo_juego = eval(datos);
+                            tipo_juego = eval(datos);
                             
-                            $("#ficha").append("<section class='admin'>" +
-                            "<form class='formadmin'><label for='categoria'>Crear nueva categoria</label><input type='text' id='categoria' />" +
-                            "<button id='crear_categoria'>Crear</button></form>" +
-                            "</section>");
-                            
+                            $("#datos").css('display', 'block');
                             
                         },
                         error: function (jqXHR, textStatus, errorThrown){
@@ -104,9 +105,48 @@
                 });
                 
                 
-                $("#ficha").on("cllick", "crear_categoria", function() {
+                // CREAR UNA NUEVA CATEGORIA
+                $("#ficha").on("click", "crear_categoria", function() {
                     
                     alert('muahaaa');
+                    
+                    $.ajaxSetup({
+                        data: {
+                            csrf_test_name: $.cookie('csrf_cookie_name')
+                            }
+                    });
+                    
+                    $.ajax({
+                    
+                        url: "<?= base_url('admin/juegos/crear_categoria') ?>",
+                        type: "POST",
+                        data: {'tipo_juego': tipo_juego, 'categoria': $("#categoria").val(), 'csrf_test_name': $.cookie('csrf_cookie_name')},
+                        success: function (datos){
+                            
+                            var res = eval(datos);
+                            
+                            // CREAMOS ARTICLE DE LA CATEGORIA
+                            $("<article id='" + $("#categoria").val() + "'></article>").insertBefore("#form_crear_categoria");
+                            
+                            // FORMULARIO PARA CREAR CAMPO
+                            $("#datos article:last-child").append("<form class='formadmin'><label for='campo'>Crear nuevo campo</label><input type='text' id='campo' />" +
+                            "<button id='crear_campo'>Crear</button></form>");
+                            
+                            // FORMULARIO PARA CREAR SUBCATEGORIA
+                            $("#datos article:last-child").append("<form class='formadmin'><label for='subcategoria'>Crear nueva subcategoria</label><input type='text' id='subcategoria' />" +
+                            "<button id='crear_subcategoria'>Crear</button></form>");
+                            
+                            
+                        },
+                        error: function (jqXHR, textStatus, errorThrown){
+                            
+                            alert(textStatus + ' ' + errorThrown);
+                            
+                        }
+                        
+                    });
+                    
+                    return false;
                     
                 });
                 
