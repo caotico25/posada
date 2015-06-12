@@ -126,14 +126,14 @@
                             $("<article id='" + $("#categoria").val() + "' class='nueva-categoria'></article>").insertBefore("#datos:last-child");
                             
                             // FORMULARIO PARA CREAR CAMPO
-                            $("#datos article:last-child").append("<form class='formadmin' id='form_campo'><label for='campo'>Crear nuevo campo</label><input type='text' id='campo' />" +
+                            $("#datos article:nth-last-child(2)").append("<form class='formadmin' id='form_campo'><label for='campo'>Crear nuevo campo</label><input type='text' id='campo' />" +
                             "<button id='crear_campo'>Crear</button></form>");
                             
                             // FORMULARIO PARA CREAR SUBCATEGORIA
-                            $("#datos article:last-child").append("<form class='formadmin'><label for='subcategoria'>Crear nueva subcategoria</label><input type='text' id='subcategoria' />" +
+                            $("#datos article:nth-last-child(2)").append("<form class='formadmin'><label for='subcategoria'>Crear nueva subcategoria</label><input type='text' id='subcategoria' />" +
                             "<button id='crear_subcategoria'>Crear</button></form>");
                             
-                            $("#datos article:last-child").css({'border': '1px solid black', 'overflow': 'hidden'});
+                            $("#datos article:nth-last-child(2)").css({'border': '1px solid black', 'overflow': 'hidden', 'margin-top': '10px', 'margin-bottom': '10px'});
                         },
                         error: function (jqXHR, textStatus, errorThrown){
                             
