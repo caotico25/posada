@@ -108,7 +108,7 @@
                 
                 // CREAR UNA NUEVA CATEGORIA
                 $("#ficha-c").on("click", "#crear_categoria", function() {
-                    alert(tipo_juego);
+                    
                     $.ajaxSetup({
                         data: {
                             csrf_test_name: $.cookie('csrf_cookie_name')
@@ -190,10 +190,12 @@
                     var cat = $(this).parent().children("#categoria").val();
                     var campo = $(this).parent().children("#campo").val();
                     
-                    $(this).parent().parent().children("#campos" + subcat).append("<div id='" + campo + "'>campo</div>");
+                    $(this).parent().parent().children("#campos" + cat).append("<div id='" + campo + "'>campo</div>");
                     
-                    $("#" + campo).css({'display': 'block-inline', 'margin': '5px', 'border': '1px solid black'});
+                    $("#" + campo).css({'display': 'inline-block', 'margin': '5px', 'border': '1px solid black', 'padding': '10px'});
                     $("#" + campo).corner();
+                    
+                    $("#" + campo).append("<button class='eliminar_campo' id='x-" + campo + "'>X</button>");
                     
                     return false;
                 });
@@ -206,9 +208,9 @@
                     var cat = $(this).parent().children("#categoria").val();
                     var campo = $(this).parent().children("#campo_s").val();
                     
-                    $(this).parent().parent().children("#campos" + subcat).append("<div id='" + campo + "'>campo</div>");
+                    $(this).parent().parent().children("#campos" + subcat).append("<div id='" + campo + "'>" + campo + "</div>");
                     
-                    $("#" + campo).css({'display': 'inline', 'margin': '5px', 'border': '1px solid black', 'padding': '10px'});
+                    $("#" + campo).css({'display': 'inline-block', 'margin': '5px', 'border': '1px solid black', 'padding': '10px'});
                     $("#" + campo).corner();
                     
                     $("#" + campo).append("<button class='eliminar_campo' id='x-" + campo + "'>X</button>");
