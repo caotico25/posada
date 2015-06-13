@@ -188,7 +188,7 @@
                 $("#ficha-c").on('click', '#crear_campo', function() {
                     
                     var cat = $(this).parent().children("#categoria").val();
-                    var campo = $(this).parent().children("#campo_s").val();
+                    var campo = $(this).parent().children("#campo").val();
                     
                     $(this).parent().parent().children("#campos" + subcat).append("<div id='" + campo + "'>campo</div>");
                     
@@ -208,7 +208,7 @@
                     
                     $(this).parent().parent().children("#campos" + subcat).append("<div id='" + campo + "'>campo</div>");
                     
-                    $("#" + campo).css({'display': 'block-inline', 'margin': '5px', 'border': '1px solid black'});
+                    $("#" + campo).css({'display': 'inline', 'margin': '5px', 'border': '1px solid black', 'padding': '10px'});
                     $("#" + campo).corner();
                     
                     $("#" + campo).append("<button class='eliminar_campo' id='x-" + campo + "'>X</button>");
@@ -218,7 +218,7 @@
                 
                 
                 // ELIMINA EL CAMPO SELECCIONADO
-                $("·ficha-c").on('click', '.eliminar_campo', function() {
+                $("#ficha-c").on('click', '.eliminar_campo', function() {
                     
                     var id = $(this).attr("id");
                     
