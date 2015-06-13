@@ -107,7 +107,7 @@
                 
                 // CREAR UNA NUEVA CATEGORIA
                 $("#ficha-c").on("click", "#crear_categoria", function() {
-                    
+                    alert(tipo_juego);
                     $.ajaxSetup({
                         data: {
                             csrf_test_name: $.cookie('csrf_cookie_name')
@@ -125,13 +125,15 @@
                             
                             $("<article id='" + $("#categoria").val() + "' class='nueva-categoria'></article>").insertBefore("#datos article:last-child");
                             
+                            $("#datos article:nth-last-child(2)").append("<h2>" + $("#categoria").val() + "</h2>");
+                            
                             // FORMULARIO PARA CREAR CAMPO
                             $("#datos article:nth-last-child(2)").append("<form class='formadmin' id='form_campo'><label for='campo'>Crear nuevo campo</label><input type='text' id='campo' />" +
-                            "<button id='crear_campo'>Crear</button></form>");
+                            "<input type='hidden' value='" + $("#categoria").val() + "' id='categoria' /><button id='crear_campo'>Crear</button></form>");
                             
                             // FORMULARIO PARA CREAR SUBCATEGORIA
                             $("#datos article:nth-last-child(2)").append("<form class='formadmin'><label for='subcategoria'>Crear nueva subcategoria</label><input type='text' id='subcategoria' />" +
-                            "<button id='crear_subcategoria'>Crear</button></form>");
+                            "<input type='hidden' value='" + $("#categoria").val() + "' id='categoria' /><button id='crear_subcategoria'>Crear</button></form>");
                             
                             $("#datos article:nth-last-child(2)").css({'border': '1px solid black', 'overflow': 'hidden', 'margin-top': '10px', 'margin-bottom': '10px', 'width': '90%', 'margin-left': '5%'});
                         },
@@ -152,19 +154,37 @@
                 $("#ficha-c").on('click', "#crear_subcategoria", function() {
                     
                     var padre = $(this).parent().parent();
+                    var subcat = padre.children("#subcategoria").val();
                     
                     padre.prepend("<section id='" + $("#subcategoria").val() + "' class='nueva-subcategoria'></section>");
                     
-                    $("#" + $("#subcategoria").val()).append("<form class='formadmin'><label for='campo'>Crear nuevo campo</label><input type='text' id='campo' />" +
-                            "<button id='crear_campo'>Crear</button></form>");
+                    $("#" + subcat).append("<h2>" + subcat + "</h2>");
+                    
+                    $("#" + subcat).append("<form class='formadmin'><label for='campo_s'>Crear nuevo campo</label><input type='text' id='campo_s' />" +
+                    "<input type='hidden' value='" + $("#subcategoria").val() + "' id='subcategoria' /><input type='hidden' value='" + $("#categoria").val() + "' id='categoria' /><button id='crear_campo_s'>Crear</button></form>");
                             
-                    $("#" + $("#subcategoria").val()).css({'border': '1px solid black', 'overflow': 'hidden', 'margin-top': '10px', 'margin-bottom': '10px', 'width': '90%', 'margin-left': '5%'});
+                    $("#" + subcat).css({'border': '1px solid black', 'overflow': 'hidden', 'margin-top': '10px', 'margin-bottom': '10px', 'width': '90%', 'margin-left': '5%'});
                     
                     padre.children("#form_campo").hide();
                     
                     return false;
                 });
                 
+                
+                // CREA CAMPO SIN SUBCATEGORIA
+                $("#ficha-c").on('click', '#crear_campo', function() {
+                    
+                    
+                    
+                });
+                
+                
+                // CREA CAMPO CON SUBCATEGORIA
+                $("#ficha-c").on('click', '#crear_campo_s', function() {
+                    
+                    
+                    
+                });
             });
             
         </script>
