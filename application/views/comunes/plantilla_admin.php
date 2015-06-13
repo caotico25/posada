@@ -112,7 +112,7 @@
                     // OBTNEMOS VALORES DE FORMULARIO
                     var categoria = $("#categoria").val();
                     // ID DE LA CATEGORIA Y NOMBRE DE LA TABLA
-                    var id_categoria = categoria.replace(/\.+/g, "_");
+                    var id_categoria = categoria.replace(/\s+/g, "_");
                     
                     $.ajaxSetup({
                         data: {
@@ -170,7 +170,7 @@
                     var categoria = $(this).parent().children("#categoria").val();
                     
                     // ID DE LA SUBCATEGORIA
-                    var id_subcategoria = subcategoria.replace(/\.+/g, "_");
+                    var id_subcategoria = subcategoria.replace(/\s+/g, "_");
                     
                     $("<section id='" + id_subcategoria + "' class='nueva-subcategoria'></section>").insertAfter($(this).parent().parent().children("h2"));
                     
