@@ -150,7 +150,7 @@
                             
                             alert(res);
                             
-                            $("#categoria").val("");
+                            $(this).parent().children("#categoria").val("");
                             
                         },
                         error: function (jqXHR, textStatus, errorThrown){
