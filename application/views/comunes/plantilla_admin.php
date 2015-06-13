@@ -157,6 +157,7 @@
                     
                     var padre = $(this).parent().parent();
                     var subcat = $(this).parent().children("#subcategoria").val();
+                    var cat = $(this).parent().children("#categoria").val();
                     
                     alert(subcat);
                     
@@ -167,12 +168,12 @@
                     $("#" + subcat).append("<div id='campos" + subcat + "'></div>");
                     
                     $("#" + subcat).append("<form class='formadmin'><label for='campo_s'>Crear nuevo campo</label><input type='text' id='campo_s' />" +
-                    "<input type='hidden' value='" + subcat + "' id='subcategoria' /><input type='hidden' value='" + subcat + "' id='categoria' /><button id='crear_campo_s'>Crear</button></form>");
+                    "<input type='hidden' value='" + subcat + "' id='subcategoria' /><input type='hidden' value='" + cat + "' id='categoria' /><button id='crear_campo_s'>Crear</button></form>");
                             
                     $("#" + subcat).css({'border': '1px solid black', 'overflow': 'hidden', 'margin-top': '10px', 'margin-bottom': '10px', 'width': '90%', 'margin-left': '5%'});
                     
                     padre.children("#form_campo").hide();
-                    padre.children().hide($(this).parent().parent().children("#" + $(this).parent().children("#categoria").val()));
+                    padre.children("#campos" + cat).hide();
                     
                     return false;
                 });
