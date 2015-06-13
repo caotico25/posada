@@ -158,7 +158,7 @@
                     
                     alert(subcat);
                     
-                    padre.prepend("<section id='" + subcat + "' class='nueva-subcategoria'></section>");
+                    $("<section id='" + subcat + "' class='nueva-subcategoria'></section>").insertAfter(padre.children("h2"));
                     
                     $("#" + subcat).append("<h3>" + subcat + "</h3>");
                     
