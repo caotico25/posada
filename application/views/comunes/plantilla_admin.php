@@ -6,6 +6,7 @@
         <title>La posada del Caos</title>
         <script src="<?= base_url('javascript/jquery-1-10-2.js') ?>" type="text/javascript" charset="utf-8"></script>
         <script src="<?= base_url('javascript/jquery.cookie.js') ?>" type="text/javascript" charset="utf-8"></script>
+        <script src="<?= base_url('javascript/esquinas.js') ?>" type="text/javascript" charset="utf-8"></script>
         <link rel="stylesheet/less" href="<?= base_url('css/responsive.less') ?>" type="text/css" media="screen" />
         <script src="<?= base_url('javascript/less.js') ?>" type="text/javascript" charset="utf-8"></script>
         <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
@@ -138,6 +139,9 @@
                             "<input type='hidden' value='" + $("#categoria").val() + "' id='categoria' /><button id='crear_subcategoria'>Crear</button></form>");
                             
                             $("#datos article:nth-last-child(2)").css({'border': '1px solid black', 'overflow': 'hidden', 'margin-top': '10px', 'margin-bottom': '10px', 'width': '90%', 'margin-left': '5%'});
+                            $("#datos article:nth-last-child(2)").corner();
+                            
+                            
                         },
                         error: function (jqXHR, textStatus, errorThrown){
                             
@@ -171,6 +175,7 @@
                     "<input type='hidden' value='" + subcat + "' id='subcategoria' /><input type='hidden' value='" + cat + "' id='categoria' /><button id='crear_campo_s'>Crear</button></form>");
                             
                     $("#" + subcat).css({'border': '1px solid black', 'overflow': 'hidden', 'margin-top': '10px', 'margin-bottom': '10px', 'width': '90%', 'margin-left': '5%'});
+                    $("#" + subcat).corner();
                     
                     padre.children("#form_campo").hide();
                     padre.children("#campos" + cat).hide();
@@ -182,6 +187,13 @@
                 // CREA CAMPO SIN SUBCATEGORIA
                 $("#ficha-c").on('click', '#crear_campo', function() {
                     
+                    var cat = $(this).parent().children("#categoria").val();
+                    var campo = $(this).parent().children("#campo_s").val();
+                    
+                    $(this).parent().parent().children("#campos" + subcat).append("<div id='" + campo + "'>campo</div>");
+                    
+                    $("#" + campo).css({'display': 'block-inline', 'margin': '5px', 'border': '1px solid black'});
+                    $("#" + campo).corner();
                     
                     return false;
                 });
@@ -194,10 +206,29 @@
                     var cat = $(this).parent().children("#categoria").val();
                     var campo = $(this).parent().children("#campo_s").val();
                     
-                    $(this).parent().parent().children("#campos" + subcat).append(campo);
+                    $(this).parent().parent().children("#campos" + subcat).append("<div id='" + campo + "'>campo</div>");
+                    
+                    $("#" + campo).css({'display': 'block-inline', 'margin': '5px', 'border': '1px solid black'});
+                    $("#" + campo).corner();
+                    
+                    $("#" + campo).append("<button class='eliminar_campo' id='x-" + campo + "'>X</button>");
                     
                     return false;
                 });
+                
+                
+                // ELIMINA EL CAMPO SELECCIONADO
+                $("·ficha-c").on('click', '.eliminar_campo', function() {
+                    
+                    var id = $(this).attr("id");
+                    
+                    var partes = id.split('-');
+                    
+                    $("#" + partes[1]).remove();
+                    
+                });
+                
+                
             });
             
         </script>
