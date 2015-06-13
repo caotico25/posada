@@ -109,6 +109,11 @@
                 // CREAR UNA NUEVA CATEGORIA
                 $("#ficha-c").on("click", "#crear_categoria", function() {
                     
+                    // OBTNEMOS VALORES DE FORMULARIO
+                    var categoria = $("#categoria").val();
+                    // ID DE LA CATEGORIA Y NOMBRE DE LA TABLA
+                    var id_categoria = categoria.replace(/\.+/g, "_");
+                    
                     $.ajaxSetup({
                         data: {
                             csrf_test_name: $.cookie('csrf_cookie_name')
@@ -119,24 +124,24 @@
                     
                         url: "<?= base_url('admin/juegos/crear_categoria') ?>",
                         type: "POST",
-                        data: {'tipo_juego': tipo_juego, 'categoria': $("#categoria").val(), 'csrf_test_name': $.cookie('csrf_cookie_name')},
+                        data: {'tipo_juego': tipo_juego, 'categoria': id_categoria, 'csrf_test_name': $.cookie('csrf_cookie_name')},
                         success: function (datos){
                             
                             var res = eval(datos);
                             
-                            $("<article id='" + $("#categoria").val() + "' class='nueva-categoria'></article>").insertBefore("#datos article:last-child");
+                            $("<article id='" + id_categoria + "' class='nueva-categoria'></article>").insertBefore("#datos article:last-child");
                             
-                            $("#datos article:nth-last-child(2)").append("<h2>" + $("#categoria").val() + "</h2>");
+                            $("#datos article:nth-last-child(2)").append("<h2>" + categoria + "</h2>");
                             
-                            $("#datos article:nth-last-child(2)").append("<div id='campos" + $("#categoria").val() + "'></div>");
+                            $("#datos article:nth-last-child(2)").append("<div id='campos_" + id_categoria + "'></div>");
                             
                             // FORMULARIO PARA CREAR CAMPO
                             $("#datos article:nth-last-child(2)").append("<form class='formadmin' id='form_campo'><label for='campo'>Crear nuevo campo</label><input type='text' id='campo' />" +
-                            "<input type='hidden' value='" + $("#categoria").val() + "' id='categoria' /><button id='crear_campo'>Crear</button></form>");
+                            "<input type='hidden' value='" + id_categoria + "' id='categoria' /><button id='crear_campo'>Crear</button></form>");
                             
                             // FORMULARIO PARA CREAR SUBCATEGORIA
                             $("#datos article:nth-last-child(2)").append("<form class='formadmin' id='formsubcat'><label for='subcategoria'>Crear nueva subcategoria</label><input type='text' id='subcategoria' />" +
-                            "<input type='hidden' value='" + $("#categoria").val() + "' id='categoria' /><button id='crear_subcategoria'>Crear</button></form>");
+                            "<input type='hidden' value='" + id_categoria + "' id='categoria' /><button id='crear_subcategoria'>Crear</button></form>");
                             
                             $("#datos article:nth-last-child(2)").css({'border': '1px solid black', 'overflow': 'hidden', 'margin-top': '10px', 'margin-bottom': '10px', 'width': '90%', 'margin-left': '5%'});
                             $("#datos article:nth-last-child(2)").corner();
@@ -159,26 +164,28 @@
                 // CREA NUEVA SUBCATEGORIA
                 $("#ficha-c").on('click', "#crear_subcategoria", function() {
                     
+                    // OBTENEMOS VALORES DEL FORMULARIO
                     var padre = $(this).parent().parent();
-                    var subcat = $(this).parent().children("#subcategoria").val();
-                    var cat = $(this).parent().children("#categoria").val();
+                    var subcategoria = $(this).parent().children("#subcategoria").val();
+                    var categoria = $(this).parent().children("#categoria").val();
                     
-                    alert(subcat);
+                    // ID DE LA SUBCATEGORIA
+                    var id_subcategoria = subcategoria.replace(/\.+/g, "_");
                     
-                    $("<section id='" + subcat + "' class='nueva-subcategoria'></section>").insertAfter($(this).parent().parent().children("h2"));
+                    $("<section id='" + id_subcategoria + "' class='nueva-subcategoria'></section>").insertAfter($(this).parent().parent().children("h2"));
                     
-                    $("#" + subcat).append("<h3>" + subcat + "</h3>");
+                    $("#" + id_subcategoria).append("<h3>" + subcategoria + "</h3>");
                     
-                    $("#" + subcat).append("<div id='campos" + subcat + "'></div>");
+                    $("#" + id_subcategoria).append("<div id='campos_" + id_subcategoria + "'></div>");
                     
-                    $("#" + subcat).append("<form class='formadmin'><label for='campo_s'>Crear nuevo campo</label><input type='text' id='campo_s' />" +
-                    "<input type='hidden' value='" + subcat + "' id='subcategoria' /><input type='hidden' value='" + cat + "' id='categoria' /><button id='crear_campo_s'>Crear</button></form>");
+                    $("#" + id_subcategoria).append("<form class='formadmin'><label for='campo_s'>Crear nuevo campo</label><input type='text' id='campo_s' />" +
+                    "<input type='hidden' value='" + id_subcategoria + "' id='subcategoria' /><input type='hidden' value='" + categoria + "' id='categoria' /><button id='crear_campo_s'>Crear</button></form>");
                             
-                    $("#" + subcat).css({'border': '1px solid black', 'overflow': 'hidden', 'margin-top': '10px', 'margin-bottom': '10px', 'width': '90%', 'margin-left': '5%'});
-                    $("#" + subcat).corner();
+                    $("#" + id_subcategoria).css({'border': '1px solid black', 'overflow': 'hidden', 'margin-top': '10px', 'margin-bottom': '10px', 'width': '90%', 'margin-left': '5%'});
+                    $("#" + id_subcategoria).corner();
                     
                     padre.children("#form_campo").hide();
-                    padre.children("#campos" + cat).hide();
+                    padre.children("#campos" + categoria).hide();
                     
                     return false;
                 });
@@ -187,10 +194,10 @@
                 // CREA CAMPO SIN SUBCATEGORIA
                 $("#ficha-c").on('click', '#crear_campo', function() {
                     
-                    var cat = $(this).parent().children("#categoria").val();
+                    var categoria = $(this).parent().children("#categoria").val();
                     var campo = $(this).parent().children("#campo").val();
                     
-                    $(this).parent().parent().children("#campos" + cat).append("<div id='" + campo + "'>" + campo + "</div>");
+                    $(this).parent().parent().children("#campos_" + categoria).append("<div id='" + campo + "'>" + campo + "</div>");
                     
                     $("#" + campo).css({'display': 'inline-block', 'margin': '5px', 'border': '1px solid black', 'padding': '10px'});
                     $("#" + campo).corner();
@@ -208,11 +215,11 @@
                 // CREA CAMPO CON SUBCATEGORIA
                 $("#ficha-c").on('click', '#crear_campo_s', function() {
                     
-                    var subcat = $(this).parent().children("#subcategoria").val();
-                    var cat = $(this).parent().children("#categoria").val();
+                    var subcategoria = $(this).parent().children("#subcategoria").val();
+                    var categoria = $(this).parent().children("#categoria").val();
                     var campo = $(this).parent().children("#campo_s").val();
                     
-                    $(this).parent().parent().children("#campos" + subcat).append("<div id='" + campo + "'>" + campo + "</div>");
+                    $(this).parent().parent().children("#campos_" + subcategoria).append("<div id='" + campo + "'>" + campo + "</div>");
                     
                     $("#" + campo).css({'display': 'inline-block', 'margin': '5px', 'border': '1px solid black', 'padding': '10px'});
                     $("#" + campo).corner();
