@@ -182,7 +182,7 @@
                 $("#ficha-c").on('click', '#crear_campo', function() {
                     
                     
-                    
+                    return false;
                 });
                 
                 
@@ -195,6 +195,7 @@
                     
                     $(this).parent().parent().children("#" + subcat).append(campo);
                     
+                    return false;
                 });
             });
             
