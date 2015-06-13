@@ -110,7 +110,7 @@
                 $("#ficha-c").on("click", "#crear_categoria", function() {
                     
                     // OBTNEMOS VALORES DE FORMULARIO
-                    var categoria = $("#categoria").val();
+                    var categoria = $(this).parent().children("#categoria").val();
                     // ID DE LA CATEGORIA Y NOMBRE DE LA TABLA
                     var id_categoria = categoria.replace(/\s+/g, "_");
                     
