@@ -200,6 +200,8 @@
                     
                     var id_campo= campo.replace(/\s+/g, "_");
                     
+                    alert(categoria + "  " + campo + "  " +id_campo);
+                    
                     $(this).parent().parent().children("#campos_" + categoria).append("<div id='" + id_campo + "'>" + campo + "</div>");
                     
                     $("#" + id_campo).css({'display': 'inline-block', 'margin': '5px', 'border': '1px solid black', 'padding': '10px'});
