@@ -135,7 +135,7 @@
                             "<input type='hidden' value='" + $("#categoria").val() + "' id='categoria' /><button id='crear_campo'>Crear</button></form>");
                             
                             // FORMULARIO PARA CREAR SUBCATEGORIA
-                            $("#datos article:nth-last-child(2)").append("<form class='formadmin'><label for='subcategoria'>Crear nueva subcategoria</label><input type='text' id='subcategoria' />" +
+                            $("#datos article:nth-last-child(2)").append("<form class='formadmin' id='formsubcat'><label for='subcategoria'>Crear nueva subcategoria</label><input type='text' id='subcategoria' />" +
                             "<input type='hidden' value='" + $("#categoria").val() + "' id='categoria' /><button id='crear_subcategoria'>Crear</button></form>");
                             
                             $("#datos article:nth-last-child(2)").css({'border': '1px solid black', 'overflow': 'hidden', 'margin-top': '10px', 'margin-bottom': '10px', 'width': '90%', 'margin-left': '5%'});
@@ -190,12 +190,16 @@
                     var cat = $(this).parent().children("#categoria").val();
                     var campo = $(this).parent().children("#campo").val();
                     
-                    $(this).parent().parent().children("#campos" + cat).append("<div id='" + campo + "'>campo</div>");
+                    $(this).parent().parent().children("#campos" + cat).append("<div id='" + campo + "'>" + campo + "</div>");
                     
                     $("#" + campo).css({'display': 'inline-block', 'margin': '5px', 'border': '1px solid black', 'padding': '10px'});
                     $("#" + campo).corner();
                     
                     $("#" + campo).append("<button class='eliminar_campo' id='x-" + campo + "'>X</button>");
+                    
+                    $(this).parent().children("#campo").val("");
+                    
+                    $(this).parent().parent().children("#formsubcat").hide();
                     
                     return false;
                 });
@@ -214,6 +218,8 @@
                     $("#" + campo).corner();
                     
                     $("#" + campo).append("<button class='eliminar_campo' id='x-" + campo + "'>X</button>");
+                    
+                    $(this).parent().children("#campo_s").val("");
                     
                     return false;
                 });
