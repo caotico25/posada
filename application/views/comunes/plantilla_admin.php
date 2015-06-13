@@ -154,7 +154,7 @@
                 $("#ficha-c").on('click', "#crear_subcategoria", function() {
                     
                     var padre = $(this).parent().parent();
-                    var subcat = padre.children("#subcategoria").val();
+                    var subcat = $(this.).parent().children("#subcategoria").val();
                     
                     alert(subcat);
                     
