@@ -158,12 +158,12 @@
                     
                     alert(subcat);
                     
-                    padre.prepend("<section id='" + $("#subcategoria").val() + "' class='nueva-subcategoria'></section>");
+                    padre.prepend("<section id='" + subcat + "' class='nueva-subcategoria'></section>");
                     
-                    $("#" + subcat).append("<h2>" + subcat + "</h2>");
+                    $("#" + subcat).append("<h3>" + subcat + "</h3>");
                     
                     $("#" + subcat).append("<form class='formadmin'><label for='campo_s'>Crear nuevo campo</label><input type='text' id='campo_s' />" +
-                    "<input type='hidden' value='" + $("#subcategoria").val() + "' id='subcategoria' /><input type='hidden' value='" + $("#categoria").val() + "' id='categoria' /><button id='crear_campo_s'>Crear</button></form>");
+                    "<input type='hidden' value='" + subcat + "' id='subcategoria' /><input type='hidden' value='" + subcat + "' id='categoria' /><button id='crear_campo_s'>Crear</button></form>");
                             
                     $("#" + subcat).css({'border': '1px solid black', 'overflow': 'hidden', 'margin-top': '10px', 'margin-bottom': '10px', 'width': '90%', 'margin-left': '5%'});
                     
