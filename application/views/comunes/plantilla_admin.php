@@ -146,6 +146,7 @@
                             $("#datos article:nth-last-child(2)").css({'border': '1px solid black', 'overflow': 'hidden', 'margin-top': '10px', 'margin-bottom': '10px', 'width': '90%', 'margin-left': '5%'});
                             $("#datos article:nth-last-child(2)").corner();
                             
+                            $("#categoria").val("");
                             
                         },
                         error: function (jqXHR, textStatus, errorThrown){
@@ -197,12 +198,14 @@
                     var categoria = $(this).parent().children("#categoria").val();
                     var campo = $(this).parent().children("#campo").val();
                     
-                    $(this).parent().parent().children("#campos_" + categoria).append("<div id='" + campo + "'>" + campo + "</div>");
+                    var id_campo= campo.replace(/\s+/g, "_");
                     
-                    $("#" + campo).css({'display': 'inline-block', 'margin': '5px', 'border': '1px solid black', 'padding': '10px'});
-                    $("#" + campo).corner();
+                    $(this).parent().parent().children("#campos_" + categoria).append("<div id='" + id_campo + "'>" + campo + "</div>");
                     
-                    $("#" + campo).append("<button class='eliminar_campo' id='x-" + campo + "'>X</button>");
+                    $("#" + id_campo).css({'display': 'inline-block', 'margin': '5px', 'border': '1px solid black', 'padding': '10px'});
+                    $("#" + id_campo).corner();
+                    
+                    $("#" + id_campo).append("<button class='eliminar_campo' id='x-" + id_campo + "'>X</button>");
                     
                     $(this).parent().children("#campo").val("");
                     
@@ -219,12 +222,14 @@
                     var categoria = $(this).parent().children("#categoria").val();
                     var campo = $(this).parent().children("#campo_s").val();
                     
-                    $(this).parent().parent().children("#campos_" + subcategoria).append("<div id='" + campo + "'>" + campo + "</div>");
+                    var id_campo= campo.replace(/\s+/g, "_");
                     
-                    $("#" + campo).css({'display': 'inline-block', 'margin': '5px', 'border': '1px solid black', 'padding': '10px'});
-                    $("#" + campo).corner();
+                    $(this).parent().parent().children("#campos_" + subcategoria).append("<div id='" + id_campo + "'>" + campo + "</div>");
                     
-                    $("#" + campo).append("<button class='eliminar_campo' id='x-" + campo + "'>X</button>");
+                    $("#" + id_campo).css({'display': 'inline-block', 'margin': '5px', 'border': '1px solid black', 'padding': '10px'});
+                    $("#" + id_campo).corner();
+                    
+                    $("#" + id_campo).append("<button class='eliminar_campo' id='x-" + id_campo + "'>X</button>");
                     
                     $(this).parent().children("#campo_s").val("");
                     
