@@ -194,7 +194,7 @@
                     var cat = $(this).parent().children("#categoria").val();
                     var campo = $(this).parent().children("#campo_s").val();
                     
-                    $(this).parent().parent().children("#" + subcat).append(campo);
+                    $(this).parent().parent().children("#campos" + subcat).append(campo);
                     
                     return false;
                 });
