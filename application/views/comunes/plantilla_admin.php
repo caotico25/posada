@@ -114,6 +114,8 @@
                     // ID DE LA CATEGORIA Y NOMBRE DE LA TABLA
                     var id_categoria = categoria.replace(/\s+/g, "_");
                     
+                    alert("id cat= " + id_categoria);
+                    
                     $.ajaxSetup({
                         data: {
                             csrf_test_name: $.cookie('csrf_cookie_name')
@@ -145,6 +147,8 @@
                             
                             $("#datos article:nth-last-child(2)").css({'border': '1px solid black', 'overflow': 'hidden', 'margin-top': '10px', 'margin-bottom': '10px', 'width': '90%', 'margin-left': '5%'});
                             $("#datos article:nth-last-child(2)").corner();
+                            
+                            alert(res);
                             
                             $("#categoria").val("");
                             
