@@ -186,7 +186,7 @@
                     $("#" + id_subcategoria).corner();
                     
                     padre.children("#form_campo").hide();
-                    padre.children("#campos" + categoria).hide();
+                    padre.children("#campos_" + categoria).hide();
                     
                     return false;
                 });
