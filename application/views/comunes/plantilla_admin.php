@@ -156,6 +156,8 @@
                     var padre = $(this).parent().parent();
                     var subcat = padre.children("#subcategoria").val();
                     
+                    alert(subcat);
+                    
                     padre.prepend("<section id='" + $("#subcategoria").val() + "' class='nueva-subcategoria'></section>");
                     
                     $("#" + subcat).append("<h2>" + subcat + "</h2>");
