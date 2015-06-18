@@ -166,7 +166,7 @@ class Partida extends CI_Model
      */
     function obtener_jugadores($id_partida)
     {
-        $res = $this->db->query("select * from fichas where partida = $id_partida");
+        $res = $this->db->query("select * from fichas where partida_id = $id_partida");
         
         return $res->result_array();
     }
