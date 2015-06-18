@@ -221,8 +221,6 @@
                             data: {'tipo_juego': tipo_juego, 'categoria': categoria, 'campo': campo, 'csrf_test_name': $.cookie('csrf_cookie_name')},
                             success: function (datos){
                                 
-                                var res = eval(datos);
-                                
                                 $(this).parent().parent().children("#campos_" + categoria).append("<div id='" + id_campo + "'>" + campo + "</div>");
                                 
                                 $("#" + id_campo).css({'display': 'inline-block', 'margin': '5px', 'border': '1px solid black', 'padding': '10px'});
@@ -276,8 +274,6 @@
                             type: "POST",
                             data: {'tipo_juego': tipo_juego, 'categoria': categoria, 'subcategoria': subcategoria, 'campo': campo, 'csrf_test_name': $.cookie('csrf_cookie_name')},
                             success: function (datos){
-                                
-                                var res = eval(datos);
                                 
                                 $(this).parent().parent().children("#campos_" + categoria).append("<div id='" + id_campo + "'>" + campo + "</div>");
                                 
