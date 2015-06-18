@@ -31,7 +31,7 @@ class Juego extends CI_Model
         
         $con = $this->load->dbforge();
         
-        $con->add_key('id', TRUE);
+        $con->add_field('id');
         
         $campos = array(
                         'campo' => array(

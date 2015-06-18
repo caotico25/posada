@@ -117,8 +117,6 @@
                         // ID DE LA CATEGORIA Y NOMBRE DE LA TABLA
                         var id_categoria = categoria.replace(/\s+/g, "_").toLowerCase();
                         
-                        alert("id cat= " + id_categoria);
-                        
                         $.ajaxSetup({
                             data: {
                                 csrf_test_name: $.cookie('csrf_cookie_name')
