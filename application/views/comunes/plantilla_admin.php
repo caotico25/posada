@@ -130,8 +130,6 @@
                             data: {'tipo_juego': tipo_juego, 'categoria': id_categoria, 'csrf_test_name': $.cookie('csrf_cookie_name')},
                             success: function (datos){
                                 
-                                var res = eval(datos);
-                                
                                 $("<article id='" + id_categoria + "' class='nueva-categoria'></article>").insertBefore("#datos article:last-child");
                                 
                                 $("#datos article:nth-last-child(2)").append("<h2>" + categoria + "</h2>");
@@ -149,7 +147,7 @@
                                 $("#datos article:nth-last-child(2)").css({'border': '1px solid black', 'overflow': 'hidden', 'margin-top': '10px', 'margin-bottom': '10px', 'width': '90%', 'margin-left': '5%'});
                                 $("#datos article:nth-last-child(2)").corner();
                                 
-                                alert(res);
+                                alert(datos);
                                 
                                 $(this).parent().children("#categoria").val("");
                                 
