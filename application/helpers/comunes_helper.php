@@ -91,7 +91,7 @@ if (!function_exists('nombre_personaje'))
         
         $nombre = $CI->Ficha->nombre_personaje($id_jugador);
         
-        return $nombre['nombre'];
+        return $nombre['usuario'];
     }
 }
 
