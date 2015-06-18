@@ -122,7 +122,13 @@
                 });
                 
                 
-                $("#jugadores").multiSelect();
+                $("#jugadores").multiSelect({
+                    
+                    keepOrder: true,
+                    selectableHeader: "<div class='custom-header'>Seleccionar jugadores:</div>",
+                    selectionHeader: "<div class='custom-header'>Invitados:</div>"
+                    
+                });
                 
             });
             
