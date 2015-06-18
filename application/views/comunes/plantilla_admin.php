@@ -111,55 +111,63 @@
                     
                     // OBTNEMOS VALORES DE FORMULARIO
                     var categoria = $(this).parent().children("#categoria").val();
-                    // ID DE LA CATEGORIA Y NOMBRE DE LA TABLA
-                    var id_categoria = categoria.replace(/\s+/g, "_");
                     
-                    alert("id cat= " + id_categoria);
-                    
-                    $.ajaxSetup({
-                        data: {
-                            csrf_test_name: $.cookie('csrf_cookie_name')
-                            }
-                    });
-                    
-                    $.ajax({
-                    
-                        url: "<?= base_url('admin/juegos/crear_categoria') ?>",
-                        type: "POST",
-                        data: {'tipo_juego': tipo_juego, 'categoria': id_categoria, 'csrf_test_name': $.cookie('csrf_cookie_name')},
-                        success: function (datos){
-                            
-                            var res = eval(datos);
-                            
-                            $("<article id='" + id_categoria + "' class='nueva-categoria'></article>").insertBefore("#datos article:last-child");
-                            
-                            $("#datos article:nth-last-child(2)").append("<h2>" + categoria + "</h2>");
-                            
-                            $("#datos article:nth-last-child(2)").append("<div id='campos_" + id_categoria + "'></div>");
-                            
-                            // FORMULARIO PARA CREAR CAMPO
-                            $("#datos article:nth-last-child(2)").append("<form class='formadmin' id='form_campo'><label for='campo'>Crear nuevo campo</label><input type='text' id='campo' />" +
-                            "<input type='hidden' value='" + id_categoria + "' id='categoria' /><button id='crear_campo'>Crear</button></form>");
-                            
-                            // FORMULARIO PARA CREAR SUBCATEGORIA
-                            $("#datos article:nth-last-child(2)").append("<form class='formadmin' id='formsubcat'><label for='subcategoria'>Crear nueva subcategoria</label><input type='text' id='subcategoria' />" +
-                            "<input type='hidden' value='" + id_categoria + "' id='categoria' /><button id='crear_subcategoria'>Crear</button></form>");
-                            
-                            $("#datos article:nth-last-child(2)").css({'border': '1px solid black', 'overflow': 'hidden', 'margin-top': '10px', 'margin-bottom': '10px', 'width': '90%', 'margin-left': '5%'});
-                            $("#datos article:nth-last-child(2)").corner();
-                            
-                            alert(res);
-                            
-                            $(this).parent().children("#categoria").val("");
-                            
-                        },
-                        error: function (jqXHR, textStatus, errorThrown){
-                            
-                            alert(textStatus + ' ' + errorThrown);
-                            
-                        }
+                    if (categoria != "")
+                    {
+                        // ID DE LA CATEGORIA Y NOMBRE DE LA TABLA
+                        var id_categoria = categoria.replace(/\s+/g, "_").toLowerCase();
                         
-                    });
+                        alert("id cat= " + id_categoria);
+                        
+                        $.ajaxSetup({
+                            data: {
+                                csrf_test_name: $.cookie('csrf_cookie_name')
+                                }
+                        });
+                        
+                        $.ajax({
+                        
+                            url: "<?= base_url('admin/juegos/crear_categoria') ?>",
+                            type: "POST",
+                            data: {'tipo_juego': tipo_juego, 'categoria': id_categoria, 'csrf_test_name': $.cookie('csrf_cookie_name')},
+                            success: function (datos){
+                                
+                                var res = eval(datos);
+                                
+                                $("<article id='" + id_categoria + "' class='nueva-categoria'></article>").insertBefore("#datos article:last-child");
+                                
+                                $("#datos article:nth-last-child(2)").append("<h2>" + categoria + "</h2>");
+                                
+                                $("#datos article:nth-last-child(2)").append("<div id='campos_" + id_categoria + "'></div>");
+                                
+                                // FORMULARIO PARA CREAR CAMPO
+                                $("#datos article:nth-last-child(2)").append("<form class='formadmin' id='form_campo'><label for='campo'>Crear nuevo campo</label><input type='text' id='campo' />" +
+                                "<input type='hidden' value='" + id_categoria + "' id='categoria' /><button id='crear_campo'>Crear</button></form>");
+                                
+                                // FORMULARIO PARA CREAR SUBCATEGORIA
+                                $("#datos article:nth-last-child(2)").append("<form class='formadmin' id='formsubcat'><label for='subcategoria'>Crear nueva subcategoria</label><input type='text' id='subcategoria' />" +
+                                "<input type='hidden' value='" + id_categoria + "' id='categoria' /><button id='crear_subcategoria'>Crear</button></form>");
+                                
+                                $("#datos article:nth-last-child(2)").css({'border': '1px solid black', 'overflow': 'hidden', 'margin-top': '10px', 'margin-bottom': '10px', 'width': '90%', 'margin-left': '5%'});
+                                $("#datos article:nth-last-child(2)").corner();
+                                
+                                alert(res);
+                                
+                                $(this).parent().children("#categoria").val("");
+                                
+                            },
+                            error: function (jqXHR, textStatus, errorThrown){
+                                
+                                alert(textStatus + ' ' + errorThrown);
+                                
+                            }
+                            
+                        });
+                    }
+                    else
+                    {
+                        alert("Introduzca categoría.");
+                    }
                     
                     return false;
                     
@@ -202,20 +210,49 @@
                     var categoria = $(this).parent().children("#categoria").val();
                     var campo = $(this).parent().children("#campo").val();
                     
-                    var id_campo= campo.replace(/\s+/g, "_");
-                    
-                    alert(categoria + "  " + campo + "  " +id_campo);
-                    
-                    $(this).parent().parent().children("#campos_" + categoria).append("<div id='" + id_campo + "'>" + campo + "</div>");
-                    
-                    $("#" + id_campo).css({'display': 'inline-block', 'margin': '5px', 'border': '1px solid black', 'padding': '10px'});
-                    $("#" + id_campo).corner();
-                    
-                    $("#" + id_campo).append("<button class='eliminar_campo' id='x-" + id_campo + "'>X</button>");
-                    
-                    $(this).parent().children("#campo").val("");
-                    
-                    $(this).parent().parent().children("#formsubcat").hide();
+                    if (campo != "")
+                    {
+                        var id_campo= campo.replace(/\s+/g, "_");
+                        
+                        $.ajaxSetup({
+                            data: {
+                                csrf_test_name: $.cookie('csrf_cookie_name')
+                                }
+                        });
+                        
+                        $.ajax({
+                        
+                            url: "<?= base_url('admin/juegos/crear_campo') ?>",
+                            type: "POST",
+                            data: {'tipo_juego': tipo_juego, 'categoria': categoria, 'campo': campo 'csrf_test_name': $.cookie('csrf_cookie_name')},
+                            success: function (datos){
+                                
+                                var res = eval(datos);
+                                
+                                $(this).parent().parent().children("#campos_" + categoria).append("<div id='" + id_campo + "'>" + campo + "</div>");
+                                
+                                $("#" + id_campo).css({'display': 'inline-block', 'margin': '5px', 'border': '1px solid black', 'padding': '10px'});
+                                $("#" + id_campo).corner();
+                                
+                                $("#" + id_campo).append("<button class='eliminar_campo' id='x-" + id_campo + "'>X</button>").css('margin-left', '5px');
+                                
+                                $(this).parent().children("#campo").val("");
+                                
+                                $(this).parent().parent().children("#formsubcat").hide();
+                                
+                            },
+                            error: function (jqXHR, textStatus, errorThrown){
+                                
+                                alert(textStatus + ' ' + errorThrown);
+                                
+                            }
+                            
+                        });
+                    }
+                    else
+                    {
+                        alert("Introduzca campo.");
+                    }
                     
                     return false;
                 });
@@ -228,16 +265,50 @@
                     var categoria = $(this).parent().children("#categoria").val();
                     var campo = $(this).parent().children("#campo_s").val();
                     
-                    var id_campo= campo.replace(/\s+/g, "_");
                     
-                    $(this).parent().parent().children("#campos_" + subcategoria).append("<div id='" + id_campo + "'>" + campo + "</div>");
-                    
-                    $("#" + id_campo).css({'display': 'inline-block', 'margin': '5px', 'border': '1px solid black', 'padding': '10px'});
-                    $("#" + id_campo).corner();
-                    
-                    $("#" + id_campo).append("<button class='eliminar_campo' id='x-" + id_campo + "'>X</button>");
-                    
-                    $(this).parent().children("#campo_s").val("");
+                    if (campo != "")
+                    {
+                        var id_campo= campo.replace(/\s+/g, "_");
+                        
+                        $.ajaxSetup({
+                            data: {
+                                csrf_test_name: $.cookie('csrf_cookie_name')
+                                }
+                        });
+                        
+                        $.ajax({
+                        
+                            url: "<?= base_url('admin/juegos/crear_campo_sub') ?>",
+                            type: "POST",
+                            data: {'tipo_juego': tipo_juego, 'categoria': categoria, 'subcategoria': subcategoria 'campo': campo 'csrf_test_name': $.cookie('csrf_cookie_name')},
+                            success: function (datos){
+                                
+                                var res = eval(datos);
+                                
+                                $(this).parent().parent().children("#campos_" + categoria).append("<div id='" + id_campo + "'>" + campo + "</div>");
+                                
+                                $("#" + id_campo).css({'display': 'inline-block', 'margin': '5px', 'border': '1px solid black', 'padding': '10px'});
+                                $("#" + id_campo).corner();
+                                
+                                $("#" + id_campo).append("<button class='eliminar_campo' id='x-" + id_campo + "'>X</button>").css('margin-left', '5px');
+                                
+                                $(this).parent().children("#campo").val("");
+                                
+                                $(this).parent().parent().children("#formsubcat").hide();
+                                
+                            },
+                            error: function (jqXHR, textStatus, errorThrown){
+                                
+                                alert(textStatus + ' ' + errorThrown);
+                                
+                            }
+                            
+                        });
+                    }
+                    else
+                    {
+                        alert("Introduzca campo.");
+                    }
                     
                     return false;
                 });

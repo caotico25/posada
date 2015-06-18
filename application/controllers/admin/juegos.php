@@ -65,9 +65,9 @@ class Juegos extends CI_Controller
      */
     function crear_tipo_juego()
     {
-        //$id_juego_nuevo = $this->Juego->nuevo_juego($this->input->post());
+        $id_juego_nuevo = $this->Juego->nuevo_juego($this->input->post());
         
-        echo json_encode(1);
+        echo json_encode($id_juego_nuevo);
     }
     
     
@@ -76,16 +76,31 @@ class Juegos extends CI_Controller
      */
     function crear_categoria()
     {
-        echo json_encode("hola");
+        $this->Juego->crear_categoria($this->input->post());
+        
+        echo json_encode("ok");
     }
     
     
     /**
-     * CREA UNA NUEVA CATEGORIA
+     * CREA UN NUEVO CAMPO
      */
-    function crear_subcategoria()
+    function crear_campo()
     {
-        echo json_encode("hola");
+        $this->Juego->crear_campo($this->input->post());
+        
+        echo json_encode("ok");
+    }
+    
+    
+    /**
+     * CREA UN NUEVO CAMPO
+     */
+    function crear_campo_sub()
+    {
+        $this->Juego->crear_campo_sub($this->input->post());
+        
+        echo json_encode("ok");
     }
     
     

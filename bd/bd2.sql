@@ -2,10 +2,11 @@
 drop table estados cascade;
 drop table partidas cascade;
 drop table fichas cascade;
+drop table tablas_ficha cascade;
 drop table tipos_juego cascade;
 drop table inventarios cascade;
 drop table anotaciones cascade;
-drop table campos cascade;
+/*drop table campos cascade;*/
 drop table chat cascade;
 drop table noticias cascade;
 drop table secciones cascade;
@@ -65,6 +66,18 @@ create table fichas (
 	id					bigserial		constraint pk_fichas primary key,
 	usuario_id			bigint			default null,
 	partida_id			bigint			default null
+);
+
+
+/*
+*
+*	TABLAS_FICHA
+*
+*/
+create table tablas_ficha (
+	id					bigserial		constraint pk_tablas_ficha primary key,
+	nombre				varchar()			default null,
+	ficha			bigint			default null
 );
 
 
@@ -139,7 +152,7 @@ create table anotaciones (
 *	------
 *	CAMPOS
 *	------
-*/
+*
 
 create table campos (
 	id					bigserial		constraint pk_atributos primary key,
@@ -149,7 +162,7 @@ create table campos (
 	valor				numeric(3)		not null default 0,
 	categoria			varchar(50)		not null,
 	subcategoria		varchar(50)
-);
+);*/
 
 
 /*
