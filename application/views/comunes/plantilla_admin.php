@@ -7,6 +7,7 @@
         <script src="<?= base_url('javascript/jquery-1-10-2.js') ?>" type="text/javascript" charset="utf-8"></script>
         <script src="<?= base_url('javascript/jquery.cookie.js') ?>" type="text/javascript" charset="utf-8"></script>
         <script src="<?= base_url('javascript/esquinas.js') ?>" type="text/javascript" charset="utf-8"></script>
+        <script src="<?= base_url('javascript/select2/src/js/select2/jquery.select2.js') ?>" type="text/javascript" charset="utf-8"></script>
         <link rel="stylesheet/less" href="<?= base_url('css/responsive.less') ?>" type="text/css" media="screen" />
         <script src="<?= base_url('javascript/less.js') ?>" type="text/javascript" charset="utf-8"></script>
         <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
@@ -62,6 +63,17 @@
                             
                         });
                         
+                    }
+                    
+                });
+                
+                
+                $("#jugadores").select2({
+                    
+                    placeholder: "Seleccionar...",
+                    allowClear: true,
+                    formatNoMatches: function(term) {
+                        return "No se han encontrado jugadores.";
                     }
                     
                 });
@@ -148,7 +160,7 @@
                                 $("#datos article:nth-last-child(2)").css({'border': '1px solid black', 'overflow': 'hidden', 'margin-top': '10px', 'margin-bottom': '10px', 'width': '90%', 'margin-left': '5%'});
                                 $("#datos article:nth-last-child(2)").corner();
                                 
-                                $("#datos article:nth-last-child(2)").children("h2").css({'background-image': 'url("../images/fondo.jpg")', 'color': '#FBC187', 'padding': '0.3em'});
+                                $("#datos article:nth-last-child(2)").children("h2").css({'background-color': 'black', 'color': '#FBC187', 'padding': '0.3em'});
                                 
                                 $(this).parent().children("#categoria").val("");
                                 
@@ -194,7 +206,7 @@
                     $("#" + id_subcategoria).css({'border': '1px solid black', 'overflow': 'hidden', 'margin-top': '10px', 'margin-bottom': '10px', 'width': '90%', 'margin-left': '5%'});
                     $("#" + id_subcategoria).corner();
                     
-                    $("#" + id_subcategoria).children("h3").css({'background-image': 'url(images/fondo.jpg)', 'color': '#FBC187', 'padding': '0.3em'});
+                    $("#" + id_subcategoria).children("h3").css({'background-color': 'black', 'color': '#FBC187', 'padding': '0.3em'});
                     
                     padre.children("#form_campo").hide();
                     padre.children("#campos_" + categoria).hide();

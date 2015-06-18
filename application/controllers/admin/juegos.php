@@ -104,4 +104,42 @@ class Juegos extends CI_Controller
     }
     
     
+    /**
+     * LISTA LAS FICHAS PARA SU EDICION
+     */
+    function editar()
+    {
+        $juegos = $this->Juego->obtener_juegos();
+        
+        $this->load->view('admin/juegos/lista_juegos',$data);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

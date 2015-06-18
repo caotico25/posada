@@ -43,6 +43,7 @@ class Partidas extends CI_Controller
         
         $data['tipos_juego'] = $this->Partida->obtener_tipos_juego();
         $data['estados'] = $this->Partida->obtener_estados();
+        $data['jugadores'] = $this->Usuario->obtener_jugadores();
                     
         $this->form_validation->set_rules($reglas);
         

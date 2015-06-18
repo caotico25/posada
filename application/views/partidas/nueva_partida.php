@@ -19,6 +19,16 @@
                     <option value="<?= $tipo_juego['id'] ?>"><?= $tipo_juego['nombre'] ?></option>
                 <?php endforeach ?>
             </select>
+            
+            <label for="jugadores">Añadir jugadores: </label>
+            <select name="jugadores" id="jugadores">
+                <?php foreach ($jugadores as $jugador): ?>
+                    <?php if ($this->session->userdata('id_login') != $jugador['id']): ?>
+                        <option value="<?= $jugador['id'] ?>"><?= $jugador['usuario'] ?></option>
+                    <?php endif ?>
+                <?php endforeach ?>
+            </select>
+            
             <?= form_error('estado') ?>
             <label for="estado">Estado de la partida: </label>
             <select name="estado" id="estado">
