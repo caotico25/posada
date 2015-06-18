@@ -78,7 +78,7 @@ class Juegos extends CI_Controller
     {
         $this->Juego->crear_categoria($this->input->post());
         
-        echo json_encode("ok");
+        echo "ok";
     }
     
     
