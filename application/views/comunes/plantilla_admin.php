@@ -206,6 +206,8 @@
                     var categoria = $(this).parent().children("#categoria").val();
                     var campo = $(this).parent().children("#campo").val();
                     
+                    alert(categoria);
+                    
                     if (campo != "")
                     {
                         var id_campo= campo.replace(/\s+/g, "_");
