@@ -126,6 +126,7 @@
                         $.ajax({
                         
                             url: "<?= base_url('admin/juegos/crear_categoria') ?>",
+                            context: this,
                             type: "POST",
                             data: {'tipo_juego': tipo_juego, 'categoria': id_categoria, 'csrf_test_name': $.cookie('csrf_cookie_name')},
                             success: function (datos){
@@ -217,6 +218,7 @@
                         $.ajax({
                         
                             url: "<?= base_url('admin/juegos/crear_campo') ?>",
+                            context: this,
                             type: "POST",
                             data: {'tipo_juego': tipo_juego, 'categoria': categoria, 'campo': campo, 'csrf_test_name': $.cookie('csrf_cookie_name')},
                             success: function (datos){
@@ -254,6 +256,7 @@
                 $("#ficha-c").on('click', '#crear_campo_s', function() {
                     
                     var subcategoria = $(this).parent().children("#subcategoria").val();
+                            context: this,
                     var categoria = $(this).parent().children("#categoria").val();
                     var campo = $(this).parent().children("#campo_s").val();
                     
