@@ -41,12 +41,14 @@
     <article>
         <h1 id="ocultar">INVENTARIO</h1>
         <div id="ocultado">
+        <?php if (isset($inventario)): ?>
         <?php foreach ($inventario as $objeto): ?>
             <article>
                 <label for="cantidad"><?= $objeto['nombre'] ?>:</label>
                 <input type="number" name="cantidad" value="<?= $objeto['valor'] ?>" id="cantidad" class="inventarios" />
             </article>
         <?php endforeach ?>
+        <?php endif ?>
         <div>
         <label for="anadir">Añadir</label>
         <input type="text" name="anadir" value="" id="anadir"/>
