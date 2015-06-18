@@ -219,6 +219,16 @@
                     }
                 });
                 
+                $("#tablero").on("change", "#resultado", function() {
+                    
+                    $("#resultado div").each(function() {
+                        
+                        alert($(this).children("span").text());
+                        
+                    });
+                    
+                });
+                
             });
             
         </script>
