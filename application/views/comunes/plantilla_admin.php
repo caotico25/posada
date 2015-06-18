@@ -148,6 +148,8 @@
                                 $("#datos article:nth-last-child(2)").css({'border': '1px solid black', 'overflow': 'hidden', 'margin-top': '10px', 'margin-bottom': '10px', 'width': '90%', 'margin-left': '5%'});
                                 $("#datos article:nth-last-child(2)").corner();
                                 
+                                $("#datos article:nth-last-child(2)").children("h2").css({'background-image': 'url("../images/fondo.jpg")', 'color': '#FBC187', 'padding': '0.3em'});
+                                
                                 $(this).parent().children("#categoria").val("");
                                 
                             },
@@ -191,6 +193,8 @@
                             
                     $("#" + id_subcategoria).css({'border': '1px solid black', 'overflow': 'hidden', 'margin-top': '10px', 'margin-bottom': '10px', 'width': '90%', 'margin-left': '5%'});
                     $("#" + id_subcategoria).corner();
+                    
+                    $("#" + id_subcategoria).children("h3").css({'background-image': 'url("../images/fondo.jpg")', 'color': '#FBC187', 'padding': '0.3em'});
                     
                     padre.children("#form_campo").hide();
                     padre.children("#campos_" + categoria).hide();
@@ -316,6 +320,14 @@
                     var partes = id.split('-');
                     
                     $("#" + partes[1]).remove();
+                    
+                });
+                
+                
+                // TERMINA CON LA CREACIÓN DE LA FICHA
+                $("#finalizar").on("click", function() {
+                    
+                    location.href = '<?= base_url('admin/juegos/editar') ?>';
                     
                 });
                 

@@ -20,6 +20,7 @@
                 <label for="categoria">Crear nueva categoria</label>
                 <input type="text" id="categoria" />
                 <button id="crear_categoria">Crear</button>
+                <button id="finalizar">Terminar creación de ficha</button>
             </form>
         </article>
     </section>
