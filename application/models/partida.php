@@ -66,7 +66,7 @@ class Partida extends CI_Model
     function partidas_finalizadas($id)
     {
         $res = $this->db->query("select * from partidas where master = $id or id in (
-                                    select partida from fichas where jugador = $id) and estado = 4");
+                                    select partida_id from fichas where usuario_id = $id) and estado = 4");
         
         return $res->result_array();
     }
