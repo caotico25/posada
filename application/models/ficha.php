@@ -168,7 +168,7 @@ class Ficha extends CI_Model
      */
     function obtener_tablas($ficha_base)
     {
-        $res = $this->db->query("select * from tablas_juego where ficha = $ficha_base order by id, subcategoria");
+        $res = $this->db->query("select * from tablas_ficha where ficha = $ficha_base order by id, subcategoria");
         
         return $res->result_array();
     }
@@ -179,7 +179,7 @@ class Ficha extends CI_Model
      */
     function obtener_campos($tabla, $ficha_base)
     {
-        $res = $this->db->query("select * from $tablas where ficha = $ficha_base order by id");
+        $res = $this->db->query("select * from $tabla where ficha = $ficha_base order by id");
         
         return $res->result_array();
     }
