@@ -8,6 +8,8 @@
         <script src="<?= base_url('javascript/jquery-1-10-2.js') ?>" type="text/javascript" charset="utf-8"></script>
         <script src="<?= base_url('javascript/esquinas.js') ?>" type="text/javascript" charset="utf-8"></script>
         <script src="<?= base_url('javascript/jquery.cookie.js') ?>" type="text/javascript" charset="utf-8"></script>
+        <script src="<?= base_url('javascript/select2/js/select2.min.js') ?>" type="text/javascript" charset="utf-8"></script>
+        <link rel="stylesheet/less" href="<?= base_url('javascript/select2/css/select2.min.js') ?>" type="text/css" media="screen" />
         <link rel="stylesheet/less" href="<?= base_url('css/responsive.less') ?>" type="text/css" media="screen" />
         <script src="<?= base_url('javascript/less.js') ?>" type="text/javascript" charset="utf-8"></script>
         <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
@@ -116,6 +118,17 @@
                     });
                     
                     return false;
+                    
+                });
+                
+                
+                $("#jugadores").select2({
+                    
+                    placeholder: "Seleccionar...",
+                    allowClear: true,
+                    formatNoMatches: function(term) {
+                        return "No se han encontrado jugadores.";
+                    }
                     
                 });
                 
