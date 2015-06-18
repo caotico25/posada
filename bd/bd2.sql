@@ -76,8 +76,8 @@ create table fichas (
 */
 create table tablas_ficha (
 	id					bigserial		constraint pk_tablas_ficha primary key,
-	nombre				varchar()			default null,
-	ficha			bigint			default null
+	nombre				varchar(100)	default null,
+	ficha				bigint			default null
 );
 
 
