@@ -13,6 +13,16 @@ class Partida extends CI_Model
         
         $this->db->query("insert into partidas (nombre, descripcion, master, tipo_juego, estado)
                             values (upper(?), ?, $master, $tipo_juego, ?)", array($nombre, $descripcion, $estado));
+                            
+        $id_partida = $this->db->insert_id();
+                            
+        if (count($jugadores) > 0)
+        {
+            for ($i = 0; $i < count($jugadores); $i++)
+            {
+                $this->anadir_jugador($id_partida, $jugadores[$i], $tipo_juego);
+            }
+        }
     }
     
     
@@ -207,12 +217,15 @@ class Partida extends CI_Model
      */
     function anadir_jugador($id_partida, $jugador, $tipo_juego)
     {
-        $tipo_juego = $this->Ficha->obtener_tipo_juego($id_partida);
-        $tipo_ficha = $this->Ficha->obtener_tipo_ficha($tipo_juego);
-        $id_ficha = $this->Ficha->inicializar_ficha($jugador, $tipo_ficha, $id_partida);
+        $ficha_base = $this->Ficha->obtener_tipo_ficha($tipo_juego);
         
-        $this->db->query("insert into jugadores (partida_id, jugador, ficha_id)
-                            values ($id_partida, $jugador, $id_ficha)");
+        $this->db->query("insert into fichas (usuario, partida)
+                            values ($jugador, $id_partida)");
+                            
+        $id_ficha = $this->db->insert_id();
+        
+        
+        $this->Ficha->inicializar_ficha($jugador, $ficha_base, $id_ficha);
     }
     
     

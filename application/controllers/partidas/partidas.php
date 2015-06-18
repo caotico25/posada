@@ -166,10 +166,6 @@ class Partidas extends CI_Controller
         extract($this->input->post());
         $jugador = $this->session->userdata('id_login');
         
-        echo "<script type=''>alert($jugador);</script>";
-        echo "<script type=''>alert($id_partida);</script>";
-        echo "<script type=''>alert($tipo_juego);</script>";
-        
         $this->Partida->anadir_jugador($id_partida, $jugador, $tipo_juego);
         
         redirect('usuarios/perfil');    // SE REDIRIGE SIEMPRE A LA FICHA DEL USUARIO PARA EVITAR ERRORES

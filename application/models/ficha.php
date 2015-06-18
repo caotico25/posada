@@ -163,32 +163,11 @@ class Ficha extends CI_Model
     /*
      * 
      */
-    function inicializar_ficha($jugador, $tipo_ficha, $id_partida)
+    function inicializar_ficha($jugador, $ficha_base, $id_ficha)
     {
-        $res = $this->db->query("insert into fichas (anotaciones, usuario_id, partida_id)
-                            select anotaciones, $jugador, $id_partida from fichas where id = $tipo_ficha");
+        $this->db->query("insert into anotaciones (ficha, texto) values ($id_ficha, '')");
         
-        $res = $this->db->query("select id from fichas where usuario_id = $jugador");
-        $res = $res->row_array();
-        $id_ficha = $res["id"];
-        
-        $this->db->query("insert into personajes (nombre, ficha)
-                            select nombre, $id_ficha from personajes where ficha = $tipo_ficha");
-        
-        $this->db->query("insert into otra_info (nombre, ficha)
-                            select nombre, $id_ficha from otra_info where ficha = $tipo_ficha");
-        
-        $this->db->query("insert into atributos (nombre, ficha, categoria)
-                            select nombre, $id_ficha, categoria from atributos where ficha = $tipo_ficha");
-        
-        $this->db->query("insert into habilidades (nombre, ficha, categoria)
-                            select nombre, $id_ficha, categoria from habilidades where ficha = $tipo_ficha");
-        
-        $this->db->query("insert into ventajas (nombre, ficha, categoria)
-                            select nombre, $id_ficha, categoria from ventajas where ficha = $tipo_ficha");
-        
-        $this->db->query("insert into otros_parametros (nombre, ficha, categoria)
-                            select nombre, $id_ficha, categoria from otros_parametros where ficha = $tipo_ficha");
+        $this->db->query("insert into inventarios (ficha) values ($id_ficha)");
         
         return $id_ficha;
     }
@@ -211,10 +190,10 @@ class Ficha extends CI_Model
      */
     function obtener_tipo_ficha($tipo_juego)
     {
-        $res = $this->db->query("select ficha from tipos_ficha where tipo_juego = $tipo_juego");
+        $res = $this->db->query("select ficha_base from tipos_juego where id = $tipo_juego");
         $res = $res->row_array();
         
-        return $res['ficha'];
+        return $res['ficha_base'];
     }
     
     
