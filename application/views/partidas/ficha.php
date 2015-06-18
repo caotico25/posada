@@ -1,7 +1,7 @@
 <?php foreach ($tablas as $tabla): ?>
 
     <?php $campos = obtener_campos($tabla['nombre'], $ficha_base) ?>
-    
+    <section>
     <article>
         <h1 id="ocultar"><?= $tabla['nombre'] ?></h1>
         <div>
@@ -33,6 +33,7 @@
             <?php endif ?>
         </div>
     </article>
+    </section>
 
 <?php endforeach ?>
 
