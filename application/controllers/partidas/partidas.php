@@ -73,18 +73,15 @@ class Partidas extends CI_Controller
         $tipo_juego = $res['tipo_juego'];
         
         $res = $this->Ficha->id_ficha_base($tipo_juego);
-        $id_ficha = $res['ficha'];
+        $id_ficha = $res['ficha_base'];
         
-        // OBTENEMOS LOS CAMPOS POR DEFECTO DE LA FICHA BASEc
+        // OBTENEMOS EL NOMBRE DE LAS TABLAS ESPECIFICAS DE LA FICHA BASE
+        $tablas = $this->Ficha->obtener_tablas($id_ficha);
+        
+        // OBTENEMOS LOS CAMPOS POR DEFECTO DE LA FICHA BASE
         $data['id_partida'] = $id_partida;
-        $data['ficha'] = $this->Ficha->obtener_datos_ficha($id_ficha);
-        $data['inventario'] = $this->Ficha->obtener_inventario($id_ficha);
-        $data['personaje'] = $this->Ficha->obtener_datos_personaje($id_ficha);
-        $data['otra_info'] = $this->Ficha->obtener_otra_info($id_ficha);
-        $data['atributos'] = $this->Ficha->obtener_atributos($id_ficha);
-        $data['habilidades'] = $this->Ficha->obtener_habilidades($id_ficha);
-        $data['ventajas'] = $this->Ficha->obtener_ventajas($id_ficha);
-        $data['otros_parametros'] = $this->Ficha->obtener_otros_parametros($id_ficha);
+        $data['tablas'] = $tablas;
+        $data['ficha_base'] = $id_ficha;
         
         $ficha = $this->load->view('partidas/ficha', $data , TRUE);
         

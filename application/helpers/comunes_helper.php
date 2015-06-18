@@ -183,6 +183,16 @@ if (!function_exists('participa'))
     }
 }
 
+if (!function_exists('obtener_campos'))
+{
+    function obtener_campos($tabla, $ficha_base)
+    {
+        $CI =& get_instance();
+        
+        return $CI->Ficha->obtener_campos($tabla, $ficha_base);
+    }
+}
+
 
 /*
  * 

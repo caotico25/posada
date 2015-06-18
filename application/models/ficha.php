@@ -21,7 +21,7 @@ class Ficha extends CI_Model
      */
     function id_ficha_base($tipo_juego)
     {
-        $res = $this->db->query("select ficha from tipos_ficha where tipo_juego = $tipo_juego");
+        $res = $this->db->query("select ficha_base from tipos_juego where id = $tipo_juego");
         
         return $res->row_array();
     }
@@ -43,7 +43,7 @@ class Ficha extends CI_Model
      */
     function obtener_inventario($id_ficha)
     {
-        $res = $this->db->query("select * from inventarios where id = $id_ficha");
+        $res = $this->db->query("select * from inventarios where ficha = $id_ficha");
         
         return $res->result_array();
     }
@@ -52,64 +52,9 @@ class Ficha extends CI_Model
     /*
      * 
      */
-    function obtener_datos_personaje($id_ficha)
+    function obtener_anotaciones($id_ficha)
     {
-        $res = $this->db->query("select * from personajes where ficha = $id_ficha");
-        
-        return $res->row_array();
-    }
-    
-    
-    /*
-     * 
-     */
-    function obtener_otra_info($id_ficha)
-    {
-        $res = $this->db->query("select * from otra_info where ficha = $id_ficha order by id");
-        
-        return $res->result_array();
-    }
-    
-    
-    /*
-     * 
-     */
-    function obtener_atributos($id_ficha)
-    {
-        $res = $this->db->query("select id, nombre, valor, categoria, ficha from atributos where ficha = $id_ficha group by id, categoria");
-        
-        return $res->result_array();
-    }
-    
-    
-    /*
-     * 
-     */
-    function obtener_habilidades($id_ficha)
-    {
-        $res = $this->db->query("select id, nombre, valor, categoria, ficha from habilidades where ficha = $id_ficha group by id, categoria");
-        
-        return $res->result_array();
-    }
-    
-    
-    /*
-     * 
-     */
-    function obtener_ventajas($id_ficha)
-    {
-        $res = $this->db->query("select id, nombre, valor, categoria, ficha from ventajas where ficha = $id_ficha group by id, categoria");
-        
-        return $res->result_array();
-    }
-    
-    
-    /*
-     * 
-     */
-    function obtener_otros_parametros($id_ficha)
-    {
-        $res = $this->db->query("select id, nombre, valor, categoria, ficha from otros_parametros where ficha = $id_ficha group by id, categoria");
+        $res = $this->db->query("select * from anotaciones where ficha = $id_ficha");
         
         return $res->result_array();
     }
@@ -216,6 +161,40 @@ class Ficha extends CI_Model
         
         return $res->row_array();
     }
+    
+    
+    /*
+     * 
+     */
+    function obtener_tablas($ficha_base)
+    {
+        $res = $this->db->query("select * from tablas_juego where ficha = $ficha_base order by id, subcategoria");
+        
+        return $res->result_array();
+    }
+    
+    
+    /*
+     * 
+     */
+    function obtener_campos($tabla, $ficha_base)
+    {
+        $res = $this->db->query("select * from $tablas where ficha = $ficha_base order by id");
+        
+        return $res->result_array();
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

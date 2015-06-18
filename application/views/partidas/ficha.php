@@ -1,171 +1,41 @@
-<section>
+<?php foreach ($tablas as $tabla): ?>
+
+    <?php $campos = obtener_campos($tabla['nombre'], $ficha_base) ?>
+    
     <article>
-        <div id="no-ocultado">
+        <h1 id="ocultar"><?= $tabla['nombre'] ?></h1>
         <div>
-        <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" value="<?= $personaje['nombre'] ?>" id="nombre" class="personajes" />
-        </div>
-        <?php foreach ($otra_info as $info): ?>
-            <div>
-            <label for="<?= $info['nombre'] ?>"><?= $info['nombre'] ?>:</label>
-            <input type="text" name="<?= $info['nombre'] ?>" value="<?= $info['valor'] ?>" id="<?= $info['nombre'] ?>" class="otra_info" />
-            </div>
-        <?php endforeach ?>
-        <div>
-        <label for="experiencia">Experiencia:</label>
-        <input type="number" name="experiencia" value="<?= $ficha['experiencia'] ?>" id="experiencia" min="0" class="fichas" />
-        </div>
-        </div>
-    </article>
-</section>
-<section>
-    <?php $categoria = $atributos[0]['categoria'] ?>
-    
-    <article>
-        <h1 id="ocultar">ATRIBUTOS</h1>
-        <div id="ocultado">
-        <h2><?= $categoria ?></h2>
-        
-        <?php foreach ($atributos as $atributo): ?>
-        
-            <?php if ($categoria == $atributo['categoria']): ?>
-                <div>
-                <label for="<?= $atributo['nombre'] ?>"><?= $atributo['nombre'] ?>:</label>
-                <input type="number" name="<?= $atributo['nombre'] ?>" value="<?= $atributo['valor'] ?>" id="<?= $atributo['nombre'] ?>" min="0" class="atributos" />
-                </div>
-            <?php else: ?>
-            
-                <?php $categoria = $atributo['categoria'] ?>
-                
-                <h2><?= $categoria ?></h2>
+            <?php if ($campos[0]['subcategoria'] == ""): ?>
+                <?php foreach ($campos as $campo): ?>
                     <div>
-                    <label for="<?= $atributo['nombre'] ?>"><?= $atributo['nombre'] ?>:</label>
-                    <input type="number" name="<?= $atributo['nombre'] ?>" value="<?= $atributo['valor'] ?>" id="<?= $atributo['nombre'] ?>" min="0" class="atributos" />
+                        <label for="<?= $campo['id'] ?>"><?= $campo['campo'] ?>:</label>
+                        <input type="text" name="<?= $campo['id'] ?>" value="<?= $atributo['valor'] ?>" id="<?= $campo['id'] ?>" min="0" class="atributos" />
                     </div>
-                    
-            <?php endif ?>
-        
-        <?php endforeach ?>
-        </div>
-    </article>
-    
-</section>
-<section>
-    <?php $categoria = $habilidades[0]['categoria'] ?>
-    
-    <article>
-        <h1 id="ocultar">HABILIDADES</h1>
-        <div id="ocultado">
-        <h2><?= $categoria ?></h2>
-        
-        <?php foreach ($habilidades as $habilidad): ?>
-        
-            <?php if ($categoria == $habilidad['categoria']): ?>
-                <div>
-                <label for="<?= $habilidad['nombre'] ?>"><?= $habilidad['nombre'] ?>:</label>
-                <input type="number" name="<?= $habilidad['nombre'] ?>" value="<?= $habilidad['valor'] ?>" id="<?= $habilidad['nombre'] ?>" min="0" class="habilidades" />
-                </div>
+                <?php endforeach ?>
             <?php else: ?>
-            
-                <?php $categoria = $habilidad['categoria'] ?>
-                
-                <h2><?= $categoria ?></h2>
-                    <div>
-                    <label for="<?= $habilidad['nombre'] ?>"><?= $habilidad['nombre'] ?>:</label>
-                    <input type="number" name="<?= $habilidad['nombre'] ?>" value="<?= $habilidad['valor'] ?>" id="<?= $habilidad['nombre'] ?>" min="0" class="habilidades" />
-                    </div>
-            <?php endif ?>
-        
-        <?php endforeach ?>
-        </div>
-    </article>
-    
-</section>
-<section>
-    <?php $categoria = $ventajas[0]['categoria'] ?>
-    
-    <article>
-        <h1 id="ocultar">VENTAJAS</h1>
-        <div id="ocultado">
-        <h2><?= $categoria ?></h2>
-        
-        <?php foreach ($ventajas as $ventaja): ?>
-        
-            <?php if ($categoria == $ventaja['categoria']): ?>
-                
-                <?php if ($ventaja['nombre'] != ''): ?>
-                    <div>
-                    <label for="<?= $ventaja['nombre'] ?>"><?= $ventaja['nombre'] ?>:</label>
-                    <input type="number" name="<?= $ventaja['nombre'] ?>" value="<?= $ventaja['valor'] ?>" id="<?= $ventaja['nombre'] ?>" min="0" class="ventajas" />
-                    </div>
-                <?php endif ?>
-            <?php else: ?>
-                <div>
-                <label for="anadir">Añadir</label>
-                <input type="text" name="anadir" value="" id="anadir"/>
-                </div>
-                <?php $categoria = $ventaja['categoria'] ?>
-                
-                <h2><?= $categoria ?></h2>
-                    
-                    <?php if ($ventaja['nombre'] != ''): ?>
-                    
+                <?php $subcategoria = $campos[0]['subcategoria'] ?>
+                <h2><?= $subcategoria ?></h2>
+                <?php foreach ($campos as $campo): ?>
+                    <?php if ($campo['subcategoria'] == $subcategoria): ?>
                         <div>
-                        <label for="<?= $ventaja['nombre'] ?>"><?= $ventaja['nombre'] ?>:</label>
-                        <input type="number" name="<?= $ventaja['nombre'] ?>" value="<?= $ventaja['valor'] ?>" id="<?= $ventaja['nombre'] ?>" min="0" class="ventajas" />
+                            <label for="<?= $campo['id'] ?>"><?= $campo['campo'] ?>:</label>
+                            <input type="text" name="<?= $campo['id'] ?>" value="<?= $atributo['valor'] ?>" id="<?= $campo['id'] ?>" min="0" class="atributos" />
                         </div>
-                
-                    <?php endif ?>
-                    
-            <?php endif ?>
-        
-        <?php endforeach ?>
-        </div>
-    </article>
-    
-</section>
-<section>
-    <?php $categoria = $otros_parametros[0]['categoria'] ?>
-    
-    <article>
-        <h1 id="ocultar">OTROS</h1>
-        <div id="ocultado">
-        <h2><?= $categoria ?></h2>
-        
-        <?php foreach ($otros_parametros as $otro_parametro): ?>
-        
-            <?php if ($categoria == $otro_parametro['categoria']): ?>
-                
-                <?php if ($otro_parametro['nombre'] != ''): ?>
-                    <div>
-                    <label for="<?= $otro_parametro['nombre'] ?>"><?= $otro_parametro['nombre'] ?>:</label>
-                    <input type="number" name="<?= $otro_parametro['nombre'] ?>" value="<?= $otro_parametro['valor'] ?>" id="<?= $otro_parametro['nombre'] ?>" min="0" class="otros_parametros" />
-                    </div>
-                <?php endif ?>
-                
-            <?php else: ?>
-                <div>
-                <label for="anadir">Añadir</label>
-                <input type="text" name="anadir" value="" id="anadir"/>
-                </div>
-                <?php $categoria = $otro_parametro['categoria'] ?>
-                
-                <h2><?= $categoria ?></h2>
-                    
-                    <?php if ($otro_parametro['nombre'] != ''): ?>
+                    <?php else: ?>
+                        <?php $subcategoria = $campo['subcategoria'] ?>
+                        <h2><?= $subcategoria ?></h2>
                         <div>
-                        <label for="<?= $otro_parametro['nombre'] ?>"><?= $otro_parametro['nombre'] ?>:</label>
-                        <input type="number" name="<?= $otro_parametro['nombre'] ?>" value="<?= $otro_parametro['valor'] ?>" id="<?= $otro_parametro['nombre'] ?>" min="0" class="otros_parametros" />
+                            <label for="<?= $campo['id'] ?>"><?= $campo['campo'] ?>:</label>
+                            <input type="text" name="<?= $campo['id'] ?>" value="<?= $atributo['valor'] ?>" id="<?= $campo['id'] ?>" min="0" class="atributos" />
                         </div>
                     <?php endif ?>
-                    
+                <?php endforeach ?>
             <?php endif ?>
-        
-        <?php endforeach ?>
         </div>
     </article>
-    
-</section>
+
+<?php endforeach ?>
+
 <section>
     <article>
         <h1 id="ocultar">INVENTARIO</h1>
