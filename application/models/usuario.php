@@ -88,8 +88,16 @@ class Usuario extends CI_Model
     }
     
     
-    
-    
+    /**
+     * 
+     * 
+     */
+    function obtener_jugadores()
+    {
+        $res = $this->db->query("select * from usuarios;");
+        
+        return $res->result_array();
+    }
     
     
     
