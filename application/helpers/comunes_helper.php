@@ -85,11 +85,11 @@ if (!function_exists('logueado'))
 
 if (!function_exists('nombre_personaje'))
 {
-    function nombre_personaje($id_partida, $id_jugador)
+    function nombre_personaje($id_jugador)
     {
         $CI =& get_instance();
         
-        $nombre = $CI->Ficha->nombre_personaje($id_partida, $id_jugador);
+        $nombre = $CI->Ficha->nombre_personaje($id_jugador);
         
         return $nombre['nombre'];
     }

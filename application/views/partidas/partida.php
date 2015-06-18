@@ -261,8 +261,8 @@
                             <select name="jugadores" id="jugadores">
                                 <option>------</option>
                                 <?php foreach ($jugadores as $jugador): ?>
-                                    <?php if ($jugador['jugador'] != obtener_id()): ?>
-                                        <option value="<?= $jugador['ficha_id'] ?>"><?= nombre_personaje($id_partida, $jugador['jugador']) ?></option>
+                                    <?php if ($jugador['usuario'] != obtener_id()): ?>
+                                        <option value="<?= $jugador['id'] ?>"><?= nombre_personaje($jugador['id']) ?></option>
                                     <?php endif ?>
                                 <?php endforeach ?>
                             </select>

@@ -85,23 +85,11 @@ class Ficha extends CI_Model
     /*
      * 
      */
-    function nombre_personaje($id_partida, $id_jugador)
+    function nombre_personaje($id_jugador)
     {
-        $res = $this->db->query("select ficha_id from jugadores where partida_id = $id_partida and jugador = $id_jugador");
-        $res = $res->row_array();
-        $ficha = $res['ficha_id'];
+        $res = $this->db->query("select * from usuarios where id = $id_jugador");
         
-        if ($ficha != NULL)
-        {
-            $res = $this->db->query("select nombre from personajes where ficha = $ficha");
-        
-            return $res->row_array();
-        }
-        else
-        {
-            return null;
-        }
-        
+        return $res->row_array();
     }
     
     
