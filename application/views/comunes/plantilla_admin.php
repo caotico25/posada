@@ -280,7 +280,7 @@
                         
                             url: "<?= base_url('admin/juegos/crear_campo_sub') ?>",
                             type: "POST",
-                            data: {'tipo_juego': tipo_juego, 'categoria': categoria, 'subcategoria': subcategoria 'campo': campo 'csrf_test_name': $.cookie('csrf_cookie_name')},
+                            data: {'tipo_juego': tipo_juego, 'categoria': categoria, 'subcategoria': subcategoria, 'campo': campo 'csrf_test_name': $.cookie('csrf_cookie_name')},
                             success: function (datos){
                                 
                                 var res = eval(datos);
