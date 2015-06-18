@@ -218,21 +218,11 @@
                         $.ajax({
                         
                             url: "<?= base_url('admin/juegos/crear_campo') ?>",
-                            context: this,
                             type: "POST",
                             data: {'tipo_juego': tipo_juego, 'categoria': categoria, 'campo': campo, 'csrf_test_name': $.cookie('csrf_cookie_name')},
                             success: function (datos){
                                 
-                                $(this).parent().parent().children("#campos_" + categoria).append("<div id='" + id_campo + "'>" + campo + "</div>");
                                 
-                                $("#" + id_campo).css({'display': 'inline-block', 'margin': '5px', 'border': '1px solid black', 'padding': '10px'});
-                                $("#" + id_campo).corner();
-                                
-                                $("#" + id_campo).append("<button class='eliminar_campo' id='x-" + id_campo + "'>X</button>").css('margin-left', '5px');
-                                
-                                $(this).parent().children("#campo").val("");
-                                
-                                $(this).parent().parent().children("#formsubcat").hide();
                                 
                             },
                             error: function (jqXHR, textStatus, errorThrown){
@@ -242,6 +232,17 @@
                             }
                             
                         });
+                        
+                        $(this).parent().parent().children("#campos_" + categoria).append("<div id='" + id_campo + "'>" + campo + "</div>");
+                                
+                        $("#" + id_campo).css({'display': 'inline-block', 'margin': '5px', 'border': '1px solid black', 'padding': '10px'});
+                        $("#" + id_campo).corner();
+                        
+                        $("#" + id_campo).append("<button class='eliminar_campo' id='x-" + id_campo + "'>X</button>").css('margin-left', '5px');
+                        
+                        $(this).parent().children("#campo").val("");
+                        
+                        $(this).parent().parent().children("#formsubcat").hide();
                     }
                     else
                     {
