@@ -21,7 +21,7 @@
             </select>
             
             <label for="jugadores">Añadir jugadores: </label>
-            <select name="jugadores" id="jugadores">
+            <select name="jugadores" id="jugadores" class="select2">
                 <?php foreach ($jugadores as $jugador): ?>
                     <?php if ($this->session->userdata('id_login') != $jugador['id']): ?>
                         <option value="<?= $jugador['id'] ?>"><?= $jugador['usuario'] ?></option>
