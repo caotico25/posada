@@ -29,9 +29,9 @@ class Juego extends CI_Model
     {
         extract($datos);
         
-        $con = $this->load->dbforge();
+        $this->load->dbforge();
         
-        $con->add_field('id');
+        $this->dbforge->add_field('id');
         
         $campos = array(
                         'campo' => array(
@@ -55,9 +55,9 @@ class Juego extends CI_Model
                                     )
                     );
         
-        $con->add_field($campos);
+        $this->dbforge->add_field($campos);
         
-        $con->create_table($categoria);
+        $this->dbforge->create_table($categoria);
         
         $res = $this->db->query("select * from tipos_juego where id = $tipo_juego");
         $res = $res->row_array();
