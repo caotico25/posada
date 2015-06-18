@@ -167,8 +167,6 @@ class Ficha extends CI_Model
     {
         $this->db->query("insert into anotaciones (ficha, texto) values ($id_ficha, '')");
         
-        $this->db->query("insert into inventarios (ficha) values ($id_ficha)");
-        
         return $id_ficha;
     }
     
