@@ -92,7 +92,7 @@ class Juego extends CI_Model
         $res = $this->db->query("select * from tipos_juego where id = $tipo_juego");
         $res = $res->row_array();
         
-        $this->db->query("insert into " + $categoria + " (campo, subcategoria, ficha) values (?, ?, ?)", array($campo, $subcategoria, $res['ficha_base']));
+        $this->db->query("insert into $categoria (campo, subcategoria, ficha) values (?, ?, ?)", array($campo, $subcategoria, $res['ficha_base']));
     }
     
     
