@@ -256,7 +256,6 @@
                 $("#ficha-c").on('click', '#crear_campo_s', function() {
                     
                     var subcategoria = $(this).parent().children("#subcategoria").val();
-                            context: this,
                     var categoria = $(this).parent().children("#categoria").val();
                     var campo = $(this).parent().children("#campo_s").val();
                     
@@ -274,6 +273,7 @@
                         $.ajax({
                         
                             url: "<?= base_url('admin/juegos/crear_campo_sub') ?>",
+                            context: this,
                             type: "POST",
                             data: {'tipo_juego': tipo_juego, 'categoria': categoria, 'subcategoria': subcategoria, 'campo': campo, 'csrf_test_name': $.cookie('csrf_cookie_name')},
                             success: function (datos){
