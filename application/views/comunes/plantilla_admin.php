@@ -224,7 +224,7 @@
                         
                             url: "<?= base_url('admin/juegos/crear_campo') ?>",
                             type: "POST",
-                            data: {'tipo_juego': tipo_juego, 'categoria': categoria, 'campo': campo 'csrf_test_name': $.cookie('csrf_cookie_name')},
+                            data: {'tipo_juego': tipo_juego, 'categoria': categoria, 'campo': campo, 'csrf_test_name': $.cookie('csrf_cookie_name')},
                             success: function (datos){
                                 
                                 var res = eval(datos);
