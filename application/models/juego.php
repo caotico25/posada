@@ -52,7 +52,7 @@ class Juego extends CI_Model
                         'ficha' => array(
                                     'type' => 'int',
                                     'constraint' => '11'
-                                    ),
+                                    )
                     );
         
         $con->add_field($campos);
