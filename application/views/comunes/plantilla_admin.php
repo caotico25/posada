@@ -147,8 +147,6 @@
                                 $("#datos article:nth-last-child(2)").css({'border': '1px solid black', 'overflow': 'hidden', 'margin-top': '10px', 'margin-bottom': '10px', 'width': '90%', 'margin-left': '5%'});
                                 $("#datos article:nth-last-child(2)").corner();
                                 
-                                alert(datos);
-                                
                                 $(this).parent().children("#categoria").val("");
                                 
                             },
@@ -205,8 +203,6 @@
                     
                     var categoria = $(this).parent().children("#categoria").val();
                     var campo = $(this).parent().children("#campo").val();
-                    
-                    alert(categoria);
                     
                     if (campo != "")
                     {
