@@ -219,7 +219,7 @@ class Partida extends CI_Model
     {
         $ficha_base = $this->Ficha->obtener_tipo_ficha($tipo_juego);
         
-        $this->db->query("insert into fichas (usuario, partida)
+        $this->db->query("insert into fichas (usuario_id, partida_id)
                             values ($jugador, $id_partida)");
                             
         $id_ficha = $this->db->insert_id();
