@@ -41,12 +41,14 @@ class Juego extends CI_Model
                         
                         'valor' => array(
                                     'type' => 'varchar',
-                                    'constraint' => '100'
+                                    'constraint' => '100',
+                                    'null' => TRUE
                                     ),
                          
                         'subcategoria' => array(
                                     'type' => 'varchar',
-                                    'constraint' => '100'
+                                    'constraint' => '100',
+                                    'null' => TRUE
                                     ),
                         
                         'ficha' => array(
