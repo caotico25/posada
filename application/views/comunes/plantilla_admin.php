@@ -33,7 +33,7 @@
                         data: {
                             csrf_test_name: $.cookie('csrf_cookie_name')
                             }
-                    });
+                    });// bla
                     
                     if ($(this).attr("name") == "seccion" || $(this).attr("name") == "tema")
                     {
