@@ -31,7 +31,7 @@ class Juego extends CI_Model
         
         $con = $this->load->dbforge();
         
-        $con->add_field('id');
+        $con->add_key('id', TRUE);
         
         $campos = array(
                         'campo' => array(
@@ -62,7 +62,7 @@ class Juego extends CI_Model
         $res = $this->db->query("select * from tipos_juego where id = $tipo_juego");
         $res = $res->row_array();
         
-        $this->db->query("insert into tablas_juego (nombre, ficha) values (?, ?)", array($categoria, $res['ficha_base']));
+        $this->db->query("insert into tablas_ficha (nombre, ficha) values (?, ?)", array($categoria, $res['ficha_base']));
     }
     
     
