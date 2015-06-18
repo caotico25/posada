@@ -194,7 +194,7 @@
                     $("#" + id_subcategoria).css({'border': '1px solid black', 'overflow': 'hidden', 'margin-top': '10px', 'margin-bottom': '10px', 'width': '90%', 'margin-left': '5%'});
                     $("#" + id_subcategoria).corner();
                     
-                    $("#" + id_subcategoria).children("h3").css({'background-image': 'url("../images/fondo.jpg")', 'color': '#FBC187', 'padding': '0.3em'});
+                    $("#" + id_subcategoria).children("h3").css({'background-image': 'url(images/fondo.jpg)', 'color': '#FBC187', 'padding': '0.3em'});
                     
                     padre.children("#form_campo").hide();
                     padre.children("#campos_" + categoria).hide();
